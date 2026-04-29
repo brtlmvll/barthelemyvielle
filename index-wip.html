@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BARTHELEMY VIELLE</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#080808;color:#f0ede6;font-family:'DM Mono',monospace;display:flex;align-items:center;justify-content:center;cursor:crosshair}
+.wrap{text-align:center;display:flex;flex-direction:column;align-items:center;gap:2rem}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,8vw,5rem);letter-spacing:.2em;color:#f0ede6;line-height:1}
+.sub{font-size:.4rem;letter-spacing:.5em;text-transform:uppercase;color:#3e3e3e}
+.form{display:flex;flex-direction:column;align-items:center;gap:.8rem;margin-top:1rem}
+input{background:transparent;border:none;border-bottom:1px solid #1f1f1f;color:#f0ede6;font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.2em;padding:.4rem 0;width:180px;outline:none;text-align:center;transition:border-color .2s}
+input:focus{border-bottom-color:#f0ede6}
+input::placeholder{color:#3e3e3e;letter-spacing:.2em}
+button{background:none;border:1px solid #1f1f1f;color:#3e3e3e;font-family:'DM Mono',monospace;font-size:.38rem;letter-spacing:.2em;text-transform:uppercase;padding:.4rem 1.2rem;cursor:pointer;transition:all .15s;margin-top:.4rem}
+button:hover{border-color:#f0ede6;color:#f0ede6}
+.err{font-size:.35rem;letter-spacing:.15em;color:#ff1a8c;opacity:0;transition:opacity .2s;text-transform:uppercase}
+.err.show{opacity:1}
+footer{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);font-size:.3rem;letter-spacing:.3em;text-transform:uppercase;color:#1f1f1f}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div>
+    <div class="logo">BV</div>
+    <div class="sub">En construction</div>
+  </div>
+  <div class="form">
+    <input type="password" id="pwd" placeholder="Mot de passe" autocomplete="off" />
+    <button onclick="check()">Entrer</button>
+    <div class="err" id="err">Incorrect</div>
+  </div>
+</div>
+<footer>Paléo + Post Futur · CLVSTR</footer>
+<script>
+document.getElementById('pwd').addEventListener('keydown', e => {
+  if (e.key === 'Enter') check();
+});
+function check() {
+  const pwd = document.getElementById('pwd').value;
+  if (pwd === 'clvstr') {
+    window.location.href = 'main.html';
+  } else {
+    const err = document.getElementById('err');
+    err.classList.add('show');
+    setTimeout(() => err.classList.remove('show'), 2000);
+    document.getElementById('pwd').value = '';
+  }
+}
+</script>
+</body>
+</html>
