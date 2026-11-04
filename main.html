@@ -6,56 +6,55 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&display=swap">
 <title>Barthélémy Vielle</title>
 <style>
-  /* ---- HOME = canvas iso à masses noires (pan/zoom). Survol = scan + dévoilement texte.
-         Masse Work = strobe des images (vibe EVA). Clic = zoom dans la forme → section en
-         fond noir / texte blanc, images clean, défilement facile. Titres Cinzel, nom réduit. ---- */
-  :root{--paper:#FCFCFB;--ink:#0A0A0A;--mute:#9F9F9A;--hair:#E8E8E3;--flame:#FF4D14;
-    --dark:#0A0A0A;--light:#F0EDE6;--serif:"Cinzel",Georgia,"Times New Roman",serif;color-scheme:light}
+  /* ---- Portfolio clean. HOME blanc : nom réduit + menu texte + masses noires (3 sections).
+         Survol = la forme se lève, l'image éclot dedans (Work = strobe des prints).
+         Clic = transition blanc→noir vers la SECTION (fond noir, texte blanc, images clean,
+         défilement). Titres Cinzel. Pas de grille, pas de scan. Navigable, concret. ---- */
+  :root{--paper:#FBFBFA;--ink:#0B0B0B;--mute:#9C9C97;--line:#E6E6E1;--dark:#0B0B0B;--light:#F0EDE6;
+    --serif:"Cinzel",Georgia,"Times New Roman",serif;color-scheme:light}
   *{box-sizing:border-box}
   html,body{height:100%}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-    overflow:hidden;overscroll-behavior:none;-webkit-font-smoothing:antialiased}
+    -webkit-font-smoothing:antialiased;overflow:hidden}
 
-  #stage{position:fixed;inset:0;overflow:hidden;cursor:grab;touch-action:none}
-  #stage.drag{cursor:grabbing}
-  #world{position:absolute;top:0;left:0;width:3400px;height:2400px;transform-origin:0 0;will-change:transform;
-    background-image:
-      repeating-linear-gradient(26.57deg,var(--hair) 0 1px,transparent 1px 78px),
-      repeating-linear-gradient(-26.57deg,var(--hair) 0 1px,transparent 1px 78px);background-position:center}
+  /* ===== HOME ===== */
+  #home{position:fixed;inset:0;display:flex;flex-direction:column;transition:opacity .45s ease,transform .45s ease;
+    padding-left:max(26px,env(safe-area-inset-left,0px));padding-right:max(26px,env(safe-area-inset-right,0px))}
+  body.away #home{opacity:0;transform:scale(.985);pointer-events:none}
+  #bar{display:flex;justify-content:space-between;align-items:center;padding-top:max(22px,env(safe-area-inset-top,0px));
+    font-size:10px;letter-spacing:.24em;text-transform:uppercase}
+  #bar .bd{display:flex;align-items:baseline;gap:.9em}
+  #bar .bd b{font-size:12px;font-weight:700;letter-spacing:.18em}#bar .bd span{color:var(--mute)}
+  #topnav{display:flex;gap:1.6em}
+  #topnav button{all:unset;cursor:pointer;color:var(--mute);transition:color .2s}
+  #topnav button:hover{color:var(--ink)}
 
-  .mass{position:absolute;padding:0;border:0;background:none;cursor:pointer}
-  .mass .wrap{position:relative;width:100%;height:100%;transition:transform .3s cubic-bezier(.2,.7,.3,1)}
-  .mass:hover .wrap{transform:translateY(-10px) scale(1.02)}
-  .mass svg{display:block;width:100%;height:100%;overflow:visible}
-  .mass .fill{fill:var(--ink)}
-  .mass .rim{fill:none;stroke:var(--paper);stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round}
-  .mass .shot{opacity:0;transition:opacity .4s ease}
-  .mass:hover .shot{opacity:1}
-  /* scan au survol (direction aléatoire via --ang, posée en JS) */
-  .mass .scan{position:absolute;inset:0;pointer-events:none;opacity:0;mix-blend-mode:screen;
-    background:linear-gradient(var(--ang,20deg),transparent 45%,rgba(255,255,255,.55) 50%,transparent 55%);background-size:260% 260%;background-position:0% 0%}
-  .mass:hover .scan{opacity:1;animation:scan .75s cubic-bezier(.4,0,.2,1) forwards}
-  @keyframes scan{from{background-position:0% 0%}to{background-position:100% 100%}}
-  .mass .flash{position:absolute;inset:0;pointer-events:none;background:var(--light);opacity:0;mix-blend-mode:screen}
-  /* menu dévoilé au survol, avec timing */
-  .mass .menu{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:16px;text-align:center;white-space:nowrap;pointer-events:none}
-  .mass .ml{display:block;font-family:var(--serif);font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;line-height:1;
-    opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .55s cubic-bezier(.2,.7,.3,1),color .2s}
-  .mass .ms{display:block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:7px;
-    opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .55s cubic-bezier(.2,.7,.3,1)}
-  .mass:hover .ml{opacity:1;transform:none;color:var(--flame);transition-delay:.16s}
-  .mass:hover .ms{opacity:1;transform:none;transition-delay:.3s}
+  .stagec{flex:1;display:flex;align-items:center;justify-content:center}
+  .masses{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:clamp(30px,6vw,96px)}
+  .m{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;width:clamp(150px,20vw,230px)}
+  .m .wrap{position:relative;width:100%;aspect-ratio:1/1;transition:transform .35s cubic-bezier(.2,.75,.3,1)}
+  .m:hover .wrap{transform:translateY(-14px)}
+  .m svg{display:block;width:100%;height:100%;overflow:visible}
+  .m .fill{fill:var(--ink)}
+  .m .rim{fill:none;stroke:var(--paper);stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+  .m .shot{opacity:0;transition:opacity .4s ease}
+  .m:hover .shot{opacity:1}
+  .m .flash{position:absolute;inset:0;background:var(--light);opacity:0;mix-blend-mode:screen;pointer-events:none}
+  .m .lab{font-family:var(--serif);font-size:clamp(1.1rem,2.3vw,1.7rem);font-weight:700;text-transform:uppercase;letter-spacing:.03em;line-height:1;
+    margin-top:1.2rem;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .5s cubic-bezier(.2,.75,.3,1),color .2s}
+  .m .sub{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:.6em;
+    opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .5s cubic-bezier(.2,.75,.3,1)}
+  .m:hover .lab{opacity:1;transform:none;color:var(--flame,#FF4D14);transition-delay:.14s}
+  .m:hover .sub{opacity:1;transform:none;transition-delay:.26s}
 
-  .ui{position:fixed;z-index:20;font-size:10px;letter-spacing:.22em;text-transform:uppercase;user-select:none}
-  #brand{top:max(18px,env(safe-area-inset-top,0px));left:max(18px,env(safe-area-inset-left,0px));display:flex;align-items:baseline;gap:.9em}
-  #brand b{font-size:12px;font-weight:700;letter-spacing:.16em} #brand span{color:var(--mute)}
-  #foot{bottom:max(16px,env(safe-area-inset-bottom,0px));left:max(18px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:.5em;color:var(--mute)}
-  #clock{color:var(--mute);font-variant-numeric:tabular-nums}
-  #hint{bottom:max(16px,env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);color:var(--mute);text-align:center;transition:opacity .5s}
+  .hb{padding-bottom:max(24px,env(safe-area-inset-bottom,0px))}
+  .hb .tag{max-width:40ch;margin:0 auto 1.6rem;text-align:center;font-size:clamp(.98rem,2vw,1.2rem);line-height:1.34;opacity:.9}
+  .hb .ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+  .hb .ft a{color:inherit;text-decoration:none}.hb .ft .eco{display:flex;gap:1.1em;flex-wrap:wrap}
 
-  /* ===== sections en fond noir, défilables, clean ===== */
+  /* ===== SECTIONS (fond noir) ===== */
   .sheet{position:fixed;inset:0;z-index:50;background:var(--dark);color:var(--light);overflow-y:auto;overflow-x:hidden;
-    opacity:0;pointer-events:none;transform:scale(1.03);transition:opacity .5s ease,transform .5s ease;-webkit-overflow-scrolling:touch;color-scheme:dark}
+    opacity:0;pointer-events:none;transform:scale(1.04);transition:opacity .5s ease,transform .5s ease;-webkit-overflow-scrolling:touch;color-scheme:dark}
   .sheet.open{opacity:1;pointer-events:auto;transform:none}
   .sheet .shead{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:1rem;
     padding:max(20px,env(safe-area-inset-top,0px)) max(22px,env(safe-area-inset-right,0px)) 18px max(22px,env(safe-area-inset-left,0px));
@@ -65,21 +64,15 @@
   .sheet .shead .ti{font-family:var(--serif);font-size:clamp(1.1rem,3vw,1.6rem);font-weight:700;letter-spacing:.03em;text-transform:uppercase}
   .sheet .inner{max-width:900px;margin:0 auto;padding:1rem max(22px,env(safe-area-inset-left,0px)) 14vh}
   .sheet .lead{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8d8d88;margin:0 0 3rem}
-
-  /* work gallery (dark, clean, scroll) */
   .wlist{display:flex;flex-direction:column;gap:7vh}
   .witem img{width:100%;height:auto;display:block}
   .wmeta{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:1rem;flex-wrap:wrap}
   .wmeta .wn{font-family:var(--serif);font-size:clamp(1.4rem,4vw,2.2rem);font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1}
-  .wmeta .wd{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8d8d88;text-align:right}
-  .wmeta .wd b{color:var(--light);font-weight:400}
-
-  /* about + studies */
-  .about p{font-size:1.02rem;line-height:1.6;max-width:56ch;margin:0 0 1.4rem;color:#d9d7d0}
+  .wmeta .wd{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8d8d88;text-align:right}.wmeta .wd b{color:var(--light);font-weight:400}
   .about .big{font-family:var(--serif);font-size:clamp(2rem,7vw,4rem);font-weight:700;text-transform:uppercase;line-height:.95;margin:0 0 2.2rem}
+  .about p{font-size:1.02rem;line-height:1.6;max-width:56ch;margin:0 0 1.4rem;color:#d9d7d0}
   .about .row{display:flex;flex-wrap:wrap;gap:.6rem 2.4rem;font-size:12px;letter-spacing:.06em;margin-top:2rem}
-  .about .row a,.about .row span{color:var(--light);text-decoration:none}
-  .about .row a{border-bottom:1.5px solid var(--light);padding-bottom:2px}
+  .about .row a,.about .row span{color:var(--light);text-decoration:none}.about .row a{border-bottom:1.5px solid var(--light);padding-bottom:2px}
   .about .eco{margin-top:3rem;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#6e6e69;display:flex;gap:1.4em;flex-wrap:wrap}
   .sub{display:flex;flex-direction:column;border-top:1px solid #222}
   .sub .it{display:flex;justify-content:space-between;align-items:center;padding:1.4rem .2rem;border-bottom:1px solid #222}
@@ -87,80 +80,67 @@
   .sub .it .st{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#56564f}
 
   @media(max-width:620px){
-    .mass .ml{opacity:1;transform:none;color:var(--ink);font-size:17px}
-    .mass .ms{opacity:1;transform:none}
-    .sheet .inner{padding-right:max(22px,env(safe-area-inset-right,0px))}
+    .masses{flex-direction:column;align-items:center;gap:clamp(22px,7vw,40px)}
+    .m{width:min(62vw,240px)}
+    .m .lab{opacity:1;transform:none;color:var(--ink)}.m .sub{opacity:1;transform:none}
+    #topnav{display:none}
   }
-  @media(prefers-reduced-motion:reduce){.mass .wrap,.sheet{transition:none}.mass:hover .scan{animation:none;opacity:.25}}
+  @media(prefers-reduced-motion:reduce){.m .wrap,.sheet,#home{transition:none}}
 </style>
 </head>
 <body>
-<div id="stage"><div id="world"></div></div>
-<header id="brand" class="ui"><b>BV</b><span>CLVSTR</span></header>
-<div id="foot" class="ui"><span id="clock">Beaucens —:—:—</span></div>
-<div id="hint" class="ui">Glisser · zoomer dans une masse</div>
+<div id="home">
+  <div id="bar">
+    <div class="bd"><b>Barthélémy Vielle</b><span>CLVSTR</span></div>
+    <nav id="topnav"><button data-go="work">Work</button><button data-go="studies">Studies</button><button data-go="about">Information</button></nav>
+  </div>
+  <div class="stagec"><div class="masses" id="masses"></div></div>
+  <div class="hb">
+    <p class="tag">Un cluster d'étoiles : des objets éloignés perçus comme proches. Direction artistique &amp; design total.</p>
+    <div class="ft"><span id="clock">Beaucens —:—:—</span><a href="mailto:barthelemy.vielle@gmail.com">barthelemy.vielle@gmail.com</a><div class="eco"><span>CLVSTR</span><span>Baruto</span><span>Rockaedron</span></div></div>
+  </div>
+</div>
 
-<!-- SECTIONS -->
 <section id="work" class="sheet">
-  <div class="shead"><button class="bk" type="button" data-close>← Index</button><span class="ti">Fashion Print</span><span style="width:3em"></span></div>
+  <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Fashion Print</span><span style="width:3em"></span></div>
   <div class="inner"><p class="lead">Motifs textiles — TRENDT · Rockaedron · U-Exist</p><div class="wlist" id="wlist"></div></div>
 </section>
-
 <section id="about" class="sheet">
-  <div class="shead"><button class="bk" type="button" data-close>← Index</button><span class="ti">Information</span><span style="width:3em"></span></div>
+  <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Information</span><span style="width:3em"></span></div>
   <div class="inner about">
     <p class="big">Design total.</p>
-    <p>CLVSTR est une pratique de direction artistique et de design : identités, signalétique, motion, systèmes visuels. Un cluster d'étoiles — des objets éloignés perçus comme proches. Le noir et blanc comme fil conducteur, la couleur comme événement.</p>
-    <p>Barthélémy Vielle. Basé entre Beaucens et Cauterets, Hautes-Pyrénées. Travaille sous CLVSTR (pratique globale), Baruto (branding client) et Rockaedron (produits).</p>
+    <p>CLVSTR — pratique de direction artistique et de design : identités, signalétique, motion, systèmes visuels. Le noir et blanc comme fil conducteur, la couleur comme événement.</p>
+    <p>Barthélémy Vielle. Entre Beaucens et Cauterets, Hautes-Pyrénées. CLVSTR (pratique globale), Baruto (branding client), Rockaedron (produits).</p>
     <div class="row"><span>barthelemy.vielle@gmail.com</span><span>+33 6 81 62 81 60</span><a href="mailto:barthelemy.vielle@gmail.com">Écrire</a></div>
     <div class="eco"><span>CLVSTR</span><span>Baruto</span><span>Forgeworks</span><span>Rockaedron</span></div>
   </div>
 </section>
-
 <section id="studies" class="sheet">
-  <div class="shead"><button class="bk" type="button" data-close>← Index</button><span class="ti">Studies — Kiwami</span><span style="width:3em"></span></div>
-  <div class="inner">
-    <p class="lead">Recherche visuelle · section en cours</p>
-    <div class="sub">
-      <div class="it"><span class="t">Image dump</span><span class="st">En attente</span></div>
+  <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Studies — Kiwami</span><span style="width:3em"></span></div>
+  <div class="inner"><p class="lead">Recherche visuelle · section en cours</p>
+    <div class="sub"><div class="it"><span class="t">Image dump</span><span class="st">En attente</span></div>
       <div class="it"><span class="t">Recherche Kiwami</span><span class="st">En attente</span></div>
-      <div class="it"><span class="t">Études visuelles</span><span class="st">En attente</span></div>
-    </div>
-  </div>
+      <div class="it"><span class="t">Études visuelles</span><span class="st">En attente</span></div></div></div>
 </section>
 
 <script>
 (function(){
   "use strict";
   var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
-  var stage=document.getElementById("stage"),world=document.getElementById("world");
-
   var IMGS=["p02","p05","p07","p09","p11","p13","p14","p20","p17","p18","p19"].map(function(x){return "assets/fashion/"+x+".jpg";});
-  var PRINTS=[
-    {n:"Lychen",cl:"TRENDT",pr:"Sérigraphie",img:"assets/fashion/p02.jpg"},
-    {n:"Bark",cl:"TRENDT",pr:"Sérigraphie",img:"assets/fashion/p05.jpg"},
-    {n:"Snow",cl:"TRENDT",pr:"Sérigraphie",img:"assets/fashion/p07.jpg"},
-    {n:"Espinhos",cl:"TRENDT",pr:"Dessin · numérisation",img:"assets/fashion/p09.jpg"},
-    {n:"Burst",cl:"Rockaedron",pr:"Encre rongeante · sérigraphie",img:"assets/fashion/p11.jpg"},
-    {n:"Cliff",cl:"Rockaedron",pr:"Photographie · composition",img:"assets/fashion/p13.jpg"},
-    {n:"Diorama",cl:"U-Exist",pr:"Numérisation · composition",img:"assets/fashion/p14.jpg"},
-    {n:"Norscape",cl:"U-Exist",pr:"Impression directe",img:"assets/fashion/p20.jpg"},
-    {n:"Klondike",cl:"U-Exist",pr:"Numérisation · composition",img:"assets/fashion/p17.jpg"},
-    {n:"Vegan",cl:"U-Exist",pr:"Impression directe",img:"assets/fashion/p18.jpg"},
-    {n:"Marble IV",cl:"U-Exist",pr:"Photographie · composition",img:"assets/fashion/p19.jpg"}
-  ];
-  // galerie work (dark, clean)
+  var PRINTS=[["Lychen","TRENDT","Sérigraphie","p02"],["Bark","TRENDT","Sérigraphie","p05"],["Snow","TRENDT","Sérigraphie","p07"],
+    ["Espinhos","TRENDT","Dessin · numérisation","p09"],["Burst","Rockaedron","Encre rongeante · sérigraphie","p11"],
+    ["Cliff","Rockaedron","Photographie · composition","p13"],["Diorama","U-Exist","Numérisation · composition","p14"],
+    ["Norscape","U-Exist","Impression directe","p20"],["Klondike","U-Exist","Numérisation · composition","p17"],
+    ["Vegan","U-Exist","Impression directe","p18"],["Marble IV","U-Exist","Photographie · composition","p19"]];
   var wl=document.getElementById("wlist");
   PRINTS.forEach(function(p){var d=document.createElement("div");d.className="witem";
-    d.innerHTML='<img loading="lazy" src="'+p.img+'" alt="'+p.n+'"><div class="wmeta"><span class="wn">'+p.n+'</span><span class="wd"><b>'+p.cl+'</b><br>'+p.pr+'</span></div>';
-    wl.appendChild(d);});
+    d.innerHTML='<img loading="lazy" src="assets/fashion/'+p[3]+'.jpg" alt="'+p[0]+'"><div class="wmeta"><span class="wn">'+p[0]+'</span><span class="wd"><b>'+p[1]+'</b><br>'+p[2]+'</span></div>';wl.appendChild(d);});
 
-  /* ---- formes ---- */
   function shapePath(S,seed,type){
     var st=seed*7+3,rng=function(){st=(st*9301+49297)%233280;return st/233280;},pts=[],m=S*0.06;function P(x,y){pts.push([x,y]);}
     if(type==="ridge"){var baseY=S*0.9,n=6+Math.floor(rng()*4);P(m,baseY);for(var i=0;i<=n;i++){P(m+(S-2*m)*i/n,(i===0||i===n)?S*(0.5+rng()*0.12):S*(0.12+rng()*0.5));}P(S-m,baseY);}
     else if(type==="totem"){var cxx=S/2,nn=5,top=S*0.05,bot=S*0.95,lft=[],rgt=[];for(var k=0;k<=nn;k++){var yy=top+(bot-top)*k/nn,w2=S*(0.15+rng()*0.22);lft.push([cxx-w2,yy]);rgt.push([cxx+w2,yy]);}pts=lft.concat(rgt.reverse());}
-    else if(type==="shard"){var np=5+Math.floor(rng()*2),c1=S/2,R2=S*0.44;for(var j=0;j<np;j++){var a=(j/np)*Math.PI*2-Math.PI/2,r=R2*(0.45+rng()*0.9);P(c1+Math.cos(a)*r,c1+Math.sin(a)*r);}}
     else{var np2=8+Math.floor(rng()*3),cc=S/2,R3=S*0.42,notch=Math.floor(rng()*np2);for(var q=0;q<np2;q++){var a2=(q/np2)*Math.PI*2+rng()*0.25,r3=R3*(0.5+rng()*0.85);if(q===notch)r3*=0.33;P(cc+Math.cos(a2)*r3,cc+Math.sin(a2)*r3);}}
     var d="M "+pts[0][0].toFixed(1)+" "+pts[0][1].toFixed(1);for(var p=1;p<pts.length;p++)d+=" L "+pts[p][0].toFixed(1)+" "+pts[p][1].toFixed(1);return d+" Z";
   }
@@ -176,83 +156,34 @@
   }
 
   var MASSES=[
-    {key:"work",  x:1120,y:620, s:560,type:"totem", seed:2, lab:"Work",    sub:"Fashion Print · 11 motifs", img:"assets/fashion/p14.jpg"},
-    {key:"studies",x:560,y:700, s:320,type:"ridge", seed:7, lab:"Studies", sub:"Kiwami · recherche"},
-    {key:"about", x:1940,y:700, s:300,type:"shard", seed:19,lab:"Information", sub:"Profil · contact"}
+    {key:"work",seed:2,type:"totem",lab:"Work",sub:"Fashion Print · 11 motifs",img:"assets/fashion/p14.jpg"},
+    {key:"studies",seed:7,type:"ridge",lab:"Studies",sub:"Kiwami · recherche",img:"assets/fashion/p24.jpg"},
+    {key:"about",seed:19,type:"relic",lab:"Information",sub:"Profil · contact"}
   ];
-  var bb={x:1e9,y:1e9,X:-1e9,Y:-1e9},workMass=null;
-  var ANG=["12deg","-12deg","90deg","-90deg","40deg","-40deg","180deg"];
+  var massesEl=document.getElementById("masses"),workShot=null,workFlash=null;
   MASSES.forEach(function(md){
-    var el=document.createElement("button");el.className="mass";el.type="button";el.dataset.key=md.key;
-    el.style.cssText="left:"+md.x+"px;top:"+md.y+"px;width:"+md.s+"px;height:"+md.s+"px";
-    el.innerHTML='<div class="wrap">'+massSVG(md.s,md.seed,md.type,md.img)
-      +'<div class="scan"></div><div class="flash"></div></div>'
-      +'<div class="menu"><span class="ml">'+md.lab+'</span><span class="ms">'+md.sub+'</span></div>';
-    // scan : direction aléatoire à chaque survol
-    el.addEventListener("pointerenter",function(){el.querySelector(".scan").style.setProperty("--ang",ANG[Math.floor(Math.random()*ANG.length)]);});
-    el.addEventListener("click",function(){if(moved>6)return;openSection(md.key);});
-    world.appendChild(el);
-    if(md.key==="work")workMass=el;
-    bb.x=Math.min(bb.x,md.x);bb.y=Math.min(bb.y,md.y-40);bb.X=Math.max(bb.X,md.x+md.s);bb.Y=Math.max(bb.Y,md.y+md.s+70);
+    var b=document.createElement("button");b.className="m";b.type="button";b.dataset.go=md.key;
+    b.innerHTML='<div class="wrap">'+massSVG(240,md.seed,md.type,md.img)+'<div class="flash"></div></div>'
+      +'<span class="lab">'+md.lab+'</span><span class="sub">'+md.sub+'</span>';
+    massesEl.appendChild(b);
+    if(md.key==="work"){workShot=b.querySelector(".shot");workFlash=b.querySelector(".flash");
+      if(!reduce){var t=null;b.addEventListener("pointerenter",function(){var k=0;t=setInterval(function(){k++;
+        workShot.setAttribute("href",IMGS[Math.floor(Math.random()*IMGS.length)]);
+        if(k%7===0){workFlash.style.opacity="1";setTimeout(function(){workFlash.style.opacity="0";},55);}},110);});
+      b.addEventListener("pointerleave",function(){clearInterval(t);workShot.setAttribute("href","assets/fashion/p14.jpg");workFlash.style.opacity="0";});}
+    }
   });
-  var IDXBOX={x:bb.x,y:bb.y,w:bb.X-bb.x,h:bb.Y-bb.y};
 
-  /* ---- strobe (vibe EVA) sur la masse Work ---- */
-  var strobeTimer=null,workShot=workMass?workMass.querySelector(".shot"):null,workFlash=workMass?workMass.querySelector(".flash"):null;
-  if(workMass&&!reduce){
-    workMass.addEventListener("pointerenter",function(){
-      var k=0;strobeTimer=setInterval(function(){
-        k++;workShot.setAttribute("href",IMGS[Math.floor(Math.random()*IMGS.length)]);
-        if(k%7===0){workFlash.style.opacity="1";setTimeout(function(){workFlash.style.opacity="0";},55);}
-      },110);
-    });
-    workMass.addEventListener("pointerleave",function(){clearInterval(strobeTimer);strobeTimer=null;workShot.setAttribute("href","assets/fashion/p14.jpg");workFlash.style.opacity="0";});
-  }
-
-  /* ---- transform (pan/zoom home) ---- */
-  var tx=0,ty=0,s=1,MIN=0.2,MAX=3,raf=null,vel={x:0,y:0};
-  function apply(){world.style.transform="translate("+tx.toFixed(2)+"px,"+ty.toFixed(2)+"px) scale("+s.toFixed(4)+")";}
-  function stopAnim(){if(raf){cancelAnimationFrame(raf);raf=null;}}
-  function clampS(v){return Math.max(MIN,Math.min(MAX,v));}
-  function tweenTo(nx,ny,ns,dur,done){stopAnim();if(reduce){tx=nx;ty=ny;s=ns;apply();done&&done();return;}
-    var x0=tx,y0=ty,s0=s,t0=performance.now();(function loop(now){var k=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-k,3);
-      tx=x0+(nx-x0)*e;ty=y0+(ny-y0)*e;s=s0+(ns-s0)*e;apply();if(k<1)raf=requestAnimationFrame(loop);else{raf=null;done&&done();}})(t0);}
-  function inertia(){stopAnim();(function loop(){vel.x*=0.92;vel.y*=0.92;tx+=vel.x;ty+=vel.y;apply();if(Math.hypot(vel.x,vel.y)>0.15)raf=requestAnimationFrame(loop);else raf=null;})();}
-  function fit(box,pad){var vw=stage.clientWidth,vh=stage.clientHeight;pad=pad||1.15;var ns=clampS(Math.min(vw/(box.w*pad),vh/(box.h*pad)));return {x:vw/2-(box.x+box.w/2)*ns,y:vh/2-(box.y+box.h/2)*ns,s:ns};}
-  function frameTo(box,pad,dur){var t=fit(box,pad);if(dur)tweenTo(t.x,t.y,t.s,dur);else{tx=t.x;ty=t.y;s=t.s;apply();}}
-
-  /* ---- sections ---- */
+  /* navigation */
   var sheets={work:document.getElementById("work"),studies:document.getElementById("studies"),about:document.getElementById("about")};
-  var openKey=null;
-  function openSection(key){var el=sheets[key];if(!el)return;
-    // zoom dans la masse puis ouverture
-    var md=MASSES.filter(function(m){return m.key===key;})[0];
-    var t=fit({x:md.x,y:md.y,w:md.s,h:md.s},0.7);tweenTo(t.x,t.y,t.s,520);
-    openKey=key;setTimeout(function(){el.classList.add("open");el.scrollTop=0;},360);hideHint();}
-  function closeSection(){if(!openKey)return;sheets[openKey].classList.remove("open");openKey=null;frameTo(IDXBOX,1.15,600);}
-  [].forEach.call(document.querySelectorAll("[data-close]"),function(b){b.addEventListener("click",closeSection);});
+  function go(key){var el=sheets[key];if(!el)return;document.body.classList.add("away");
+    setTimeout(function(){el.classList.add("open");el.scrollTop=0;},180);}
+  function back(){document.body.classList.remove("away");Object.keys(sheets).forEach(function(k){sheets[k].classList.remove("open");});}
+  document.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){go(b.dataset.go);});});
+  document.querySelectorAll("[data-close]").forEach(function(b){b.addEventListener("click",back);});
+  addEventListener("keydown",function(e){if(e.key==="Escape")back();});
 
-  /* ---- interactions (home) ---- */
-  stage.addEventListener("wheel",function(e){if(openKey)return;e.preventDefault();stopAnim();var r=stage.getBoundingClientRect(),sx=e.clientX-r.left,sy=e.clientY-r.top,ns=clampS(s*Math.exp(-e.deltaY*0.0016)),wx=(sx-tx)/s,wy=(sy-ty)/s;
-    tx=sx-wx*ns;ty=sy-wy*ns;s=ns;apply();hideHint();},{passive:false});
-  var pointers=new Map(),moved=0,pinchD=0,pinchM=null,lastT=0;
-  stage.addEventListener("pointerdown",function(e){if(openKey)return;stopAnim();pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});stage.setPointerCapture(e.pointerId);
-    if(pointers.size===1){stage.classList.add("drag");moved=0;vel.x=vel.y=0;lastT=performance.now();}
-    else if(pointers.size===2){var p=[].slice.call(pointers.values());pinchD=dist(p[0],p[1]);pinchM=mid(p[0],p[1]);}});
-  stage.addEventListener("pointermove",function(e){if(!pointers.has(e.pointerId))return;var prev=pointers.get(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
-    if(pointers.size===1){var dx=e.clientX-prev.x,dy=e.clientY-prev.y;tx+=dx;ty+=dy;moved+=Math.abs(dx)+Math.abs(dy);var now=performance.now(),dt=Math.max(1,now-lastT);vel.x=dx/dt*16;vel.y=dy/dt*16;lastT=now;apply();hideHint();}
-    else if(pointers.size===2){var p=[].slice.call(pointers.values()),nd=dist(p[0],p[1]),nm=mid(p[0],p[1]),r=stage.getBoundingClientRect(),sx=nm.x-r.left,sy=nm.y-r.top,ns=clampS(s*(nd/(pinchD||nd)));
-      var wx=(sx-tx)/s,wy=(sy-ty)/s;tx=sx-wx*ns;ty=sy-wy*ns;s=ns;tx+=nm.x-pinchM.x;ty+=nm.y-pinchM.y;pinchD=nd;pinchM=nm;apply();hideHint();}});
-  function up(e){if(!pointers.has(e.pointerId))return;if(pointers.size===1&&moved>=6&&Math.hypot(vel.x,vel.y)>0.6)inertia();
-    pointers.delete(e.pointerId);if(pointers.size<2)pinchD=0;if(pointers.size===0)stage.classList.remove("drag");}
-  stage.addEventListener("pointerup",up);stage.addEventListener("pointercancel",up);
-  function dist(a,b){return Math.hypot(a.x-b.x,a.y-b.y);}function mid(a,b){return {x:(a.x+b.x)/2,y:(a.y+b.y)/2};}
-  addEventListener("keydown",function(e){if(e.key==="Escape"&&openKey){closeSection();e.preventDefault();}});
-
-  var hint=document.getElementById("hint"),hintGone=false;function hideHint(){if(!hintGone){hintGone=true;hint.style.opacity="0";}}
   function tick(){var c=document.getElementById("clock");if(c)c.textContent="Beaucens "+new Date().toLocaleTimeString("fr-FR");}tick();setInterval(tick,1000);
-  addEventListener("resize",function(){if(!openKey)frameTo(IDXBOX,1.15);});
-  frameTo(IDXBOX,1.15);
 })();
 </script>
 </body>
