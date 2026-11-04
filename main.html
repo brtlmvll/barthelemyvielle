@@ -75,6 +75,22 @@
   .ggrid.wide{grid-template-columns:1fr}
   .ggrid img{width:100%;height:auto;display:block;border:1px solid #1a1a1a}
   @media(max-width:620px){.ggrid{grid-template-columns:1fr}}
+  /* hub à shapes (Work) */
+  .hubshapes{display:flex;flex-wrap:wrap;gap:clamp(28px,6vw,80px);justify-content:center;padding:6vh 0 2vh}
+  .hs{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;width:clamp(150px,22vw,240px)}
+  .hs .hw{position:relative;width:100%;aspect-ratio:1/1;transition:transform .35s cubic-bezier(.2,.75,.3,1)}
+  .hs:hover .hw{transform:translateY(-12px)}
+  .hs svg{display:block;width:100%;height:100%;overflow:visible}
+  .hs .hfill{fill:var(--light)}
+  .hs .hrim{fill:none;stroke:var(--dark);stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+  .hs .hshot{opacity:1;clip-path:inset(100% 0 0 0);transition:clip-path .55s cubic-bezier(.76,0,.24,1)}
+  .hs:hover .hshot{clip-path:inset(0 0 0 0)}
+  .hs .hlab{font-family:var(--serif);font-size:clamp(1rem,2.3vw,1.5rem);font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-top:1.1rem}
+  .hs .hsub{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#8d8d88;margin-top:.5em}
+  .hs.soon{cursor:pointer;opacity:.82}
+  .photo-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;padding:16vh 0;color:#8d8d88;text-align:center}
+  .photo-empty .pe-mark{font-size:2rem;color:#2a2a2a}
+  .photo-empty p{font-size:12px;letter-spacing:.18em;text-transform:uppercase}
   .wlist{display:flex;flex-direction:column;gap:7vh}
   .witem img{width:100%;height:auto;display:block}
   .wmeta{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:1rem;flex-wrap:wrap}
@@ -113,9 +129,16 @@
 </div>
 
 <section id="work" class="sheet">
-  <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Fashion Print</span><span style="width:3em"></span></div>
-  <div class="inner"><p class="lead">Motifs textiles — 11 pièces</p>
-    <div class="submenu" id="wsub"></div><div id="wlist"></div></div>
+  <div class="shead"><button class="bk" id="workback">← Index</button><span class="ti" id="worktitle">Work</span><span style="width:3em"></span></div>
+  <div class="inner">
+    <div id="workhub">
+      <p class="lead">Deux terrains — le motif &amp; l'image.</p>
+      <div class="hubshapes" id="hubshapes"></div>
+    </div>
+    <div id="galFashion" hidden><p class="lead">Motifs textiles — 11 pièces</p><div class="submenu" id="wsub"></div><div id="wlist"></div></div>
+    <div id="galPhoto" hidden><p class="lead">Photography — sélection en cours</p>
+      <div class="photo-empty"><span class="pe-mark">◼</span><p>Section prête. Les images arrivent ici.</p></div></div>
+  </div>
 </section>
 <section id="about" class="sheet">
   <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Information</span><span style="width:3em"></span></div>
@@ -145,7 +168,34 @@
     ["Cliff","Rockaedron","Photographie · composition","p13"],["Diorama","U-Exist","Numérisation · composition","p14"],
     ["Norscape","U-Exist","Impression directe","p20"],["Klondike","U-Exist","Numérisation · composition","p17"],
     ["Vegan","U-Exist","Impression directe","p18"],["Marble IV","U-Exist","Photographie · composition","p19"]];
-  // WORK : sous-menu par client + groupes
+  // WORK HUB : shapes intermédiaires (Fashion Print / Photography)
+  function hubSVG(seed,type,img){
+    var S=240,d=shapePath(S,seed,type),fid="hf"+seed,cid="hc"+seed,sc=(S*0.05).toFixed(1),bf=(0.009+(seed%5)*0.0016).toFixed(4);
+    return '<svg viewBox="0 0 '+S+' '+S+'"><defs><filter id="'+fid+'" x="-25%" y="-25%" width="150%" height="150%">'
+      +'<feTurbulence type="fractalNoise" baseFrequency="'+bf+'" numOctaves="2" seed="'+seed+'" result="n"/>'
+      +'<feDisplacementMap in="SourceGraphic" in2="n" scale="'+sc+'" xChannelSelector="R" yChannelSelector="G"/></filter>'
+      +'<clipPath id="'+cid+'"><path d="'+d+'"/></clipPath></defs><g filter="url(#'+fid+')">'
+      +'<path class="hfill" d="'+d+'"/>'
+      +(img?'<image class="hshot" href="'+img+'" x="0" y="0" width="'+S+'" height="'+S+'" preserveAspectRatio="xMidYMid slice" clip-path="url(#'+cid+')"/>':'')
+      +'<path class="hrim" d="'+d+'"/></g></svg>';
+  }
+  var HUB=[
+    {cat:"fashion",seed:31,type:"shard",lab:"Fashion Print",sub:"11 motifs textiles",img:"assets/fashion/p11.jpg"},
+    {cat:"photo",  seed:37,type:"monolith",lab:"Photography",sub:"sélection en cours",img:""}
+  ];
+  var hubEl=document.getElementById("hubshapes");
+  HUB.forEach(function(hc){var b=document.createElement("button");b.className="hs"+(hc.cat==="photo"?" soon":"");b.type="button";
+    b.innerHTML='<div class="hw">'+hubSVG(hc.seed,hc.type,hc.img)+'</div><span class="hlab">'+hc.lab+'</span><span class="hsub">'+hc.sub+'</span>';
+    b.addEventListener("click",function(){openCat(hc.cat);});hubEl.appendChild(b);});
+
+  var workhub=document.getElementById("workhub"),galFashion=document.getElementById("galFashion"),galPhoto=document.getElementById("galPhoto"),
+      worktitle=document.getElementById("worktitle"),workback=document.getElementById("workback"),workMode="hub";
+  function showHub(){workMode="hub";workhub.hidden=false;galFashion.hidden=true;galPhoto.hidden=true;worktitle.textContent="Work";sheets.work.scrollTop=0;}
+  function openCat(cat){workMode=cat;workhub.hidden=true;galFashion.hidden=(cat!=="fashion");galPhoto.hidden=(cat!=="photo");
+    worktitle.textContent=(cat==="fashion"?"Fashion Print":"Photography");sheets.work.scrollTop=0;}
+  workback.addEventListener("click",function(){if(workMode!=="hub")showHub();else back();});
+
+  // FASHION : sous-menu par client + groupes
   var wl=document.getElementById("wlist"),wsub=document.getElementById("wsub");
   var WCLIENTS=["TRENDT","Rockaedron","U-Exist"];
   var ab=document.createElement("button");ab.textContent="Tous";ab.className="on";
@@ -229,7 +279,7 @@
   function withWipe(swap){if(reduce){swap();return;}
     wipe.style.transition="transform .42s cubic-bezier(.76,0,.24,1)";wipe.style.transformOrigin="left";wipe.style.transform="scaleX(1)";
     setTimeout(function(){swap();wipe.style.transformOrigin="right";wipe.style.transform="scaleX(0)";},430);}
-  function go(key){var el=sheets[key];if(!el)return;withWipe(function(){document.body.classList.add("away");el.classList.add("open");el.scrollTop=0;});}
+  function go(key){var el=sheets[key];if(!el)return;withWipe(function(){document.body.classList.add("away");if(key==="work")showHub();el.classList.add("open");el.scrollTop=0;});}
   function back(){withWipe(function(){document.body.classList.remove("away");Object.keys(sheets).forEach(function(k){sheets[k].classList.remove("open");});});}
   document.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){go(b.dataset.go);});});
   document.querySelectorAll("[data-close]").forEach(function(b){b.addEventListener("click",back);});
