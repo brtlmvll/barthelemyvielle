@@ -1,0 +1,29 @@
+/* Home only: orthographic stones, separated from the project window system. */
+#home .stagec{position:relative;min-height:0;overflow:hidden;background:radial-gradient(ellipse at 49% 66%,#343c3138,transparent 60%)}
+#home .masses{position:relative!important;display:block!important;width:min(1120px,100%)!important;height:min(580px,66vh);margin:auto;flex:none}
+#home .home-rock{position:absolute;display:flex;align-items:center;width:36%!important;margin:0!important;left:46%;top:10%;transform:translateX(-50%);z-index:3;isolation:isolate;-webkit-tap-highlight-color:transparent}
+#home .home-rock:nth-child(2){width:31%!important;left:18%;top:40%;z-index:2}
+#home .home-rock:nth-child(3){width:25%!important;left:82%;top:42%;z-index:4}
+#home .home-rock .wrap{aspect-ratio:300/265;transition:none!important;transform:none!important}
+#home .home-rock svg{animation:none!important;transform:none!important;overflow:visible}
+#home .home-rock .wrap::after{display:none!important}
+.rock-shell{transform-origin:150px 200px;animation:rock-arrival 1150ms cubic-bezier(.16,.8,.24,1) var(--arrival) backwards,rock-presence var(--idle) ease-in-out calc(var(--arrival) + 1150ms) infinite;transition:opacity .5s}
+.rock-crown{animation:rock-light 11s ease-in-out infinite alternate}
+.rock-ground{animation:ground-arrival 1200ms ease var(--arrival) backwards}
+.rock-art{filter:grayscale(1);opacity:0;transition:opacity .32s,filter .25s;pointer-events:none;transform:none!important;animation:none!important}
+#home .home-rock:is(:hover,:focus-visible) .rock-art{opacity:1;filter:grayscale(0)}
+#home .home-rock:is(:hover,:focus-visible) .rock-shell{opacity:.22}
+#home .home-rock[data-go="about"]:is(:hover,:focus-visible) .rock-shell{opacity:1}
+#home .home-rock:focus-visible{outline:1px solid var(--terrain-text);outline-offset:10px;border-radius:3px}
+#home .home-rock .lab{margin-top:3px;font-size:clamp(22px,2.4vw,32px);letter-spacing:.025em;opacity:1;transform:none;color:var(--terrain-text)}
+#home .home-rock .sub{max-width:28ch;text-align:center;min-height:2.6em;font-size:9px;line-height:1.5;letter-spacing:.1em;opacity:1;transform:none}
+.rock-number{font:9px/1.4 'Helvetica Neue',Arial,sans-serif;letter-spacing:.18em;color:var(--terrain-muted);margin:0 0 9px;opacity:.8}
+#home .hb .tag{font-size:14px;max-width:43ch;margin-bottom:24px;line-height:1.5}
+#home #bar{position:relative;z-index:8;gap:24px;flex-wrap:wrap}#home .motion-control{margin-left:0}
+@keyframes rock-arrival{0%{transform:translateY(94px) scaleY(.55);opacity:0}30%{opacity:1}77%{transform:translateY(-5px) scaleY(1.015)}100%{transform:translateY(0) scaleY(1)}}
+@keyframes rock-presence{0%,100%{transform:translateY(0) rotate(-.3deg)}50%{transform:translateY(-3px) rotate(.25deg)}}
+@keyframes rock-light{from{opacity:.91}to{opacity:1}}
+@keyframes ground-arrival{from{opacity:0;transform:scale(.5);transform-origin:150px 206px}to{opacity:1;transform:scale(1)}}
+@media(max-width:700px){#home{padding-inline:20px}#home #bar{padding-top:20px;gap:17px}#home #bar .bd{gap:9px}#home #bar .bd b{font-size:10px;letter-spacing:.12em}#home #topnav{gap:18px;font-size:9px}#home .motion-control{font-size:9px;margin-left:auto}#home .masses{height:min(520px,63vh);min-height:365px}#home .home-rock{width:58%!important;left:51%;top:0}#home .home-rock:nth-child(2){width:50%!important;left:25%;top:43%}#home .home-rock:nth-child(3){width:39%!important;left:80%;top:49%}#home .home-rock .lab{font-size:21px}#home .home-rock .sub{font-size:8px;max-width:20ch}#home .rock-number{font-size:8px;margin-bottom:6px}#home .hb .tag{font-size:12px;margin-bottom:14px;max-width:36ch}#home .hb{padding-bottom:18px}#home .ft{font-size:8px;gap:10px}#home .stagec{overflow:visible}}
+@media(max-height:650px) and (min-width:701px){#home .masses{height:370px}#home .home-rock{width:29%!important}#home .home-rock:nth-child(2){width:25%!important;top:26%}#home .home-rock:nth-child(3){width:21%!important;top:30%}#home .hb .tag{margin-bottom:10px}}
+@media(prefers-reduced-motion:reduce){.rock-shell,.rock-crown,.rock-ground{animation:none!important}.rock-art{transition:none}}

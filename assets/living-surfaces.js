@@ -25,7 +25,7 @@ function paint(w,t){
  points.forEach((p,i)=>{const prev=points[(i+points.length-1)%points.length],next=points[(i+1)%points.length];if(i)d+=' L'+near(p,prev);d+=' Q'+p.map(v=>v.toFixed(2)).join(' ')+' '+near(p,next);});d+=' Z';
  w.path.setAttribute('d',d);w.clip?.setAttribute('d',d);w.host._windowRim?.setAttribute('d',d);
 }
-function attach(){document.querySelectorAll('.card-image,.pcover,.image-open').forEach(h=>register(h));document.querySelectorAll('.m,.hs').forEach(h=>register(h,true));}
+function attach(){document.querySelectorAll('.card-image,.pcover,.image-open').forEach(h=>register(h));document.querySelectorAll('.m:not(.home-rock),.hs').forEach(h=>register(h,true));}
 attach();document.addEventListener('catalogue-ready',attach);
 fetch(prefix+'assets/project-catalogue.json').then(r=>r.json()).then(projects=>{
  attach();for(const w of windows){if(w.shape){const label=w.host.textContent.toLowerCase();const section=label.startsWith('work')?projects.filter(p=>p.kind!=='study'):label.includes('stud')?projects.filter(p=>p.kind==='study'):label.includes('photo')?projects.filter(p=>p.kind==='photography'):label.includes('identity')||label.includes('brand')?projects.filter(p=>p.category==='Identity'):label.includes('artwork')?projects.filter(p=>p.category==='Artwork & Print'):label.includes('motion')||label.includes('treatment')?projects.filter(p=>p.category==='Treatments'||p.category==='3D & Motion'):projects.filter(p=>p.category==='Print & Surface');w.urls=section.flatMap(p=>p.previews.slice(0,2)).map(u=>prefix+u);

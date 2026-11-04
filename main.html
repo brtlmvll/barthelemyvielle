@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script>(function(){var p=location.pathname,f=new URLSearchParams(location.search).get('filter'),i=/\/projects\/(?:index(?:\.html)?)?$/.test(p),s=/\/studies(?:\.html)?$/.test(p);document.documentElement.dataset.depth=!p.includes('/projects/')?0:i?(f&&f!=='All'?2:1):s?1:/\/(garden-and-city|contour-counterform|spatial-scores)(?:\.html)?$/.test(p)?2:3;})();</script>
+<head><script>(function(){var p=location.pathname,f=new URLSearchParams(location.search).get('filter'),i=/\/projects\/(?:index(?:\.html)?)?$/.test(p),s=/\/studies(?:\.html)?$/.test(p);document.documentElement.dataset.depth=!p.includes('/projects/')?0:i?(f&&f!=='All'?2:1):s?1:/\/(garden-and-city|contour-counterform|spatial-scores|directional-grammar|night-signals)(?:\.html)?$/.test(p)?2:3;})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Barthélémy Vielle</title>
@@ -178,7 +178,7 @@
 /* COLOUR ON CONTACT */
 .shot,.hshot,.pcover,.pcover img{transition:filter .3s ease}.m:hover .shot,.m:focus-visible .shot,.hs:hover .hshot,.hs:focus-visible .hshot,.pchead:hover .pcover,.pchead:hover .pcover img,.pchead:focus-visible .pcover,.pchead:focus-visible .pcover img{filter:grayscale(0) contrast(1)}
 </style>
-<link rel="stylesheet" href="assets/window-system.css?v=20261104-terrain"><link rel="stylesheet" href="assets/terrain-layout.css?v=terrain"><script src="assets/terrain-layout.js?v=terrain" defer></script><script src="assets/terrain-transitions.js?v=terrain" defer></script></head>
+<link rel="stylesheet" href="assets/window-system.css?v=20261104-terrain"><link rel="stylesheet" href="assets/terrain-layout.css?v=terrain"><script src="assets/terrain-layout.js?v=terrain" defer></script><script src="assets/terrain-transitions.js?v=terrain" defer></script><link rel="stylesheet" href="assets/home-landscape.css?v=20261104-volume"></head>
 <body>
 <div id="bvstrobe"></div>
 <div id="home">
@@ -354,7 +354,7 @@
   var MASSES=[
     {key:"work",seed:2,type:"totem",lab:"Work",sub:"Identity · Print · Image · Motion",img:"assets/fashion/p14.jpg",
       phrases:["Identity","Printed matter","Treatments","Surface","Photography","Artwork"]},
-    {key:"studies",seed:7,type:"ridge",lab:"Studies",sub:"Three research paths",img:"assets/gc/illus-fox.jpg",
+    {key:"studies",seed:7,type:"ridge",lab:"Studies",sub:"Five research paths",img:"assets/gc/illus-fox.jpg",
       phrases:["Garden & City","Signage","Illustration","Cauterets","Research","Identity"]},
     {key:"about",seed:19,type:"relic",lab:"Information",sub:"Profile · contact",
       phrases:["Profile","Contact","CLVSTR","Baruto","Rockaedron","Information"]}
@@ -399,5 +399,6 @@
 })();
 </script>
 <script src="assets/project-links.js?v=20261104-terrain" defer></script>
+<script src="assets/home-landscape.js?v=20261104-volume" defer></script>
 <script src="assets/living-surfaces.js?v=20261104-terrain" defer></script></body>
 </html>

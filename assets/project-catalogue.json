@@ -563,5 +563,45 @@
       "assets/studies/space-03.svg",
       "assets/studies/space-04.svg"
     ]
+  },
+  {
+    "name": "Directional Grammar",
+    "slug": "directional-grammar",
+    "category": "Studies",
+    "kind": "study",
+    "description": "An archive of directional experiments: arrows turn, branch and become stairs. A study of how one sign can describe movement through space.",
+    "images": [
+      "assets/studies/recovered/directional-grammar-01.svg",
+      "assets/studies/recovered/directional-grammar-02.svg",
+      "assets/studies/recovered/directional-grammar-03.svg",
+      "assets/studies/recovered/directional-grammar-04.svg",
+      "assets/studies/recovered/directional-grammar-05.svg",
+      "assets/studies/recovered/directional-grammar-06.svg"
+    ],
+    "previews": [
+      "assets/studies/recovered/directional-grammar-01.svg",
+      "assets/studies/recovered/directional-grammar-02.svg",
+      "assets/studies/recovered/directional-grammar-03.svg",
+      "assets/studies/recovered/directional-grammar-04.svg",
+      "assets/studies/recovered/directional-grammar-05.svg",
+      "assets/studies/recovered/directional-grammar-06.svg"
+    ]
+  },
+  {
+    "name": "Night Signals",
+    "slug": "night-signals",
+    "category": "Studies",
+    "kind": "study",
+    "description": "The owl as watcher, nocturnal presence and fictional agent. Flash-lit animal images meet speculative character design in a small archive of generative image research.",
+    "images": [
+      "assets/studies/recovered/night-signals-01.svg",
+      "assets/studies/recovered/night-signals-02.svg",
+      "assets/studies/recovered/night-signals-03.svg"
+    ],
+    "previews": [
+      "assets/studies/recovered/night-signals-01.svg",
+      "assets/studies/recovered/night-signals-02.svg",
+      "assets/studies/recovered/night-signals-03.svg"
+    ]
   }
 ]
