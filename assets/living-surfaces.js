@@ -15,11 +15,15 @@ function register(host,shape=false){if(seen.has(host)){const w=windows.find(w=>w
  }else{const svg=svgElement('svg',{viewBox:'0 0 100 100',preserveAspectRatio:'none',class:'aperture-frame','aria-hidden':'true'});path=svgElement('path',{class:'aperture-fill'});svg.append(path);host.prepend(svg);host.classList.add('window-surface');image=host.querySelector('img');}
  const w={host,path,clip,image,shape,seed:windows.length,hover:false,openness:0,visible:false,urls:[],index:0,next:performance.now()+2400+windows.length*107};windows.push(w);observer.observe(host);host.addEventListener('pointerenter',()=>w.hover=true);host.addEventListener('pointerleave',()=>w.hover=false);host.addEventListener('focusin',()=>w.hover=true);host.addEventListener('focusout',()=>w.hover=false);paint(w,0);return w;
 }
-function paint(w,t){const phase=t/(11000+w.seed%5*1300)+w.seed*.31,part=Math.floor(phase),raw=phase-part,mix=raw*raw*(3-2*raw),a=forms[part%3],b=forms[(part+1)%3];w.openness+=(Number(w.hover)-w.openness)*.12;const h=w.openness*.7;
- const points=a.map((p,i)=>p.map((v,axis)=>{const target=v+(b[i][axis]-v)*mix;const drift=Math.sin(t*.00065+i*1.73+w.seed+axis)*.6;return (target+drift)*(1-h)+open[i][axis]*h;}));
- // Large project images use only the outer margin: their full composition remains intact.
+function paint(w,t){
+ const base=forms[w.seed%forms.length],breath=1+Math.sin(t*.00028+w.seed)*.0015;
+ const points=base.map((p,i)=>p.map((v,axis)=>50+(v-50+Math.sin(i*4.13+w.seed*2.71+axis)*.45)*breath));
  if(!w.shape&&w.host.classList.contains('image-open'))points.forEach(p=>{p[0]=p[0]<50?p[0]*.4:100-(100-p[0])*.4;p[1]=p[1]<50?p[1]*.4:100-(100-p[1])*.4;});
- const mid=(a,b)=>a.map((v,i)=>((v+b[i])/2).toFixed(2)).join(' ');const d='M'+mid(points[points.length-1],points[0])+' '+points.map((p,i)=>'Q'+p.map(v=>v.toFixed(2)).join(' ')+' '+mid(p,points[(i+1)%points.length])).join(' ')+' Z';w.path.setAttribute('d',d);w.clip?.setAttribute('d',d);w.host._windowRim?.setAttribute('d',d);
+ // Stable, lightly softened facets; no interpolation into another silhouette.
+ const near=(p,q)=>p.map((v,i)=>(v+(q[i]-v)*.16).toFixed(2)).join(' ');
+ let d='M'+near(points[0],points[points.length-1]);
+ points.forEach((p,i)=>{const prev=points[(i+points.length-1)%points.length],next=points[(i+1)%points.length];if(i)d+=' L'+near(p,prev);d+=' Q'+p.map(v=>v.toFixed(2)).join(' ')+' '+near(p,next);});d+=' Z';
+ w.path.setAttribute('d',d);w.clip?.setAttribute('d',d);w.host._windowRim?.setAttribute('d',d);
 }
 function attach(){document.querySelectorAll('.card-image,.pcover,.image-open').forEach(h=>register(h));document.querySelectorAll('.m,.hs').forEach(h=>register(h,true));}
 attach();document.addEventListener('catalogue-ready',attach);
