@@ -37,15 +37,16 @@
   .m svg{display:block;width:100%;height:100%;overflow:visible}
   .m .fill{fill:var(--ink)}
   .m .rim{fill:none;stroke:var(--paper);stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round}
-  .m .shot{opacity:0;transition:opacity .4s ease}
-  .m:hover .shot{opacity:1}
+  .m .shot{opacity:1;clip-path:inset(100% 0 0 0);transition:clip-path .55s cubic-bezier(.76,0,.24,1)}
+  .m:hover .shot{clip-path:inset(0 0 0 0)}
   .m .flash{position:absolute;inset:0;background:var(--light);opacity:0;mix-blend-mode:screen;pointer-events:none}
   .m .lab{font-family:var(--serif);font-size:clamp(1.1rem,2.3vw,1.7rem);font-weight:700;text-transform:uppercase;letter-spacing:.03em;line-height:1;
     margin-top:1.2rem;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .5s cubic-bezier(.2,.75,.3,1),color .2s}
   .m .sub{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:.6em;
     opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .5s cubic-bezier(.2,.75,.3,1)}
-  .m:hover .lab{opacity:1;transform:none;color:var(--flame,#FF4D14);transition-delay:.14s}
-  .m:hover .sub{opacity:1;transform:none;transition-delay:.26s}
+  .m:hover .lab{opacity:1;transform:none;transition-delay:.12s}
+  .m:hover .sub{opacity:1;transform:none;transition-delay:.22s}
+  #wipe{position:fixed;inset:0;z-index:60;background:var(--dark);transform:scaleX(0);transform-origin:left;pointer-events:none;will-change:transform}
 
   .hb{padding-bottom:max(24px,env(safe-area-inset-bottom,0px))}
   .hb .tag{max-width:40ch;margin:0 auto 1.6rem;text-align:center;font-size:clamp(.98rem,2vw,1.2rem);line-height:1.34;opacity:.9}
@@ -123,6 +124,8 @@
       <div class="it"><span class="t">Études visuelles</span><span class="st">En attente</span></div></div></div>
 </section>
 
+<div id="wipe"></div>
+
 <script>
 (function(){
   "use strict";
@@ -156,9 +159,12 @@
   }
 
   var MASSES=[
-    {key:"work",seed:2,type:"totem",lab:"Work",sub:"Fashion Print · 11 motifs",img:"assets/fashion/p14.jpg"},
-    {key:"studies",seed:7,type:"ridge",lab:"Studies",sub:"Kiwami · recherche",img:"assets/fashion/p24.jpg"},
-    {key:"about",seed:19,type:"relic",lab:"Information",sub:"Profil · contact"}
+    {key:"work",seed:2,type:"totem",lab:"Work",sub:"Fashion Print · 11 motifs",img:"assets/fashion/p14.jpg",
+      phrases:["Fashion Print","11 motifs","TRENDT","Rockaedron","U-Exist","Sérigraphie","Encre rongeante"]},
+    {key:"studies",seed:7,type:"ridge",lab:"Studies",sub:"Kiwami · recherche",img:"assets/fashion/p24.jpg",
+      phrases:["Kiwami","Recherche","Études","Image dump","À venir"]},
+    {key:"about",seed:19,type:"relic",lab:"Information",sub:"Profil · contact",
+      phrases:["Profil","Contact","CLVSTR","Baruto","Rockaedron","Information"]}
   ];
   var massesEl=document.getElementById("masses"),workShot=null,workFlash=null;
   MASSES.forEach(function(md){
@@ -166,6 +172,11 @@
     b.innerHTML='<div class="wrap">'+massSVG(240,md.seed,md.type,md.img)+'<div class="flash"></div></div>'
       +'<span class="lab">'+md.lab+'</span><span class="sub">'+md.sub+'</span>';
     massesEl.appendChild(b);
+    // strobe du texte sous la masse (monochrome, autorisé)
+    if(!reduce&&md.phrases){var subEl=b.querySelector(".sub"),ts=null;
+      b.addEventListener("pointerenter",function(){var k=0;ts=setInterval(function(){k++;
+        subEl.textContent=(k%9===0)?"":md.phrases[Math.floor(Math.random()*md.phrases.length)];},100);});
+      b.addEventListener("pointerleave",function(){clearInterval(ts);subEl.textContent=md.sub;});}
     if(md.key==="work"){workShot=b.querySelector(".shot");workFlash=b.querySelector(".flash");
       if(!reduce){var t=null;b.addEventListener("pointerenter",function(){var k=0;t=setInterval(function(){k++;
         workShot.setAttribute("href",IMGS[Math.floor(Math.random()*IMGS.length)]);
@@ -176,9 +187,12 @@
 
   /* navigation */
   var sheets={work:document.getElementById("work"),studies:document.getElementById("studies"),about:document.getElementById("about")};
-  function go(key){var el=sheets[key];if(!el)return;document.body.classList.add("away");
-    setTimeout(function(){el.classList.add("open");el.scrollTop=0;},180);}
-  function back(){document.body.classList.remove("away");Object.keys(sheets).forEach(function(k){sheets[k].classList.remove("open");});}
+  var wipe=document.getElementById("wipe");
+  function withWipe(swap){if(reduce){swap();return;}
+    wipe.style.transition="transform .42s cubic-bezier(.76,0,.24,1)";wipe.style.transformOrigin="left";wipe.style.transform="scaleX(1)";
+    setTimeout(function(){swap();wipe.style.transformOrigin="right";wipe.style.transform="scaleX(0)";},430);}
+  function go(key){var el=sheets[key];if(!el)return;withWipe(function(){document.body.classList.add("away");el.classList.add("open");el.scrollTop=0;});}
+  function back(){withWipe(function(){document.body.classList.remove("away");Object.keys(sheets).forEach(function(k){sheets[k].classList.remove("open");});});}
   document.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){go(b.dataset.go);});});
   document.querySelectorAll("[data-close]").forEach(function(b){b.addEventListener("click",back);});
   addEventListener("keydown",function(e){if(e.key==="Escape")back();});
