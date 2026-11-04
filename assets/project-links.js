@@ -6,6 +6,7 @@ fetch('assets/project-catalogue.json').then(r=>{if(!r.ok)throw new Error('Catalo
  document.querySelectorAll('.witem').forEach(item=>{const n=item.querySelector('.wn'),p=n&&byName.get(n.textContent.trim().toLowerCase());if(!p)return;const a=document.createElement('a');a.href=ROOT+p.slug+'.html';a.setAttribute('aria-label','Open '+p.name+' project');item.parentNode.insertBefore(a,item);a.appendChild(item);});
  document.dispatchEvent(new Event('catalogue-ready'));
 }).catch(()=>{});
-document.addEventListener('click',event=>{const target=event.target.closest('[data-go="studies"]');if(target){event.preventDefault();event.stopImmediatePropagation();location.href=ROOT+'studies.html';}},true);
+document.addEventListener('click',event=>{const work=event.target.closest('[data-go="work"]');if(work){event.preventDefault();event.stopImmediatePropagation();location.href=ROOT+'index.html';return;}const target=event.target.closest('[data-go="studies"]');if(target){event.preventDefault();event.stopImmediatePropagation();location.href=ROOT+'studies.html';}},true);
+if(location.hash==='#work')location.replace(ROOT+'index.html');
 if(location.hash==='#studies')location.replace(ROOT+'studies.html');
 })();
