@@ -129,6 +129,21 @@
   body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
   @media(prefers-reduced-motion:reduce){body::after{opacity:.04}}
+  .parchive{display:grid;grid-template-columns:repeat(2,1fr);gap:4vh 3%}
+  @media(max-width:620px){.parchive{grid-template-columns:1fr}}
+  .pcard{border:1px solid #1e1e1e;background:#0d0d0d}
+  .pchead{all:unset;cursor:pointer;display:block;width:100%}
+  .pcover{display:block;width:100%;aspect-ratio:4/3;background-size:cover;background-position:center;background-color:#111;filter:grayscale(1) contrast(1.06);transition:filter .5s ease}
+  .pcard:hover .pcover,.pcard.open .pcover{filter:grayscale(0) contrast(1)}
+  .pcmeta{display:block;padding:16px 18px 20px}
+  .pctitle{display:block;font-family:var(--serif);font-size:clamp(1.2rem,2.6vw,1.6rem);font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1}
+  .pcdesc{display:block;font-size:.86rem;line-height:1.5;color:#b9b7b0;margin-top:.7em;max-width:46ch}
+  .pcopen{display:inline-block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#777772;margin-top:1em;border-bottom:1px solid #333;padding-bottom:3px}
+  .pcard.open .pcopen{color:var(--light)}
+  .pcmore{display:none;flex-direction:column;gap:2vh;padding:0 18px 22px}
+  .pcard.open .pcmore{display:flex}
+  .pcmore img{width:100%;display:block;border:1px solid #1a1a1a}
+  @media(hover:none){.frag,.hfrag{opacity:0}}
 </style>
 </head>
 <body>
@@ -279,11 +294,16 @@
   var DESC={"De Saint Aise": "Retail concept and identity. Monolithic structures carved from raw matter — shelving emerges from rock, light cuts through shadow. Brutal, tactile minimalism where the space extends the brand.", "Terrarivm Generalis": "Identity for an urban-vegetalization startup. A logotype drawn from modular architecture; natural textures set against synthetic tones — grounded yet forward-thinking.", "Hovr": "Branding for a meditation-supplements brand. A digital-first system, clear and elevated; organic textures and landscapes behind minimal product shots, with motion that evokes breath.", "Common Wave": "Pictogram system. Modular marks — loops, waves, interlocking forms — an identity that keeps shifting while staying instantly recognizable.", "Petit Producteur": "Branding and editorial system for a sustainable cosmetics brand. Modern type, modular layouts, neutral tones — heritage meets contemporary formulation.", "99 Cts Records": "Label identity. Fractured reflections, plastic distortion, deep red — the physicality of sound rendered as a visual language under pressure.", "U-Exist": "Prints for custom prosthetics and orthotics. High-resolution scans of lichen, minerals and organic forms wrap the device's contours — the prosthetic as an extension of identity.", "Koridor #2": "Event identity for Korhan Futaci's concert. Istanbul → Paris: a travel ticket becomes a poster. Halftone, aviation motifs, minimal type — raw energy turned into a graphic object.", "Ludgate Squatter": "Cover for 99Cts Records. Distortion, pressure, something on the verge of combustion — the texture bleeds through, unstable yet deliberate, a fragment of print holding it together.", "Medivm": "Douve · Meurtrière — poster. Scanned moss and compositing: the tension between organic form and fortified architecture, framed in electric blue. Protection and threat at once.", "Kazuho": "Blitz EP — cover for 99Cts Records. Topographic chaos meets synthetic precision; neon green against deep violet. The grid fractures like a map of sonic terrain.", "Hshtgs": "Visual identity. A scanned snake moult processed into a prismatic, iridescent texture; Arabic type spelling “hashtags”. Raw nature meets digital culture.", "Smthg Smthg Rcrds": "Cliffy — poster series. Scans of rock formations build a dense, tactile surface that answers the label's layered sound; typographic order against organic chaos.", "Vibra": "Director's treatment for VIBRA Brazil. A keynote of bold type and high contrast, built as a storytelling tool — the creative direction made clear, kinetic, high-adrenaline.", "Longchamp": "Creative direction and motion for “Très Paris – Chapter II”. A fluid narrative between cinematic storytelling and editorial layout — Parisian nonchalance, from casting to location.", "Golfinho": "Treatment for a water-distribution company. Clean, contemporary design serving a clear narrative — corporate clarity with a touch of refinement.", "Maskné Protect": "3D and motion for a cosmetics brand. Weightless masks, fluid simulation and soft rendering — breathability and comfort translated into movement."};
   function buildArchive(famKey,listId){var host=document.getElementById(listId);
     if(FAMINTRO[famKey]){var intro=document.createElement("p");intro.className="gintro";intro.textContent=FAMINTRO[famKey];host.appendChild(intro);}
-    ARCHIVE[famKey].projects.forEach(function(pr){var grp=document.createElement("div");grp.className="ggroup";
-      grp.innerHTML='<div class="ghead">'+pr.n+'</div>'+(DESC[pr.n]?'<p class="gdesc">'+DESC[pr.n]+'</p>':'');
-      var grid=document.createElement("div");grid.className="ggrid"+(pr.imgs.length===1?" wide":"");
-      pr.imgs.forEach(function(u){var im=document.createElement("img");im.loading="lazy";im.src=u;im.alt=pr.n;grid.appendChild(im);});
-      grp.appendChild(grid);host.appendChild(grp);});}
+    var grid=document.createElement("div");grid.className="parchive";
+    ARCHIVE[famKey].projects.forEach(function(pr){var card=document.createElement("div");card.className="pcard";
+      var cover=pr.imgs[0],more=pr.imgs.slice(1).map(function(u){return '<img loading="lazy" src="'+u+'" alt="'+pr.n+'">';}).join('');
+      card.innerHTML='<button class="pchead" type="button"><span class="pcover" style="background-image:url(\''+cover+'\')"></span>'
+        +'<span class="pcmeta"><span class="pctitle">'+pr.n+'</span>'+(DESC[pr.n]?'<span class="pcdesc">'+DESC[pr.n]+'</span>':'')
+        +(more?'<span class="pcopen">'+(pr.imgs.length)+' images — open</span>':'')+'</span></button>'
+        +(more?'<div class="pcmore">'+more+'</div>':'');
+      if(more)card.querySelector('.pchead').addEventListener('click',function(){card.classList.toggle('open');});
+      grid.appendChild(card);});
+    host.appendChild(grid);}
   buildArchive("branding","brList");buildArchive("artwork","arList");buildArchive("motion","moList");
 
   function shapePath(S,seed,type){
