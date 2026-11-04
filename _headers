@@ -10,3 +10,12 @@
   Cache-Control: public, max-age=0, must-revalidate
 /assets/living-surfaces.js
   Cache-Control: public, max-age=0, must-revalidate
+
+/assets/terrain-*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/window-system.css
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/preview-*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/previews/*
+  Cache-Control: public, max-age=0, must-revalidate
