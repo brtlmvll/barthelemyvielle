@@ -181,7 +181,7 @@
       +(img?'<image class="hshot" href="'+img+'" x="0" y="0" width="'+S+'" height="'+S+'" preserveAspectRatio="xMidYMid slice" clip-path="url(#'+cid+')"/>':'')
       +'<path class="hrim" d="'+d+'"/></g></svg>';
   }
-  var PHOTOS=["pine","moss-grid","wall-texture","cauterets-bw","moss-line","slug","chamois-ski","dogs"];
+  var PHOTOS=["pine","moss-grate","moss-wall","building-bw","moss-dark","slug","chamois-snow","dogs"];
   var HUB=[
     {cat:"fashion",seed:31,type:"shard",lab:"Fashion Print",sub:"11 motifs textiles",img:"assets/fashion/p11.jpg"},
     {cat:"photo",  seed:37,type:"monolith",lab:"Photography",sub:"carnet · "+PHOTOS.length+" images",img:"assets/photo/pine.jpg"}
@@ -220,10 +220,9 @@
   // STUDIES : galerie Garden & City organisée
   var GC={
     "Signalétique":["signage-wall","spa-aiga","entrance"],
-    "Illustration":["illus-chamois","illus-chamois-lobby","illus-reception","illus-fox","illus-cat-desk","illus-storks","illus-cat-leopard","illus-dog-laptop","illus-fox-run"],
+    "Illustration":["illus-chamois-reception","illus-chamois-hike","illus-reception","illus-fox","illus-cat-desk","illus-storks","illus-cat-leopard","illus-dog-laptop","illus-fox-run"],
     "Campagne":["campaign"],
-    "Produit & espaces":["jewelry-vg","aire-de-jeux"],
-    "Intérieurs":["staircase-01","staircase-day","staircase-night","staircase-02","staircase-03","entrance"]
+    "Espaces":["aire-de-jeux","staircase-01","staircase-day","staircase-night","staircase-02","staircase-03"]
   };
   var gl=document.getElementById("glist"),gsub=document.getElementById("gsub"),gkeys=Object.keys(GC);
   gkeys.forEach(function(k,idx){
