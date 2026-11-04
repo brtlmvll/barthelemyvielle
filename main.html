@@ -39,7 +39,6 @@
   .m .rim{fill:none;stroke:var(--paper);stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round}
   .m .shot{opacity:1;clip-path:inset(100% 0 0 0);transition:clip-path .55s cubic-bezier(.76,0,.24,1)}
   .m:hover .shot{clip-path:inset(0 0 0 0)}
-  .m .flash{position:absolute;inset:0;background:var(--light);opacity:0;mix-blend-mode:screen;pointer-events:none}
   .m .lab{font-family:var(--serif);font-size:clamp(1.1rem,2.3vw,1.7rem);font-weight:700;text-transform:uppercase;letter-spacing:.03em;line-height:1;
     margin-top:1.2rem;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .5s cubic-bezier(.2,.75,.3,1),color .2s}
   .m .sub{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:.6em;
@@ -64,7 +63,18 @@
   .sheet .shead .bk:hover{opacity:1}
   .sheet .shead .ti{font-family:var(--serif);font-size:clamp(1.1rem,3vw,1.6rem);font-weight:700;letter-spacing:.03em;text-transform:uppercase}
   .sheet .inner{max-width:900px;margin:0 auto;padding:1rem max(22px,env(safe-area-inset-left,0px)) 14vh}
-  .sheet .lead{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8d8d88;margin:0 0 3rem}
+  .sheet .lead{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8d8d88;margin:0 0 2rem}
+  /* sous-menu intermédiaire de section */
+  .submenu{position:sticky;top:0;z-index:4;display:flex;flex-wrap:wrap;gap:.3em 1.4em;padding:.4rem 0 1.2rem;margin:0 0 3rem;
+    background:linear-gradient(var(--dark) 78%,transparent)}
+  .submenu button{all:unset;cursor:pointer;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#777772;transition:color .2s}
+  .submenu button:hover,.submenu button.on{color:var(--light)}
+  .ggroup{margin:0 0 5vh}
+  .ghead{font-family:var(--serif);font-size:clamp(1rem,2.6vw,1.4rem);font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#8d8d88;margin:0 0 2rem;padding-bottom:.6rem;border-bottom:1px solid #222}
+  .ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:2vh 2%}
+  .ggrid.wide{grid-template-columns:1fr}
+  .ggrid img{width:100%;height:auto;display:block;border:1px solid #1a1a1a}
+  @media(max-width:620px){.ggrid{grid-template-columns:1fr}}
   .wlist{display:flex;flex-direction:column;gap:7vh}
   .witem img{width:100%;height:auto;display:block}
   .wmeta{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:1rem;flex-wrap:wrap}
@@ -104,7 +114,8 @@
 
 <section id="work" class="sheet">
   <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Fashion Print</span><span style="width:3em"></span></div>
-  <div class="inner"><p class="lead">Motifs textiles — TRENDT · Rockaedron · U-Exist</p><div class="wlist" id="wlist"></div></div>
+  <div class="inner"><p class="lead">Motifs textiles — 11 pièces</p>
+    <div class="submenu" id="wsub"></div><div id="wlist"></div></div>
 </section>
 <section id="about" class="sheet">
   <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Information</span><span style="width:3em"></span></div>
@@ -117,11 +128,9 @@
   </div>
 </section>
 <section id="studies" class="sheet">
-  <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Studies — Kiwami</span><span style="width:3em"></span></div>
-  <div class="inner"><p class="lead">Recherche visuelle · section en cours</p>
-    <div class="sub"><div class="it"><span class="t">Image dump</span><span class="st">En attente</span></div>
-      <div class="it"><span class="t">Recherche Kiwami</span><span class="st">En attente</span></div>
-      <div class="it"><span class="t">Études visuelles</span><span class="st">En attente</span></div></div></div>
+  <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Studies — Garden &amp; City</span><span style="width:3em"></span></div>
+  <div class="inner"><p class="lead">Garden &amp; City · Cauterets — recherche d'identité, signalétique, illustration</p>
+    <div class="submenu" id="gsub"></div><div id="glist"></div></div>
 </section>
 
 <div id="wipe"></div>
@@ -136,9 +145,39 @@
     ["Cliff","Rockaedron","Photographie · composition","p13"],["Diorama","U-Exist","Numérisation · composition","p14"],
     ["Norscape","U-Exist","Impression directe","p20"],["Klondike","U-Exist","Numérisation · composition","p17"],
     ["Vegan","U-Exist","Impression directe","p18"],["Marble IV","U-Exist","Photographie · composition","p19"]];
-  var wl=document.getElementById("wlist");
-  PRINTS.forEach(function(p){var d=document.createElement("div");d.className="witem";
-    d.innerHTML='<img loading="lazy" src="assets/fashion/'+p[3]+'.jpg" alt="'+p[0]+'"><div class="wmeta"><span class="wn">'+p[0]+'</span><span class="wd"><b>'+p[1]+'</b><br>'+p[2]+'</span></div>';wl.appendChild(d);});
+  // WORK : sous-menu par client + groupes
+  var wl=document.getElementById("wlist"),wsub=document.getElementById("wsub");
+  var WCLIENTS=["TRENDT","Rockaedron","U-Exist"];
+  var ab=document.createElement("button");ab.textContent="Tous";ab.className="on";
+  ab.addEventListener("click",function(){document.getElementById("work").querySelector(".inner").scrollIntoView?0:0;sheets.work.scrollTo({top:0,behavior:"smooth"});});wsub.appendChild(ab);
+  WCLIENTS.forEach(function(cl){
+    var btn=document.createElement("button");btn.textContent=cl;btn.dataset.cl=cl;
+    btn.addEventListener("click",function(){var g=document.getElementById("wg-"+cl);if(g)g.scrollIntoView({behavior:"smooth",block:"start"});});
+    wsub.appendChild(btn);
+    var grp=document.createElement("div");grp.className="ggroup";grp.id="wg-"+cl;
+    grp.innerHTML='<div class="ghead">'+cl+'</div>';
+    PRINTS.filter(function(p){return p[1]===cl;}).forEach(function(p){var d=document.createElement("div");d.className="witem";d.style.marginBottom="6vh";
+      d.innerHTML='<img loading="lazy" src="assets/fashion/'+p[3]+'.jpg" alt="'+p[0]+'"><div class="wmeta"><span class="wn">'+p[0]+'</span><span class="wd">'+p[2]+'</span></div>';grp.appendChild(d);});
+    wl.appendChild(grp);
+  });
+
+  // STUDIES : galerie Garden & City organisée
+  var GC={
+    "Signalétique":["signage-wall","spa-aiga","entrance"],
+    "Illustration":["illus-reception","illus-fox","illus-cat-desk","illus-storks","illus-cat-leopard","illus-dog-laptop","illus-fox-run"],
+    "Campagne":["campaign"],
+    "Intérieurs":["staircase-01","staircase-day","staircase-night","staircase-02","staircase-03","entrance"]
+  };
+  var gl=document.getElementById("glist"),gsub=document.getElementById("gsub"),gkeys=Object.keys(GC);
+  gkeys.forEach(function(k,idx){
+    var btn=document.createElement("button");btn.textContent=k;if(idx===0)btn.className="on";btn.dataset.k=k;
+    btn.addEventListener("click",function(){var g=document.getElementById("gg-"+idx);if(g)g.scrollIntoView({behavior:"smooth",block:"start"});});gsub.appendChild(btn);
+    var grp=document.createElement("div");grp.className="ggroup";grp.id="gg-"+idx;
+    grp.innerHTML='<div class="ghead">'+k+'</div>';
+    var grid=document.createElement("div");grid.className="ggrid"+(k==="Campagne"?" wide":"");
+    GC[k].forEach(function(n){var im=document.createElement("img");im.loading="lazy";im.src="assets/gc/"+n+".jpg";im.alt=k;grid.appendChild(im);});
+    grp.appendChild(grid);gl.appendChild(grp);
+  });
 
   function shapePath(S,seed,type){
     var st=seed*7+3,rng=function(){st=(st*9301+49297)%233280;return st/233280;},pts=[],m=S*0.06;function P(x,y){pts.push([x,y]);}
@@ -161,15 +200,15 @@
   var MASSES=[
     {key:"work",seed:2,type:"totem",lab:"Work",sub:"Fashion Print · 11 motifs",img:"assets/fashion/p14.jpg",
       phrases:["Fashion Print","11 motifs","TRENDT","Rockaedron","U-Exist","Sérigraphie","Encre rongeante"]},
-    {key:"studies",seed:7,type:"ridge",lab:"Studies",sub:"Kiwami · recherche",img:"assets/fashion/p24.jpg",
-      phrases:["Kiwami","Recherche","Études","Image dump","À venir"]},
+    {key:"studies",seed:7,type:"ridge",lab:"Studies",sub:"Garden & City · recherche",img:"assets/gc/illus-fox.jpg",
+      phrases:["Garden & City","Signalétique","Illustration","Cauterets","Recherche","Identité"]},
     {key:"about",seed:19,type:"relic",lab:"Information",sub:"Profil · contact",
       phrases:["Profil","Contact","CLVSTR","Baruto","Rockaedron","Information"]}
   ];
   var massesEl=document.getElementById("masses"),workShot=null,workFlash=null;
   MASSES.forEach(function(md){
     var b=document.createElement("button");b.className="m";b.type="button";b.dataset.go=md.key;
-    b.innerHTML='<div class="wrap">'+massSVG(240,md.seed,md.type,md.img)+'<div class="flash"></div></div>'
+    b.innerHTML='<div class="wrap">'+massSVG(240,md.seed,md.type,md.img)+'</div>'
       +'<span class="lab">'+md.lab+'</span><span class="sub">'+md.sub+'</span>';
     massesEl.appendChild(b);
     // strobe du texte sous la masse (monochrome, autorisé)
@@ -177,11 +216,10 @@
       b.addEventListener("pointerenter",function(){var k=0;ts=setInterval(function(){k++;
         subEl.textContent=(k%9===0)?"":md.phrases[Math.floor(Math.random()*md.phrases.length)];},100);});
       b.addEventListener("pointerleave",function(){clearInterval(ts);subEl.textContent=md.sub;});}
-    if(md.key==="work"){workShot=b.querySelector(".shot");workFlash=b.querySelector(".flash");
-      if(!reduce){var t=null;b.addEventListener("pointerenter",function(){var k=0;t=setInterval(function(){k++;
-        workShot.setAttribute("href",IMGS[Math.floor(Math.random()*IMGS.length)]);
-        if(k%7===0){workFlash.style.opacity="1";setTimeout(function(){workFlash.style.opacity="0";},55);}},110);});
-      b.addEventListener("pointerleave",function(){clearInterval(t);workShot.setAttribute("href","assets/fashion/p14.jpg");workFlash.style.opacity="0";});}
+    if(md.key==="work"){workShot=b.querySelector(".shot");
+      if(!reduce){var t=null;b.addEventListener("pointerenter",function(){var k=0;t=setInterval(function(){
+        workShot.setAttribute("href",IMGS[Math.floor(Math.random()*IMGS.length)]);},110);});
+      b.addEventListener("pointerleave",function(){clearInterval(t);workShot.setAttribute("href","assets/fashion/p14.jpg");});}
     }
   });
 
