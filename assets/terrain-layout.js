@@ -13,8 +13,8 @@ fetch('../assets/project-catalogue.json').then(r=>r.json()).then(items=>{
  else entries=items.filter(p=>p.category===filter).map(p=>({...p,href:p.slug+'.html',sub:p.category}));
  grid.innerHTML=entries.map((p,i)=>`<a class="project-card terrain-stone stone-${i%6}" href="${esc(p.href)}"><div class="card-image" data-cycle="${esc(JSON.stringify(p.previews))}"><img src="../${esc(p.previews[0])}" alt="${esc(p.name)}" loading="${i<4?'eager':'lazy'}"></div><div class="card-caption"><span>${esc(p.name)}</span><span>${esc(p.sub)}</span></div></a>`).join('');
  const intro=document.querySelector('.index-intro');if(intro){const heading=intro.querySelector('h1'),eyebrow=intro.querySelector('.eyebrow'),lead=intro.querySelector('.lede'),count=intro.querySelector('.index-count');
- if(isIndex&&depth===1){heading.innerHTML='Selected<br>work.';eyebrow.textContent='CLVSTR / Fields of work';count.textContent='Six fields / '+items.filter(p=>p.kind!=='study').length+' projects';}
- if(isIndex&&depth===2){heading.textContent=filter;heading.classList.add('field-title');eyebrow.innerHTML='<a href="index.html">← Fields of work</a>';if(lead)lead.textContent='A constellation of projects.';count.textContent=entries.length+' projects';}}
+ if(isIndex&&depth===1){heading.innerHTML='Selected<br>work.';eyebrow.textContent='CLVSTR / Fields of work';if(lead)lead.textContent='Identity, print, image, motion.';count.textContent='Six fields / '+items.filter(p=>p.kind!=='study').length+' projects';}
+ if(isIndex&&depth===2){heading.textContent=filter;heading.classList.add('field-title');eyebrow.innerHTML='<a href="index.html">← Fields of work</a>';if(lead)lead.remove();count.textContent=entries.length+' projects';}}
  const filters=document.querySelector('.filters');if(filters)filters.outerHTML='<nav class="terrain-breadcrumb" aria-label="Work navigation">'+(depth===2?'<a href="index.html">← All fields</a><span>'+esc(filter)+'</span>':'<span>Choose a field to enter</span><a href="studies.html">Studies ↗</a>')+'</nav>';
  document.dispatchEvent(new Event('catalogue-ready'));
 });
