@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&display=swap">
 <title>Barthélémy Vielle</title>
+<meta name="description" content="Barthélémy Vielle — directeur artistique. Identités, signalétique & motifs, de l'affiche au point de vente. CLVSTR.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Barthélémy Vielle — CLVSTR">
+<meta property="og:description" content="Barthélémy Vielle — directeur artistique. Identités, signalétique & motifs, de l'affiche au point de vente. CLVSTR.">
+<meta property="og:image" content="https://barthelemyvielle.com/assets/fashion/p14.jpg">
+<meta property="og:url" content="https://barthelemyvielle.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&display=swap">
 <style>
   /* ---- Portfolio clean. HOME blanc : nom réduit + menu texte + masses noires (3 sections).
          Survol = la forme se lève, l'image éclot dedans (Work = strobe des prints).
@@ -26,7 +33,7 @@
   #bar .bd{display:flex;align-items:baseline;gap:.9em}
   #bar .bd b{font-size:12px;font-weight:700;letter-spacing:.18em}#bar .bd span{color:var(--mute)}
   #topnav{display:flex;gap:1.6em}
-  #topnav button{all:unset;cursor:pointer;color:var(--mute);transition:color .2s}
+  #topnav button{all:unset;cursor:pointer;color:#5a5a56;font-weight:500;transition:color .2s}
   #topnav button:hover{color:var(--ink)}
 
   .stagec{flex:1;display:flex;align-items:center;justify-content:center}
@@ -41,7 +48,7 @@
   .m:hover .shot{clip-path:inset(0 0 0 0)}
   .m .lab{font-family:var(--serif);font-size:clamp(1.1rem,2.3vw,1.7rem);font-weight:700;text-transform:uppercase;letter-spacing:.03em;line-height:1;
     margin-top:1.2rem;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .5s cubic-bezier(.2,.75,.3,1),color .2s}
-  .m .sub{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:.6em;
+  .m .sub{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6a6a66;margin-top:.6em;
     opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .5s cubic-bezier(.2,.75,.3,1)}
   .m:hover .lab{opacity:1;transform:none;transition-delay:.12s}
   .m:hover .sub{opacity:1;transform:none;transition-delay:.22s}
@@ -126,7 +133,7 @@
   </div>
   <div class="stagec"><div class="masses" id="masses"></div></div>
   <div class="hb">
-    <p class="tag">Un cluster d'étoiles : des objets éloignés perçus comme proches. Direction artistique &amp; design total.</p>
+    <p class="tag">Barthélémy Vielle — directeur artistique. Identités, signalétique &amp; motifs, de l'affiche au point de vente.</p>
     <div class="ft"><span id="clock">Beaucens —:—:—</span><a href="mailto:barthelemy.vielle@gmail.com">barthelemy.vielle@gmail.com</a><div class="eco"><span>CLVSTR</span><span>Baruto</span><span>Rockaedron</span></div></div>
   </div>
 </div>
@@ -145,11 +152,12 @@
 <section id="about" class="sheet">
   <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Information</span><span style="width:3em"></span></div>
   <div class="inner about">
-    <p class="big">Design total.</p>
-    <p>CLVSTR — pratique de direction artistique et de design : identités, signalétique, motion, systèmes visuels. Le noir et blanc comme fil conducteur, la couleur comme événement.</p>
-    <p>Barthélémy Vielle. Entre Beaucens et Cauterets, Hautes-Pyrénées. CLVSTR (pratique globale), Baruto (branding client), Rockaedron (produits).</p>
+    <p class="big">Je conçois des identités qui tiennent de l'affiche au point de vente.</p>
+    <p><b>Barthélémy Vielle</b> — directeur artistique et graphiste, entre Beaucens et Cauterets, Hautes-Pyrénées. Direction artistique, branding, motion, signalétique, systèmes visuels.</p>
+    <p><b>CLVSTR</b> est ma pratique : un cluster d'étoiles, des objets éloignés perçus comme proches. Le noir et blanc comme fil conducteur, la couleur comme événement.</p>
+    <p>Sous cette pratique : <b>Baruto</b>, la face client pour le branding d'identité (restaurants, hôtels, marques). <b>Rockaedron</b>, les produits et objets. <b>Forgeworks</b>, un studio séparé.</p>
     <div class="row"><span>barthelemy.vielle@gmail.com</span><span>+33 6 81 62 81 60</span><a href="mailto:barthelemy.vielle@gmail.com">Écrire</a></div>
-    <div class="eco"><span>CLVSTR</span><span>Baruto</span><span>Forgeworks</span><span>Rockaedron</span></div>
+    <div class="eco"><span>CLVSTR</span><span>Baruto</span><span>Rockaedron</span><span>Forgeworks</span></div>
   </div>
 </section>
 <section id="studies" class="sheet">
@@ -285,11 +293,21 @@
   function withWipe(swap){if(reduce){swap();return;}
     wipe.style.transition="transform .42s cubic-bezier(.76,0,.24,1)";wipe.style.transformOrigin="left";wipe.style.transform="scaleX(1)";
     setTimeout(function(){swap();wipe.style.transformOrigin="right";wipe.style.transform="scaleX(0)";},430);}
-  function go(key){var el=sheets[key];if(!el)return;withWipe(function(){document.body.classList.add("away");if(key==="work")showHub();el.classList.add("open");el.scrollTop=0;});}
-  function back(){withWipe(function(){document.body.classList.remove("away");Object.keys(sheets).forEach(function(k){sheets[k].classList.remove("open");});});}
+  var openSec=null;
+  function openSheet(key){var el=sheets[key];if(!el||openSec===key)return;openSec=key;
+    withWipe(function(){document.body.classList.add("away");if(key==="work")showHub();
+      Object.keys(sheets).forEach(function(k){sheets[k].classList.toggle("open",k===key);});sheets[key].scrollTop=0;});}
+  function closeSheet(){if(!openSec)return;openSec=null;
+    withWipe(function(){document.body.classList.remove("away");Object.keys(sheets).forEach(function(k){sheets[k].classList.remove("open");});});}
+  // routing par hash : liens partageables + bouton Retour natif
+  function go(key){if(location.hash.replace("#","")===key)openSheet(key);else location.hash=key;}
+  function back(){if(location.hash)location.hash="";else closeSheet();}
+  function syncHash(){var k=location.hash.replace("#","");if(sheets[k])openSheet(k);else closeSheet();}
+  addEventListener("hashchange",syncHash);
   document.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){go(b.dataset.go);});});
   document.querySelectorAll("[data-close]").forEach(function(b){b.addEventListener("click",back);});
   addEventListener("keydown",function(e){if(e.key==="Escape")back();});
+  syncHash();
 
   function tick(){var c=document.getElementById("clock");if(c)c.textContent="Beaucens "+new Date().toLocaleTimeString("fr-FR");}tick();setInterval(tick,1000);
 })();
