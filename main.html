@@ -178,7 +178,7 @@
 /* COLOUR ON CONTACT */
 .shot,.hshot,.pcover,.pcover img{transition:filter .3s ease}.m:hover .shot,.m:focus-visible .shot,.hs:hover .hshot,.hs:focus-visible .hshot,.pchead:hover .pcover,.pchead:hover .pcover img,.pchead:focus-visible .pcover,.pchead:focus-visible .pcover img{filter:grayscale(0) contrast(1)}
 </style>
-</head>
+<link rel="stylesheet" href="assets/window-system.css?v=20261104-window"></head>
 <body>
 <div id="bvstrobe"></div>
 <div id="home">
@@ -242,15 +242,7 @@
     for(var y=0;y<=rows;y++){var row=[];for(var x=0;x<=cols;x++)row.push([x*S/cols+(x&&x<cols?(Math.random()-.5)*S*.08:0),y*S/rows+(y&&y<rows?(Math.random()-.5)*S*.08:0)]);pts.push(row);}
     function shard(poly){var id='shard-'+(++fragmentSerial),cx=0,cy=0;poly.forEach(function(p){cx+=p[0]/3;cy+=p[1]/3;});out+='<defs><clipPath id="'+id+'"><polygon points="'+poly.map(function(p){return p.join(',');}).join(' ')+'"/></clipPath></defs><g class="'+cls+'" data-cx="'+cx+'" data-cy="'+cy+'"><path d="'+outline+'" clip-path="url(#'+id+')"/></g>';}
     for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){var a=pts[r][c],b=pts[r][c+1],d=pts[r+1][c],e=pts[r+1][c+1];shard([a,b,e]);shard([a,e,d]);}return out;}
-  function wireFrag(el){var frags=[].slice.call(el.querySelectorAll('.frag,.hfrag')),anims=[],iteration=0;if(!frags.length)return;
-    function run(open){anims.forEach(function(a){a.cancel();});anims=[];if(reduce||document.documentElement.classList.contains('motion-paused'))return;
-      var mode=(iteration++)%3,ox=Math.random()*240,oy=Math.random()*240;
-      frags.forEach(function(r,i){var cx=+r.getAttribute('data-cx'),cy=+r.getAttribute('data-cy'),angle=Math.atan2(cy-oy,cx-ox),dist=Math.hypot(cx-ox,cy-oy),delay=dist/340*160;
-        var dx=mode===1?(i%2?1:-1)*12:Math.cos(angle)*(10+dist*.04),dy=mode===2?-12-Math.random()*8:Math.sin(angle)*(10+dist*.04),rot=(Math.random()-.5)*8;
-        var resting={opacity:.87,transform:'translate(0px,0px) rotate(0deg) scale(1)'},scattered={opacity:0,transform:'translate('+dx.toFixed(1)+'px,'+dy.toFixed(1)+'px) rotate('+rot.toFixed(1)+'deg) scale(.96)'};
-        anims.push(r.animate(open?[resting,scattered]:[scattered,resting],{duration:open?460+Math.random()*120:420,delay:delay*(open?1:.25),fill:'forwards',easing:'cubic-bezier(.16,.7,.2,1)'}));});}
-    el.addEventListener('pointerenter',function(e){if(e.pointerType!=='touch')run(true);});el.addEventListener('pointerleave',function(){run(false);});el.addEventListener('focus',function(){run(true);});el.addEventListener('blur',function(){run(false);});
-    document.addEventListener('motion-state',function(e){if(e.detail.paused){anims.forEach(function(a){a.cancel();});anims=[];}});}
+  function wireFrag(){}
   function hubSVG(seed,type,img){
     var S=240,d=shapePath(S,seed,type),fid="hf"+seed,cid="hc"+seed,sc=(S*0.05).toFixed(1),bf=(0.009+(seed%5)*0.0016).toFixed(4);
     return '<svg viewBox="0 0 '+S+' '+S+'"><defs><filter id="'+fid+'" x="-25%" y="-25%" width="150%" height="150%">'
@@ -362,7 +354,7 @@
   var MASSES=[
     {key:"work",seed:2,type:"totem",lab:"Work",sub:"Identity · Print · Image · Motion",img:"assets/fashion/p14.jpg",
       phrases:["Identity","Printed matter","Treatments","Surface","Photography","Artwork"]},
-    {key:"studies",seed:7,type:"ridge",lab:"Studies",sub:"Garden & City · research",img:"assets/gc/illus-fox.jpg",
+    {key:"studies",seed:7,type:"ridge",lab:"Studies",sub:"Three research paths",img:"assets/gc/illus-fox.jpg",
       phrases:["Garden & City","Signage","Illustration","Cauterets","Research","Identity"]},
     {key:"about",seed:19,type:"relic",lab:"Information",sub:"Profile · contact",
       phrases:["Profile","Contact","CLVSTR","Baruto","Rockaedron","Information"]}
@@ -406,6 +398,6 @@
   function tick(){var c=document.getElementById("clock");if(c)c.textContent="Beaucens "+new Date().toLocaleTimeString("fr-FR");}tick();setInterval(tick,1000);
 })();
 </script>
-<script src="assets/project-links.js?v=20261104-1" defer></script>
-<script src="assets/living-surfaces.js?v=20261104-1" defer></script></body>
+<script src="assets/project-links.js?v=20261104-window" defer></script>
+<script src="assets/living-surfaces.js?v=20261104-window" defer></script></body>
 </html>

@@ -525,5 +525,43 @@
       "assets/previews/garden-and-city-05.svg",
       "assets/previews/garden-and-city-06.svg"
     ]
+  },
+  {
+    "name": "Contour / Counterform",
+    "slug": "contour-counterform",
+    "category": "Studies",
+    "kind": "study",
+    "description": "Original graphic research into contour, strata and negative space. Landscape references from the personal screen archive become a new language of lines, folds and intervals.",
+    "images": [
+      "assets/studies/contour-01.svg",
+      "assets/studies/contour-02.svg",
+      "assets/studies/contour-03.svg",
+      "assets/studies/contour-04.svg"
+    ],
+    "previews": [
+      "assets/studies/contour-01.svg",
+      "assets/studies/contour-02.svg",
+      "assets/studies/contour-03.svg",
+      "assets/studies/contour-04.svg"
+    ]
+  },
+  {
+    "name": "Spatial Scores",
+    "slug": "spatial-scores",
+    "category": "Studies",
+    "kind": "study",
+    "description": "Original graphic research into thresholds, repetition and light. Architectural references from the personal screen archive are translated into abstract planes, openings and spatial rhythms.",
+    "images": [
+      "assets/studies/space-01.svg",
+      "assets/studies/space-02.svg",
+      "assets/studies/space-03.svg",
+      "assets/studies/space-04.svg"
+    ],
+    "previews": [
+      "assets/studies/space-01.svg",
+      "assets/studies/space-02.svg",
+      "assets/studies/space-03.svg",
+      "assets/studies/space-04.svg"
+    ]
   }
 ]
