@@ -1,0 +1,529 @@
+[
+  {
+    "name": "De Saint Aise",
+    "slug": "de-saint-aise",
+    "category": "Identity",
+    "description": "Retail concept and identity. Monolithic structures carved from raw matter — shelving emerges from rock, light cuts through shadow. Brutal, tactile minimalism where the space extends the brand.",
+    "images": [
+      "assets/archive/de-saint-aise/01.svg",
+      "assets/archive/de-saint-aise/02.svg",
+      "assets/archive/de-saint-aise/03.svg",
+      "assets/archive/de-saint-aise/04.svg",
+      "assets/archive/de-saint-aise/05.svg",
+      "assets/archive/de-saint-aise/06.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/de-saint-aise-01.svg",
+      "assets/previews/de-saint-aise-02.svg",
+      "assets/previews/de-saint-aise-03.svg",
+      "assets/previews/de-saint-aise-04.svg",
+      "assets/previews/de-saint-aise-05.svg",
+      "assets/previews/de-saint-aise-06.svg"
+    ]
+  },
+  {
+    "name": "Terrarivm Generalis",
+    "slug": "terrarivm-generalis",
+    "category": "Identity",
+    "description": "Identity for an urban-vegetalization startup. A logotype drawn from modular architecture; natural textures set against synthetic tones — grounded yet forward-thinking.",
+    "images": [
+      "assets/archive/terrarivm-generalis/01.svg",
+      "assets/archive/terrarivm-generalis/02.svg",
+      "assets/archive/terrarivm-generalis/03.svg",
+      "assets/archive/terrarivm-generalis/04.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/terrarivm-generalis-01.svg",
+      "assets/previews/terrarivm-generalis-02.svg",
+      "assets/previews/terrarivm-generalis-03.svg",
+      "assets/previews/terrarivm-generalis-04.svg"
+    ]
+  },
+  {
+    "name": "Hovr",
+    "slug": "hovr",
+    "category": "Identity",
+    "description": "Branding for a meditation-supplements brand. A digital-first system, clear and elevated; organic textures and landscapes behind minimal product shots, with motion that evokes breath.",
+    "images": [
+      "assets/archive/hovr/01.svg",
+      "assets/archive/hovr/02.svg",
+      "assets/archive/hovr/03.svg",
+      "assets/archive/hovr/04.svg",
+      "assets/archive/hovr/05.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/hovr-01.svg",
+      "assets/previews/hovr-02.svg",
+      "assets/previews/hovr-03.svg",
+      "assets/previews/hovr-04.svg",
+      "assets/previews/hovr-05.svg"
+    ]
+  },
+  {
+    "name": "Common Wave",
+    "slug": "common-wave",
+    "category": "Identity",
+    "description": "Pictogram system. Modular marks — loops, waves, interlocking forms — an identity that keeps shifting while staying instantly recognizable.",
+    "images": [
+      "assets/archive/common-wave/01.svg",
+      "assets/archive/common-wave/02.svg",
+      "assets/archive/common-wave/03.svg",
+      "assets/archive/common-wave/04.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/common-wave-01.svg",
+      "assets/previews/common-wave-02.svg",
+      "assets/previews/common-wave-03.svg",
+      "assets/previews/common-wave-04.svg"
+    ]
+  },
+  {
+    "name": "Petit Producteur",
+    "slug": "petit-producteur",
+    "category": "Identity",
+    "description": "Branding and editorial system for a sustainable cosmetics brand. Modern type, modular layouts, neutral tones — heritage meets contemporary formulation.",
+    "images": [
+      "assets/archive/petit-producteur/01.svg",
+      "assets/archive/petit-producteur/02.svg",
+      "assets/archive/petit-producteur/03.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/petit-producteur-01.svg",
+      "assets/previews/petit-producteur-02.svg",
+      "assets/previews/petit-producteur-03.svg"
+    ]
+  },
+  {
+    "name": "99 Cts Records",
+    "slug": "99-cts-records",
+    "category": "Identity",
+    "description": "Label identity. Fractured reflections, plastic distortion, deep red — the physicality of sound rendered as a visual language under pressure.",
+    "images": [
+      "assets/archive/99-cts-records/01.svg",
+      "assets/archive/99-cts-records/02.svg",
+      "assets/archive/99-cts-records/03.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/99-cts-records-01.svg",
+      "assets/previews/99-cts-records-02.svg",
+      "assets/previews/99-cts-records-03.svg"
+    ]
+  },
+  {
+    "name": "U-Exist",
+    "slug": "u-exist",
+    "category": "Print & Surface",
+    "description": "Prints for custom prosthetics and orthotics. High-resolution scans of lichen, minerals and organic forms wrap the device's contours — the prosthetic as an extension of identity.",
+    "images": [
+      "assets/archive/u-exist/01.svg",
+      "assets/archive/u-exist/02.svg",
+      "assets/archive/u-exist/03.svg",
+      "assets/archive/u-exist/04.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/u-exist-01.svg",
+      "assets/previews/u-exist-02.svg",
+      "assets/previews/u-exist-03.svg",
+      "assets/previews/u-exist-04.svg"
+    ]
+  },
+  {
+    "name": "Hshtgs",
+    "slug": "hshtgs",
+    "category": "Identity",
+    "description": "Visual identity. A scanned snake moult processed into a prismatic, iridescent texture; Arabic type spelling “hashtags”. Raw nature meets digital culture.",
+    "images": [
+      "assets/archive/hshtgs/01.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/hshtgs-01.svg"
+    ]
+  },
+  {
+    "name": "Koridor #2",
+    "slug": "koridor-2",
+    "category": "Artwork & Print",
+    "description": "Event identity for Korhan Futaci's concert. Istanbul → Paris: a travel ticket becomes a poster. Halftone, aviation motifs, minimal type — raw energy turned into a graphic object.",
+    "images": [
+      "assets/archive/koridor-2/01.svg",
+      "assets/archive/koridor-2/02.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/koridor-2-01.svg",
+      "assets/previews/koridor-2-02.svg"
+    ]
+  },
+  {
+    "name": "Ludgate Squatter",
+    "slug": "ludgate-squatter",
+    "category": "Artwork & Print",
+    "description": "Cover for 99Cts Records. Distortion, pressure, something on the verge of combustion — the texture bleeds through, unstable yet deliberate, a fragment of print holding it together.",
+    "images": [
+      "assets/archive/ludgate-squatter/01.svg",
+      "assets/archive/ludgate-squatter/02.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/ludgate-squatter-01.svg",
+      "assets/previews/ludgate-squatter-02.svg"
+    ]
+  },
+  {
+    "name": "Medivm",
+    "slug": "medivm",
+    "category": "Artwork & Print",
+    "description": "Douve · Meurtrière — poster. Scanned moss and compositing: the tension between organic form and fortified architecture, framed in electric blue. Protection and threat at once.",
+    "images": [
+      "assets/archive/medivm/01-poster.svg",
+      "assets/archive/medivm/02.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/medivm-01.svg",
+      "assets/previews/medivm-02.svg"
+    ]
+  },
+  {
+    "name": "Kazuho",
+    "slug": "kazuho",
+    "category": "Artwork & Print",
+    "description": "Blitz EP — cover for 99Cts Records. Topographic chaos meets synthetic precision; neon green against deep violet. The grid fractures like a map of sonic terrain.",
+    "images": [
+      "assets/archive/kazuho/01.svg",
+      "assets/archive/kazuho/02.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/kazuho-01.svg",
+      "assets/previews/kazuho-02.svg"
+    ]
+  },
+  {
+    "name": "Smthg Smthg Rcrds",
+    "slug": "smthg-smthg-rcrds",
+    "category": "Artwork & Print",
+    "description": "Cliffy — poster series. Scans of rock formations build a dense, tactile surface that answers the label's layered sound; typographic order against organic chaos.",
+    "images": [
+      "assets/archive/smthg-smthg-rcrds/01.svg",
+      "assets/archive/smthg-smthg-rcrds/02.svg",
+      "assets/archive/smthg-smthg-rcrds/03.svg",
+      "assets/archive/smthg-smthg-rcrds/04.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/smthg-smthg-rcrds-01.svg",
+      "assets/previews/smthg-smthg-rcrds-02.svg",
+      "assets/previews/smthg-smthg-rcrds-03.svg",
+      "assets/previews/smthg-smthg-rcrds-04.svg"
+    ]
+  },
+  {
+    "name": "Vibra",
+    "slug": "vibra",
+    "category": "Treatments",
+    "description": "Director's treatment for VIBRA Brazil. A keynote of bold type and high contrast, built as a storytelling tool — the creative direction made clear, kinetic, high-adrenaline.",
+    "images": [
+      "assets/archive/vibra/01-poster.svg",
+      "assets/archive/vibra/02-poster.svg",
+      "assets/archive/vibra/03-poster.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/vibra-01.svg",
+      "assets/previews/vibra-02.svg",
+      "assets/previews/vibra-03.svg"
+    ]
+  },
+  {
+    "name": "Longchamp",
+    "slug": "longchamp",
+    "category": "Treatments",
+    "description": "Creative direction and motion for “Très Paris – Chapter II”. A fluid narrative between cinematic storytelling and editorial layout — Parisian nonchalance, from casting to location.",
+    "images": [
+      "assets/archive/longchamp/01-poster.svg",
+      "assets/archive/longchamp/02-poster.svg",
+      "assets/archive/longchamp/03-poster.svg",
+      "assets/archive/longchamp/04-poster.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/longchamp-01.svg",
+      "assets/previews/longchamp-02.svg",
+      "assets/previews/longchamp-03.svg",
+      "assets/previews/longchamp-04.svg"
+    ]
+  },
+  {
+    "name": "Golfinho",
+    "slug": "golfinho",
+    "category": "Treatments",
+    "description": "Treatment for a water-distribution company. Clean, contemporary design serving a clear narrative — corporate clarity with a touch of refinement.",
+    "images": [
+      "assets/archive/golfinho/01-poster.svg",
+      "assets/archive/golfinho/02-poster.svg",
+      "assets/archive/golfinho/03-poster.svg",
+      "assets/archive/golfinho/04-poster.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/golfinho-01.svg",
+      "assets/previews/golfinho-02.svg",
+      "assets/previews/golfinho-03.svg",
+      "assets/previews/golfinho-04.svg"
+    ]
+  },
+  {
+    "name": "Maskné Protect",
+    "slug": "maskne-protect",
+    "category": "3D & Motion",
+    "description": "3D and motion for a cosmetics brand. Weightless masks, fluid simulation and soft rendering — breathability and comfort translated into movement.",
+    "images": [
+      "assets/archive/maskne-protect/01.svg",
+      "assets/archive/maskne-protect/02.svg",
+      "assets/archive/maskne-protect/03.svg",
+      "assets/archive/maskne-protect/04.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/maskne-protect-01.svg",
+      "assets/previews/maskne-protect-02.svg",
+      "assets/previews/maskne-protect-03.svg",
+      "assets/previews/maskne-protect-04.svg"
+    ]
+  },
+  {
+    "name": "Lychen",
+    "slug": "print-lychen",
+    "category": "Print & Surface",
+    "description": "Screen printing. A surface-design study for TRENDT, presented here through the original pattern.",
+    "images": [
+      "assets/fashion/p02.jpg"
+    ],
+    "client": "TRENDT",
+    "technique": "Screen printing",
+    "kind": "print",
+    "previews": [
+      "assets/previews/print-lychen-01.svg"
+    ]
+  },
+  {
+    "name": "Bark",
+    "slug": "print-bark",
+    "category": "Print & Surface",
+    "description": "Screen printing. A surface-design study for TRENDT, presented here through the original pattern.",
+    "images": [
+      "assets/fashion/p05.jpg"
+    ],
+    "client": "TRENDT",
+    "technique": "Screen printing",
+    "kind": "print",
+    "previews": [
+      "assets/previews/print-bark-01.svg"
+    ]
+  },
+  {
+    "name": "Snow",
+    "slug": "print-snow",
+    "category": "Print & Surface",
+    "description": "Screen printing. A surface-design study for TRENDT, presented here through the original pattern.",
+    "images": [
+      "assets/fashion/p07.jpg"
+    ],
+    "client": "TRENDT",
+    "technique": "Screen printing",
+    "kind": "print",
+    "previews": [
+      "assets/previews/print-snow-01.svg"
+    ]
+  },
+  {
+    "name": "Espinhos",
+    "slug": "print-espinhos",
+    "category": "Print & Surface",
+    "description": "Drawing · scanning. A surface-design study for TRENDT, presented here through the original pattern.",
+    "images": [
+      "assets/fashion/p09.jpg"
+    ],
+    "client": "TRENDT",
+    "technique": "Drawing · scanning",
+    "kind": "print",
+    "previews": [
+      "assets/previews/print-espinhos-01.svg"
+    ]
+  },
+  {
+    "name": "Burst",
+    "slug": "print-burst",
+    "category": "Print & Surface",
+    "description": "Discharge ink · screen printing. A surface-design study for Rockaedron, presented here through the original pattern.",
+    "images": [
+      "assets/fashion/p11.jpg"
+    ],
+    "client": "Rockaedron",
+    "technique": "Discharge ink · screen printing",
+    "kind": "print",
+    "previews": [
+      "assets/previews/print-burst-01.svg"
+    ]
+  },
+  {
+    "name": "Cliff",
+    "slug": "print-cliff",
+    "category": "Print & Surface",
+    "description": "Photography · composition. A surface-design study for Rockaedron, presented here through the original pattern.",
+    "images": [
+      "assets/fashion/p13.jpg"
+    ],
+    "client": "Rockaedron",
+    "technique": "Photography · composition",
+    "kind": "print",
+    "previews": [
+      "assets/previews/print-cliff-01.svg"
+    ]
+  },
+  {
+    "name": "Diorama",
+    "slug": "print-diorama",
+    "category": "Print & Surface",
+    "description": "Scanning · composition. A surface-design study for U-Exist, presented here through the original pattern.",
+    "images": [
+      "assets/fashion/p14.jpg"
+    ],
+    "client": "U-Exist",
+    "technique": "Scanning · composition",
+    "kind": "print",
+    "previews": [
+      "assets/previews/print-diorama-01.svg"
+    ]
+  },
+  {
+    "name": "Norscape",
+    "slug": "print-norscape",
+    "category": "Print & Surface",
+    "description": "Direct printing. A surface-design study for U-Exist, presented here through the original pattern.",
+    "images": [
+      "assets/fashion/p20.jpg"
+    ],
+    "client": "U-Exist",
+    "technique": "Direct printing",
+    "kind": "print",
+    "previews": [
+      "assets/previews/print-norscape-01.svg"
+    ]
+  },
+  {
+    "name": "Klondike",
+    "slug": "print-klondike",
+    "category": "Print & Surface",
+    "description": "Scanning · composition. A surface-design study for U-Exist, presented here through the original pattern.",
+    "images": [
+      "assets/fashion/p17.jpg"
+    ],
+    "client": "U-Exist",
+    "technique": "Scanning · composition",
+    "kind": "print",
+    "previews": [
+      "assets/previews/print-klondike-01.svg"
+    ]
+  },
+  {
+    "name": "Vegan",
+    "slug": "print-vegan",
+    "category": "Print & Surface",
+    "description": "Direct printing. A surface-design study for U-Exist, presented here through the original pattern.",
+    "images": [
+      "assets/fashion/p18.jpg"
+    ],
+    "client": "U-Exist",
+    "technique": "Direct printing",
+    "kind": "print",
+    "previews": [
+      "assets/previews/print-vegan-01.svg"
+    ]
+  },
+  {
+    "name": "Marble IV",
+    "slug": "print-marble-iv",
+    "category": "Print & Surface",
+    "description": "Photography · composition. A surface-design study for U-Exist, presented here through the original pattern.",
+    "images": [
+      "assets/fashion/p19.jpg"
+    ],
+    "client": "U-Exist",
+    "technique": "Photography · composition",
+    "kind": "print",
+    "previews": [
+      "assets/previews/print-marble-iv-01.svg"
+    ]
+  },
+  {
+    "name": "Field Notes",
+    "slug": "field-notes",
+    "category": "Photography",
+    "description": "A photographic notebook of surfaces, structures, plants and encounters. Close observation links the natural environment to the built world.",
+    "images": [
+      "assets/photo/pine.jpg",
+      "assets/photo/moss-grate.jpg",
+      "assets/photo/moss-wall.jpg",
+      "assets/photo/building-bw.jpg",
+      "assets/photo/moss-dark.jpg",
+      "assets/photo/slug.jpg",
+      "assets/photo/chamois-snow.jpg",
+      "assets/photo/dogs.jpg"
+    ],
+    "kind": "photography",
+    "previews": [
+      "assets/previews/field-notes-01.svg",
+      "assets/previews/field-notes-02.svg",
+      "assets/previews/field-notes-03.svg",
+      "assets/previews/field-notes-04.svg",
+      "assets/previews/field-notes-05.svg",
+      "assets/previews/field-notes-06.svg"
+    ]
+  },
+  {
+    "name": "Garden & City",
+    "slug": "garden-and-city",
+    "category": "Studies",
+    "description": "An identity and spatial-design study for Garden & City in Cauterets. Signage, illustration and spatial proposals are explored as parts of one visual system.",
+    "images": [
+      "assets/gc/signage-wall.jpg",
+      "assets/gc/spa-aiga.jpg",
+      "assets/gc/entrance.jpg",
+      "assets/gc/illus-chamois-reception.jpg",
+      "assets/gc/illus-chamois-hike.jpg",
+      "assets/gc/illus-reception.jpg",
+      "assets/gc/illus-fox.jpg",
+      "assets/gc/illus-cat-desk.jpg",
+      "assets/gc/illus-storks.jpg",
+      "assets/gc/illus-cat-leopard.jpg",
+      "assets/gc/illus-dog-laptop.jpg",
+      "assets/gc/illus-fox-run.jpg",
+      "assets/gc/campaign.jpg",
+      "assets/gc/aire-de-jeux.jpg",
+      "assets/gc/staircase-01.jpg",
+      "assets/gc/staircase-day.jpg",
+      "assets/gc/staircase-night.jpg",
+      "assets/gc/staircase-02.jpg",
+      "assets/gc/staircase-03.jpg"
+    ],
+    "kind": "study",
+    "previews": [
+      "assets/previews/garden-and-city-01.svg",
+      "assets/previews/garden-and-city-02.svg",
+      "assets/previews/garden-and-city-03.svg",
+      "assets/previews/garden-and-city-04.svg",
+      "assets/previews/garden-and-city-05.svg",
+      "assets/previews/garden-and-city-06.svg"
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/main.html
+  Cache-Control: public, max-age=0, must-revalidate
+/projects/*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/project-*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/living-surfaces.js
+  Cache-Control: public, max-age=0, must-revalidate
