@@ -16,3 +16,8 @@ body::after,.pctitle,.ml,.sect .h,.hlab{animation:none!important}.motion-paused 
 @media(prefers-reduced-motion:reduce){.window-image,.window-fill,.card-image>img,.pcover>img,.image-open>img{transition:none}}
 
 .site-texture{position:fixed;inset:0;z-index:55;pointer-events:none;opacity:.055;mix-blend-mode:soft-light;background-image:url("paper-grain.svg");background-size:210px 210px}.window-image{filter:grayscale(1)}
+
+/* Home and Work share one window silhouette and the same contact behaviour. */
+.m.has-preview:is(:hover,:focus-visible) .window-fill{fill:var(--terrain-text)}.m .window-fill{transition:none}.m:not(.has-preview) .window-fill{fill:var(--terrain-text)}
+
+.m .wrap>img.window-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover!important;transform:none!important;animation:none!important;max-width:none!important}
