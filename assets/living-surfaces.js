@@ -64,8 +64,9 @@ let previous=0,elapsed=0;function frame(now){requestAnimationFrame(frame);if(now
       {duration:920,easing:EASE,fill:'backwards'});
   }),{threshold:.08,rootMargin:'0px 0px -6% 0px'});
   function watch(){
-    document.querySelectorAll('.project-intro,.index-intro,.chapter-heading,.terrain-stone,.image-open,.card-image,.project-pagination a,.sheet').forEach(el=>{
-      if(el.closest('#home')||el.classList.contains('reveal')||seen.has(el))return;io.observe(el);});
+    document.querySelectorAll('.project-intro,.index-intro,.chapter-heading,.terrain-stone,.image-open,.card-image,.project-pagination a').forEach(el=>{
+      // Legacy sheets manage their own visibility; arrival opacity must never reveal them.
+      if(el.closest('#home, .sheet')||el.classList.contains('reveal')||seen.has(el))return;io.observe(el);});
   }
   /* PERPETUAL — gentle never-still float on the home masses.
      ChatGPT's window-system.css flattened the ambient morph, so the home
