@@ -82,6 +82,15 @@ let previous=0,elapsed=0;function frame(now){requestAnimationFrame(frame);if(now
         {duration:dur,delay:1320+i*95,iterations:Infinity,easing:'ease-in-out'});
     });
   }
-  ready(()=>{entrance();floatHome();watch();});
+  let booted=false;
+  function boot(){
+    if(!booted){booted=true;floatHome();watch();}
+    entrance();
+  }
+  ready(boot);
+  /* iOS Chrome/Safari restore pages from the back-forward cache WITHOUT
+     firing DOMContentLoaded, so the home used to arrive frozen. Replay the
+     entrance on a persisted pageshow so it always animates in. */
+  window.addEventListener('pageshow',e=>{if(e.persisted)entrance();});
   document.addEventListener('catalogue-ready',watch);
 })();
