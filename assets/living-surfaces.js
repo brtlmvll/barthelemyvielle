@@ -67,6 +67,21 @@ let previous=0,elapsed=0;function frame(now){requestAnimationFrame(frame);if(now
     document.querySelectorAll('.project-intro,.index-intro,.chapter-heading,.terrain-stone,.image-open,.card-image,.project-pagination a,.sheet').forEach(el=>{
       if(el.closest('#home')||el.classList.contains('reveal')||seen.has(el))return;io.observe(el);});
   }
-  ready(()=>{entrance();watch();});
+  /* PERPETUAL — gentle never-still float on the home masses.
+     ChatGPT's window-system.css flattened the ambient morph, so the home
+     went static after entry; this keeps a small, constant motion alive
+     without touching the !important-locked .wrap/svg. */
+  function floatHome(){
+    const home=document.querySelector('#home');if(!home)return;
+    [...home.querySelectorAll('.m')].forEach((el,i)=>{
+      const dur=7200+i*950,dy=3+(i%2?1:0);
+      el.animate(
+        [{transform:'translateY(0) rotate(-.35deg) scale(1)'},
+         {transform:'translateY(-'+dy+'px) rotate(.3deg) scale(1.012)'},
+         {transform:'translateY(0) rotate(-.35deg) scale(1)'}],
+        {duration:dur,delay:1320+i*95,iterations:Infinity,easing:'ease-in-out'});
+    });
+  }
+  ready(()=>{entrance();floatHome();watch();});
   document.addEventListener('catalogue-ready',watch);
 })();
