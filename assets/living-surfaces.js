@@ -30,3 +30,43 @@ let projects=[];function configure(){for(const w of windows){if(w.home){const ke
 fetch(prefix+'assets/project-catalogue.json').then(r=>r.json()).then(data=>{projects=data;configure();}).catch(()=>{});
 let previous=0,elapsed=0;function frame(now){requestAnimationFrame(frame);if(now-previous<42)return;const dt=Math.min(80,now-previous);previous=now;if(document.hidden)return;if(!paused)elapsed+=dt;for(const w of windows){if(!w.visible||w.host.closest('.sheet:not(.open)'))continue;if(!paused||Math.abs(w.open-(w.home&&w.hover&&w.urls.length?1:0))>.001)paint(w,elapsed);if(!paused&&!reduced.matches&&w.urls.length>1&&now>w.next){w.next=now+(w.hover?460:1100)+(w.seed%3)*53;const i=(w.urls.indexOf(w.current)+1)%w.urls.length;setSource(w,w.urls[i],true);}}}requestAnimationFrame(frame);
 })();
+
+/* ===== CLVSTR · entrance + arrival — additive, non-destructive (Claude) ===== */
+(()=>{'use strict';
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+  let off=reduce.matches;try{off=off||sessionStorage.getItem('bv-motion')==='off';}catch{}
+  if(off)return;
+  const EASE='cubic-bezier(.22,.65,.2,1)';
+  const ready=fn=>document.readyState!=='loading'?fn():document.addEventListener('DOMContentLoaded',fn);
+
+  /* HOME ENTRANCE — organic settle, ink coming into focus (no circle) */
+  function entrance(){
+    const home=document.querySelector('#home');if(!home)return;
+    const picks=[],add=sel=>home.querySelectorAll(sel).forEach(el=>{if(el&&!picks.includes(el))picks.push(el);});
+    add('#bar, #topnav');
+    home.querySelectorAll('.m').forEach(el=>{if(!picks.includes(el))picks.push(el);});
+    add('.home-featured, .hb .tag, .hb .ft');
+    picks.forEach((el,i)=>el.animate(
+      [{opacity:0,transform:'translateY(16px) scale(.985)',filter:'blur(10px)'},
+       {opacity:1,offset:.62,filter:'blur(0px)'},
+       {opacity:1,transform:'translateY(0) scale(1)',filter:'blur(0px)'}],
+      {duration:1150,delay:120+i*95,easing:EASE,fill:'backwards'}));
+  }
+
+  /* ARRIVAL — one-time settle as content blocks enter view */
+  const seen=new WeakSet();
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting||seen.has(e.target))return;
+    seen.add(e.target);io.unobserve(e.target);
+    e.target.animate(
+      [{opacity:.001,transform:'translateY(26px)',filter:'blur(7px)'},
+       {opacity:1,transform:'translateY(0)',filter:'blur(0px)'}],
+      {duration:920,easing:EASE,fill:'backwards'});
+  }),{threshold:.08,rootMargin:'0px 0px -6% 0px'});
+  function watch(){
+    document.querySelectorAll('.project-intro,.index-intro,.chapter-heading,.terrain-stone,.image-open,.card-image,.project-pagination a,.sheet').forEach(el=>{
+      if(el.closest('#home')||el.classList.contains('reveal')||seen.has(el))return;io.observe(el);});
+  }
+  ready(()=>{entrance();watch();});
+  document.addEventListener('catalogue-ready',watch);
+})();
