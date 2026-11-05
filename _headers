@@ -1,21 +1,13 @@
+# HTML pages: never bfcache-restore a stale page (kills the iOS "flash of the
+# previous page"); always load fresh so the home shows and animates cleanly.
+# Versioned assets under /assets/ keep their normal long cache.
 /
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-store
 /index.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-store
+/main
+  Cache-Control: no-store
 /main.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-store
 /projects/*
-  Cache-Control: public, max-age=0, must-revalidate
-/assets/project-*
-  Cache-Control: public, max-age=0, must-revalidate
-/assets/living-surfaces.js
-  Cache-Control: public, max-age=0, must-revalidate
-
-/assets/terrain-*
-  Cache-Control: public, max-age=0, must-revalidate
-/assets/window-system.css
-  Cache-Control: public, max-age=0, must-revalidate
-/assets/preview-*
-  Cache-Control: public, max-age=0, must-revalidate
-/assets/previews/*
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-store
