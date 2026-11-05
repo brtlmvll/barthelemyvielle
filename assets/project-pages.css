@@ -7,3 +7,15 @@
 
 /* Monochrome at rest, original colour on contact. */
 .image-open img,.card-image>img{transition:filter .3s ease}.image-open:hover img,.image-open:focus-visible img,.project-card:hover img,.project-card:focus-visible img{filter:grayscale(0)}
+
+/* ===== Studies series pages — editorial plates (Claude) ===== */
+.study-body{display:flex;flex-direction:column;gap:clamp(56px,8vw,128px);padding:12px var(--gutter) clamp(80px,10vw,150px)}
+.study-body .visual:nth-child(n){width:fit-content;max-width:100%;margin:0;padding-top:0;grid-column:auto}
+.study-body .visual:first-child{align-self:center}
+.study-body .visual:nth-child(2n){align-self:flex-start;margin-left:clamp(0px,7vw,120px)}
+.study-body .visual:nth-child(2n+3){align-self:flex-end;margin-right:clamp(0px,7vw,120px)}
+.study-body .image-open{background:none;overflow:visible;line-height:0}
+.study-body .image-open img{width:auto;max-width:100%;height:auto;max-height:min(80vh,920px);object-fit:contain;mix-blend-mode:multiply}
+.study-body .visual:not(:first-child) .image-open img{max-height:min(66vh,760px)}
+.study-body figcaption{justify-content:flex-start;padding-top:14px}
+@media(max-width:700px){.study-body{gap:46px;padding-inline:20px}.study-body .visual:nth-child(n){align-self:stretch;width:auto;margin:0}.study-body .image-open img,.study-body .visual:not(:first-child) .image-open img{width:100%;max-height:none}}
