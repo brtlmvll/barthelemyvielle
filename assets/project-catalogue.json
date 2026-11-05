@@ -525,5 +525,56 @@
       "assets/previews/garden-and-city-05.svg",
       "assets/previews/garden-and-city-06.svg"
     ]
+  },
+  {
+    "name": "Manifestes CLVSTR",
+    "slug": "manifestes-clvstr",
+    "category": "Studies",
+    "description": "Collage studies combining mineral, botanical and interface imagery.",
+    "images": [
+      "assets/studies-archives/manifestes-clvstr-67.webp",
+      "assets/studies-archives/manifestes-clvstr-69.webp",
+      "assets/studies-archives/manifestes-clvstr-70.webp"
+    ],
+    "previews": [
+      "assets/studies-archives/manifestes-clvstr-67.webp",
+      "assets/studies-archives/manifestes-clvstr-69.webp",
+      "assets/studies-archives/manifestes-clvstr-70.webp"
+    ],
+    "kind": "study"
+  },
+  {
+    "name": "Ridgeworks",
+    "slug": "ridgeworks",
+    "category": "Studies",
+    "description": "Photographic matter and typographic experiments.",
+    "images": [
+      "assets/studies-archives/ridgeworks-5.webp",
+      "assets/studies-archives/ridgeworks-15.webp",
+      "assets/studies-archives/ridgeworks-17.webp",
+      "assets/studies-archives/ridgeworks-21.webp"
+    ],
+    "previews": [
+      "assets/studies-archives/ridgeworks-5.webp",
+      "assets/studies-archives/ridgeworks-15.webp",
+      "assets/studies-archives/ridgeworks-17.webp",
+      "assets/studies-archives/ridgeworks-21.webp"
+    ],
+    "kind": "study"
+  },
+  {
+    "name": "Estaing / Isaby",
+    "slug": "estaing-isaby",
+    "category": "Studies",
+    "description": "Landscape treatments and poster studies from the archives.",
+    "images": [
+      "assets/studies-archives/estaing-isaby-39.webp",
+      "assets/studies-archives/estaing-isaby-51.webp"
+    ],
+    "previews": [
+      "assets/studies-archives/estaing-isaby-39.webp",
+      "assets/studies-archives/estaing-isaby-51.webp"
+    ],
+    "kind": "study"
   }
 ]

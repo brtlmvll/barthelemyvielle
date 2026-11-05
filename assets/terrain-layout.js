@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const path=location.pathname,isIndex=/\/projects\/(?:index(?:\.html)?)?$/.test(path),isStudies=/\/studies(?:\.html)?$/.test(path),filter=new URLSearchParams(location.search).get('filter'),isResearch=/\/(garden-and-city|contour-counterform|spatial-scores|directional-grammar|night-signals)(?:\.html)?$/.test(path),groups=['Identity','Print & Surface','Artwork & Print','Treatments','3D & Motion','Photography'];
+const path=location.pathname,isIndex=/\/projects\/(?:index(?:\.html)?)?$/.test(path),isStudies=/\/studies(?:\.html)?$/.test(path),filter=new URLSearchParams(location.search).get('filter'),isResearch=/\/(manifestes-clvstr|ridgeworks|estaing-isaby|garden-and-city|contour-counterform|spatial-scores|directional-grammar|night-signals)(?:\.html)?$/.test(path),groups=['Identity','Print & Surface','Artwork & Print','Treatments','3D & Motion','Photography'];
 const depth=!path.includes('/projects/')?0:isIndex?(filter&&filter!=='All'?2:1):isStudies?1:isResearch?2:3;document.documentElement.dataset.depth=depth;
 for(const a of document.querySelectorAll('.sitebar nav a')){const current=isStudies||isResearch?a.textContent==='Studies':a.textContent==='Work';if(current)a.setAttribute('aria-current','page');}
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -8,7 +8,7 @@ const grid=document.querySelector('.project-grid');if(!grid)return;
 if(isIndex&&filter&&filter!=='All'){document.documentElement.classList.add('collection-loading');const h=document.querySelector('h1');h.textContent=filter;h.classList.add('field-title');document.title=filter+' — Barthélémy Vielle';}
 Promise.all([fetch('../assets/project-catalogue.json').then(r=>r.json()),fetch('../assets/preview-metadata.json').then(r=>r.json()).catch(()=>({}))]).then(([items,media])=>{
  const cover={Identity:'terrarivm-generalis','Print & Surface':'print-diorama','Artwork & Print':'medivm',Treatments:'longchamp','3D & Motion':'maskne-protect',Photography:'field-notes'};
- let entries;if(isStudies)entries=items.filter(p=>p.kind==='study').map(p=>({...p,href:p.slug+'.html',sub:p.images.length+' plates'}));
+ let entries;if(isStudies)entries=items.filter(p=>p.kind==='study').sort((a,b)=>['manifestes-clvstr','ridgeworks','estaing-isaby','garden-and-city'].indexOf(a.slug)-['manifestes-clvstr','ridgeworks','estaing-isaby','garden-and-city'].indexOf(b.slug)).map(p=>({...p,href:p.slug+'.html',sub:p.images.length+' plates'}));
  else if(depth===1){const priority=['de-saint-aise','terrarivm-generalis','hovr','common-wave'];entries=items.filter(p=>p.kind!=='study').sort((a,b)=>(priority.includes(a.slug)?priority.indexOf(a.slug):99)-(priority.includes(b.slug)?priority.indexOf(b.slug):99)).map(p=>({...p,href:p.slug+'.html',sub:p.category}));}
  else entries=items.filter(p=>p.category===filter).map(p=>({...p,href:p.slug+'.html',sub:p.kind==='study'?'Research':p.images.length+' '+(p.images.length===1?'image':'images')}));
  grid.classList.add('terrain-cluster');grid.dataset.cluster=isStudies?'studies':'projects';
@@ -18,7 +18,7 @@ Promise.all([fetch('../assets/project-catalogue.json').then(r=>r.json()),fetch('
  else if(depth===1){heading.textContent='Selected work.';eyebrow.textContent='CLVSTR / Selected projects';if(lead)lead.textContent='Identities, printed matter, images & motion.';if(count)count.textContent=items.filter(p=>p.kind!=='study').length+' projects / Six fields';}
  else{heading.textContent=filter;eyebrow.innerHTML='<a href="index.html">← Fields of work</a>';if(lead)lead.textContent='Selected projects / '+String(groups.indexOf(filter)+1).padStart(2,'0');if(count)count.textContent=entries.length+(entries.length===1?' project':' projects');}
  let bar=document.querySelector('.filters,.terrain-breadcrumb');if(!bar){bar=document.createElement('nav');intro?.after(bar);}bar.className='terrain-breadcrumb';bar.setAttribute('aria-label',isStudies?'Studies navigation':'Work navigation');
- bar.innerHTML=isStudies?'<span>Garden & City / Research</span><a href="index.html">Selected work ↗</a>':'<div class="field-nav"><a href="index.html" '+(depth===1?'aria-current="page"':'')+'>All</a>'+groups.map(g=>`<a href="index.html?filter=${encodeURIComponent(g)}" ${g===filter?'aria-current="page"':''}>${esc(g)}</a>`).join('')+'</div>';
+ bar.innerHTML=isStudies?'<span>Archive studies / Selected series</span><a href="index.html">Selected work ↗</a>':'<div class="field-nav"><a href="index.html" '+(depth===1?'aria-current="page"':'')+'>All</a>'+groups.map(g=>`<a href="index.html?filter=${encodeURIComponent(g)}" ${g===filter?'aria-current="page"':''}>${esc(g)}</a>`).join('')+'</div>';
  document.documentElement.classList.remove('collection-loading');document.dispatchEvent(new Event('catalogue-ready'));
 }).catch(()=>document.documentElement.classList.remove('collection-loading'));
 })();
