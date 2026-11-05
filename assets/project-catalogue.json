@@ -137,12 +137,12 @@
   {
     "name": "Hshtgs",
     "slug": "hshtgs",
-    "category": "Identity",
+    "category": "Studies",
     "description": "Visual identity. A scanned snake moult processed into a prismatic, iridescent texture; Arabic type spelling “hashtags”. Raw nature meets digital culture.",
     "images": [
       "assets/archive/hshtgs/01.svg"
     ],
-    "kind": "project",
+    "kind": "study",
     "previews": [
       "assets/previews/hshtgs-01.svg"
     ]
