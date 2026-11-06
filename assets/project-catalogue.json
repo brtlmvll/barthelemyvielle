@@ -308,8 +308,8 @@
   {
     "name": "Field Notes",
     "slug": "field-notes",
-    "category": "Studies",
-    "description": "A photographic notebook of surfaces, structures, plants and encounters. Close observation links the natural environment to the built world.",
+    "category": "Photography",
+    "description": "Mousse, béton, acier, pierre. Un carnet de photographies prises au téléphone, attentif aux surfaces et aux rencontres entre le vivant et le construit.",
     "images": [
       "assets/photo/moss-grate.jpg",
       "assets/photo/moss-dark.jpg",
@@ -320,11 +320,12 @@
     ],
     "kind": "study",
     "previews": [
-      "assets/previews/field-notes-02.svg",
-      "assets/previews/field-notes-03.svg",
-      "assets/previews/field-notes-04.svg",
-      "assets/previews/field-notes-05.svg",
-      "assets/previews/field-notes-06.svg"
+      "assets/photo/moss-grate.jpg",
+      "assets/photo/moss-dark.jpg",
+      "assets/photo/moss-wall.jpg",
+      "assets/photo/slug.jpg",
+      "assets/photo/pine.jpg",
+      "assets/photo/building-bw.jpg"
     ]
   },
   {
@@ -345,36 +346,39 @@
     "kind": "study"
   },
   {
-    "name": "Estaing / Isaby",
+    "name": "Lac d’Estaing",
     "slug": "estaing-isaby",
     "category": "Studies",
-    "description": "Landscape treatments and poster studies from the archives.",
+    "description": "Trois traitements neuraux à partir de photographies du lac d’Estaing prises sur place. Une recherche d’image sur la couleur, le relief et les reflets.",
     "images": [
-      "assets/studies-archives/estaing-isaby-39.webp",
-      "assets/studies-archives/estaing-isaby-51.webp"
+      "assets/studies-archives/estaing-isaby-51.webp",
+      "assets/studies-archives/estaing-neural-8196.webp",
+      "assets/studies-archives/estaing-neural-3-image.webp"
     ],
     "previews": [
-      "assets/studies-archives/estaing-isaby-51.webp"
+      "assets/studies-archives/estaing-isaby-51.webp",
+      "assets/studies-archives/estaing-neural-8196.webp",
+      "assets/studies-archives/estaing-neural-3-image.webp"
     ],
     "kind": "study"
   },
   {
     "slug": "multimum",
     "name": "Multimum",
-    "description": "Mineral matter and speculative identity.",
+    "description": "Une étude d’identité autour de la labradorite : volumes polis, reflets et dessin du logotype.",
     "category": "Studies",
     "kind": "study",
     "images": [
-      "assets/studies-curated/multimum.webp"
+      "assets/studies-archives/marques-labradora.webp"
     ],
     "previews": [
-      "assets/studies-curated/multimum.webp"
+      "assets/studies-archives/marques-labradora.webp"
     ]
   },
   {
     "slug": "fathaer",
     "name": "Fathaer",
-    "description": "A typographic identity extended into Haello and Tribe interfaces.",
+    "description": "Une recherche d’identité pour un système domotique, présentée à travers l’affiche Fathaer et les deux propositions d’interface Haello et Tribe.",
     "category": "Studies",
     "kind": "study",
     "images": [
@@ -391,7 +395,7 @@
   {
     "slug": "signes",
     "name": "Signes",
-    "description": "An archive of graphic figures and signs, composed as a circular repertoire.",
+    "description": "Un répertoire de figures, d’animaux et de signes réuni dans une composition circulaire. La pièce conserve son format vertical et sa signature.",
     "category": "Studies",
     "kind": "study",
     "images": [
@@ -437,5 +441,20 @@
       "assets/previews/print-burst-01.svg",
       "assets/previews/print-cliff-01.svg"
     ]
+  },
+  {
+    "name": "Ridgeworks",
+    "slug": "ridgeworks",
+    "category": "Studies",
+    "description": "Deux affiches pour Ridgeworks, marque fictive : photographie minérale, bloc de roche suspendu et typographie massive.",
+    "images": [
+      "assets/studies-archives/ridgeworks-5.webp",
+      "assets/studies-archives/ridgeworks-15.webp"
+    ],
+    "previews": [
+      "assets/studies-archives/ridgeworks-5.webp",
+      "assets/studies-archives/ridgeworks-15.webp"
+    ],
+    "kind": "study"
   }
 ]
