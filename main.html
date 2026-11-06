@@ -178,7 +178,7 @@
 /* COLOUR ON CONTACT */
 .shot,.hshot,.pcover,.pcover img{transition:filter .3s ease}.m:hover .shot,.m:focus-visible .shot,.hs:hover .hshot,.hs:focus-visible .hshot,.pchead:hover .pcover,.pchead:hover .pcover img,.pchead:focus-visible .pcover,.pchead:focus-visible .pcover img{filter:grayscale(0) contrast(1)}
 </style>
-<link rel="stylesheet" href="assets/window-system.css?v=20261105-light-dark"><link rel="stylesheet" href="assets/terrain-layout.css?v=20261105-light-dark"><script src="assets/terrain-layout.js?v=20261105-hshtgs" defer></script><script src="assets/terrain-transitions.js?v=20261105-light-dark" defer></script></head>
+<link rel="stylesheet" href="assets/window-system.css?v=20261105-light-dark"><link rel="stylesheet" href="assets/terrain-layout.css?v=20261105-light-dark"><script src="assets/terrain-layout.js?v=20261106-nogc" defer></script><script src="assets/terrain-transitions.js?v=20261105-light-dark" defer></script></head>
 <body>
 <div id="bvstrobe"></div>
 <div id="home">
@@ -219,8 +219,8 @@
   </div>
 </section>
 <section id="studies" class="sheet">
-  <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Garden &amp; City</span><span style="width:3em"></span></div>
-  <div class="inner"><p class="lead">Garden &amp; City · Cauterets — identity research, signage, illustration</p>
+  <div class="shead"><button class="bk" data-close>← Index</button><span class="ti">Studies</span><span style="width:3em"></span></div>
+  <div class="inner"><p class="lead">Archive studies — matter, image, sign</p>
     <div class="submenu" id="gsub"></div><div id="glist"></div></div>
 </section>
 
@@ -295,13 +295,8 @@
     wl.appendChild(grp);
   });
 
-  // STUDIES : galerie Garden & City organisée
-  var GC={
-    "Signage":["signage-wall","spa-aiga","entrance"],
-    "Illustration":["illus-chamois-reception","illus-chamois-hike","illus-reception","illus-fox","illus-cat-desk","illus-storks","illus-cat-leopard","illus-dog-laptop","illus-fox-run"],
-    "Campaign":["campaign"],
-    "Spaces":["aire-de-jeux","staircase-01","staircase-day","staircase-night","staircase-02","staircase-03"]
-  };
+  // STUDIES : galerie (vide — contenus déplacés vers projects/studies.html)
+  var GC={};
   var gl=document.getElementById("glist"),gsub=document.getElementById("gsub"),gkeys=Object.keys(GC);
   gkeys.forEach(function(k,idx){
     var btn=document.createElement("button");btn.textContent=k;if(idx===0)btn.className="on";btn.dataset.k=k;
@@ -354,8 +349,8 @@
   var MASSES=[
     {key:"work",seed:2,type:"totem",lab:"Work",sub:"Identity · Print · Image · Motion",img:"assets/fashion/p14.jpg",
       phrases:["Identity","Printed matter","Treatments","Surface","Photography","Artwork"]},
-    {key:"studies",seed:7,type:"ridge",lab:"Studies",sub:"Garden & City · Research",img:"assets/gc/illus-fox.jpg",
-      phrases:["Garden & City","Signage","Illustration","Cauterets","Research","Identity"]},
+    {key:"studies",seed:7,type:"ridge",lab:"Studies",sub:"Archive · Research",img:"assets/studies-archives/manifestes-clvstr-67.webp",
+      phrases:["Manifestes","Ridgeworks","Estaing","Archive","Research","Matter"]},
     {key:"about",seed:19,type:"relic",lab:"Information",sub:"Profile · contact",
       phrases:["Profile","Contact","CLVSTR","Baruto","Rockaedron","Information"]}
   ];

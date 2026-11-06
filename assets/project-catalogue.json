@@ -491,42 +491,6 @@
     ]
   },
   {
-    "name": "Garden & City",
-    "slug": "garden-and-city",
-    "category": "Studies",
-    "description": "An identity and spatial-design study for Garden & City in Cauterets. Signage, illustration and spatial proposals are explored as parts of one visual system.",
-    "images": [
-      "assets/gc/signage-wall.jpg",
-      "assets/gc/spa-aiga.jpg",
-      "assets/gc/entrance.jpg",
-      "assets/gc/illus-chamois-reception.jpg",
-      "assets/gc/illus-chamois-hike.jpg",
-      "assets/gc/illus-reception.jpg",
-      "assets/gc/illus-fox.jpg",
-      "assets/gc/illus-cat-desk.jpg",
-      "assets/gc/illus-storks.jpg",
-      "assets/gc/illus-cat-leopard.jpg",
-      "assets/gc/illus-dog-laptop.jpg",
-      "assets/gc/illus-fox-run.jpg",
-      "assets/gc/campaign.jpg",
-      "assets/gc/aire-de-jeux.jpg",
-      "assets/gc/staircase-01.jpg",
-      "assets/gc/staircase-day.jpg",
-      "assets/gc/staircase-night.jpg",
-      "assets/gc/staircase-02.jpg",
-      "assets/gc/staircase-03.jpg"
-    ],
-    "kind": "study",
-    "previews": [
-      "assets/previews/garden-and-city-01.svg",
-      "assets/previews/garden-and-city-02.svg",
-      "assets/previews/garden-and-city-03.svg",
-      "assets/previews/garden-and-city-04.svg",
-      "assets/previews/garden-and-city-05.svg",
-      "assets/previews/garden-and-city-06.svg"
-    ]
-  },
-  {
     "name": "Manifestes CLVSTR",
     "slug": "manifestes-clvstr",
     "category": "Studies",

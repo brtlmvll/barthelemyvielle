@@ -102,7 +102,6 @@
   "local_repo_assets": {
     "note": "Fichiers deja heberges dans le repo brtlmvll/barthelemyvielle",
     "fashion_prints": "assets/fashion/*.jpg (11 motifs Kiwami)",
-    "garden_city": "assets/gc/*.jpg",
-    "photography": "assets/photo/*.jpg"
+        "photography": "assets/photo/*.jpg"
   }
 }
