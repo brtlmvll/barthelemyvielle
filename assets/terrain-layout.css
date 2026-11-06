@@ -87,3 +87,15 @@ html{font-variant-emoji:text}
  .index-intro h1{font-size:clamp(34px,10.5vw,45px)}
  .index-intro{padding-block:20px;gap:12px}
 }
+
+/* Small fields keep one complete cluster instead of an unfinished lead pair. */
+@media(min-width:901px){
+ .terrain-cluster[data-cluster=projects][data-count="3"] .terrain-stone:nth-child(n){grid-column:span 4!important;padding-top:0}
+ .terrain-cluster[data-cluster=projects][data-count="3"] .terrain-stone:nth-child(2){padding-top:64px}
+ .terrain-cluster[data-cluster=projects][data-count="3"] .terrain-stone:nth-child(3){padding-top:24px}
+ .terrain-cluster[data-cluster=projects][data-count="1"] .terrain-stone:only-child{grid-column:3/11!important;width:min(100%,720px)!important}
+}
+@media(min-width:621px) and (max-width:900px){
+ .terrain-cluster[data-cluster=projects] .terrain-stone:first-child{grid-column:1/-1!important}
+ .terrain-cluster[data-cluster=projects] .terrain-stone:nth-child(2){grid-column:span 3!important}
+}
