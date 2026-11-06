@@ -140,19 +140,6 @@
     ]
   },
   {
-    "name": "Hshtgs",
-    "slug": "hshtgs",
-    "category": "Studies",
-    "description": "Visual identity. A scanned snake moult processed into a prismatic, iridescent texture; Arabic type spelling “hashtags”. Raw nature meets digital culture.",
-    "images": [
-      "assets/archive/hshtgs/01.svg"
-    ],
-    "kind": "study",
-    "previews": [
-      "assets/previews/hshtgs-01.svg"
-    ]
-  },
-  {
     "name": "Koridor #2",
     "slug": "koridor-2",
     "category": "Artwork & Print",
@@ -327,23 +314,6 @@
       "assets/photo/pine.jpg",
       "assets/photo/building-bw.jpg"
     ]
-  },
-  {
-    "name": "Manifestes CLVSTR",
-    "slug": "manifestes-clvstr",
-    "category": "Studies",
-    "description": "Collage studies combining mineral, botanical and interface imagery.",
-    "images": [
-      "assets/studies-archives/manifestes-clvstr-67.webp",
-      "assets/studies-archives/manifestes-clvstr-69.webp",
-      "assets/studies-archives/manifestes-clvstr-70.webp"
-    ],
-    "previews": [
-      "assets/studies-archives/manifestes-clvstr-67.webp",
-      "assets/studies-archives/manifestes-clvstr-69.webp",
-      "assets/studies-archives/manifestes-clvstr-70.webp"
-    ],
-    "kind": "study"
   },
   {
     "name": "Lac d’Estaing",
