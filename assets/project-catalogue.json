@@ -505,19 +505,23 @@
     "kind": "study"
   },
   {
-    "name": "Ridgeworks",
-    "slug": "ridgeworks",
+    "name": "Fictional Brands",
+    "slug": "marques-fictives",
     "category": "Studies",
-    "description": "Photographic matter and typographic experiments.",
+    "description": "Identities for brands that do not exist, set on mineral matter, objects and interfaces.",
     "images": [
+      "assets/studies-archives/marques-labradora.webp",
+      "assets/studies-archives/marques-fathaer-h.webp",
       "assets/studies-archives/ridgeworks-5.webp",
+      "assets/studies-archives/marques-accomplicoins.webp",
+      "assets/studies-archives/ridgeworks-17.webp",
       "assets/studies-archives/ridgeworks-15.webp",
-      "assets/studies-archives/ridgeworks-17.webp"
+      "assets/studies-archives/marques-fathaer-haello.webp"
     ],
     "previews": [
-      "assets/studies-archives/ridgeworks-5.webp",
-      "assets/studies-archives/ridgeworks-15.webp",
-      "assets/studies-archives/ridgeworks-17.webp"
+      "assets/studies-archives/marques-labradora.webp",
+      "assets/studies-archives/marques-fathaer-h.webp",
+      "assets/studies-archives/marques-accomplicoins.webp"
     ],
     "kind": "study"
   },
