@@ -50,7 +50,12 @@
       "assets/archive/u-exist/01.svg",
       "assets/archive/u-exist/02.svg",
       "assets/archive/u-exist/03.svg",
-      "assets/archive/u-exist/04.svg"
+      "assets/archive/u-exist/04.svg",
+      "assets/fashion/p20.jpg",
+      "assets/fashion/p18.jpg",
+      "assets/fashion/p14.jpg",
+      "assets/fashion/p17.jpg",
+      "assets/fashion/p19.jpg"
     ],
     "kind": "project",
     "previews": [
@@ -301,171 +306,6 @@
     ]
   },
   {
-    "name": "Lychen",
-    "slug": "print-lychen",
-    "category": "Print & Surface",
-    "description": "Screen printing. A surface-design study for TRENDT, presented here through the original pattern.",
-    "images": [
-      "assets/fashion/p02.jpg"
-    ],
-    "client": "TRENDT",
-    "technique": "Screen printing",
-    "kind": "print",
-    "previews": [
-      "assets/previews/print-lychen-01.svg"
-    ]
-  },
-  {
-    "name": "Bark",
-    "slug": "print-bark",
-    "category": "Print & Surface",
-    "description": "Screen printing. A surface-design study for TRENDT, presented here through the original pattern.",
-    "images": [
-      "assets/fashion/p05.jpg"
-    ],
-    "client": "TRENDT",
-    "technique": "Screen printing",
-    "kind": "print",
-    "previews": [
-      "assets/previews/print-bark-01.svg"
-    ]
-  },
-  {
-    "name": "Snow",
-    "slug": "print-snow",
-    "category": "Print & Surface",
-    "description": "Screen printing. A surface-design study for TRENDT, presented here through the original pattern.",
-    "images": [
-      "assets/fashion/p07.jpg"
-    ],
-    "client": "TRENDT",
-    "technique": "Screen printing",
-    "kind": "print",
-    "previews": [
-      "assets/previews/print-snow-01.svg"
-    ]
-  },
-  {
-    "name": "Espinhos",
-    "slug": "print-espinhos",
-    "category": "Print & Surface",
-    "description": "Drawing · scanning. A surface-design study for TRENDT, presented here through the original pattern.",
-    "images": [
-      "assets/fashion/p09.jpg"
-    ],
-    "client": "TRENDT",
-    "technique": "Drawing · scanning",
-    "kind": "print",
-    "previews": [
-      "assets/previews/print-espinhos-01.svg"
-    ]
-  },
-  {
-    "name": "Burst",
-    "slug": "print-burst",
-    "category": "Print & Surface",
-    "description": "Discharge ink · screen printing. A surface-design study for Rockaedron, presented here through the original pattern.",
-    "images": [
-      "assets/fashion/p11.jpg"
-    ],
-    "client": "Rockaedron",
-    "technique": "Discharge ink · screen printing",
-    "kind": "print",
-    "previews": [
-      "assets/previews/print-burst-01.svg"
-    ]
-  },
-  {
-    "name": "Cliff",
-    "slug": "print-cliff",
-    "category": "Print & Surface",
-    "description": "Photography · composition. A surface-design study for Rockaedron, presented here through the original pattern.",
-    "images": [
-      "assets/fashion/p13.jpg"
-    ],
-    "client": "Rockaedron",
-    "technique": "Photography · composition",
-    "kind": "print",
-    "previews": [
-      "assets/previews/print-cliff-01.svg"
-    ]
-  },
-  {
-    "name": "Diorama",
-    "slug": "print-diorama",
-    "category": "Print & Surface",
-    "description": "Scanning · composition. A surface-design study for U-Exist, presented here through the original pattern.",
-    "images": [
-      "assets/fashion/p14.jpg"
-    ],
-    "client": "U-Exist",
-    "technique": "Scanning · composition",
-    "kind": "print",
-    "previews": [
-      "assets/previews/print-diorama-01.svg"
-    ]
-  },
-  {
-    "name": "Norscape",
-    "slug": "print-norscape",
-    "category": "Print & Surface",
-    "description": "Direct printing. A surface-design study for U-Exist, presented here through the original pattern.",
-    "images": [
-      "assets/fashion/p20.jpg"
-    ],
-    "client": "U-Exist",
-    "technique": "Direct printing",
-    "kind": "print",
-    "previews": [
-      "assets/previews/print-norscape-01.svg"
-    ]
-  },
-  {
-    "name": "Klondike",
-    "slug": "print-klondike",
-    "category": "Print & Surface",
-    "description": "Scanning · composition. A surface-design study for U-Exist, presented here through the original pattern.",
-    "images": [
-      "assets/fashion/p17.jpg"
-    ],
-    "client": "U-Exist",
-    "technique": "Scanning · composition",
-    "kind": "print",
-    "previews": [
-      "assets/previews/print-klondike-01.svg"
-    ]
-  },
-  {
-    "name": "Vegan",
-    "slug": "print-vegan",
-    "category": "Print & Surface",
-    "description": "Direct printing. A surface-design study for U-Exist, presented here through the original pattern.",
-    "images": [
-      "assets/fashion/p18.jpg"
-    ],
-    "client": "U-Exist",
-    "technique": "Direct printing",
-    "kind": "print",
-    "previews": [
-      "assets/previews/print-vegan-01.svg"
-    ]
-  },
-  {
-    "name": "Marble IV",
-    "slug": "print-marble-iv",
-    "category": "Print & Surface",
-    "description": "Photography · composition. A surface-design study for U-Exist, presented here through the original pattern.",
-    "images": [
-      "assets/fashion/p19.jpg"
-    ],
-    "client": "U-Exist",
-    "technique": "Photography · composition",
-    "kind": "print",
-    "previews": [
-      "assets/previews/print-marble-iv-01.svg"
-    ]
-  },
-  {
     "name": "Field Notes",
     "slug": "field-notes",
     "category": "Studies",
@@ -559,6 +399,43 @@
     ],
     "previews": [
       "assets/studies-curated/signes.webp"
+    ]
+  },
+  {
+    "slug": "trendt",
+    "name": "TRENDT",
+    "category": "Print & Surface",
+    "kind": "project",
+    "client": "TRENDT",
+    "technique": "Screen printing · drawing · scanning",
+    "description": "Surface designs for TRENDT — screen printing, drawing and scanning.",
+    "images": [
+      "assets/fashion/p02.jpg",
+      "assets/fashion/p07.jpg",
+      "assets/fashion/p09.jpg",
+      "assets/fashion/p05.jpg"
+    ],
+    "previews": [
+      "assets/previews/print-lychen-01.svg",
+      "assets/previews/print-snow-01.svg",
+      "assets/previews/print-espinhos-01.svg"
+    ]
+  },
+  {
+    "slug": "rockaedron",
+    "name": "Rockaedron",
+    "category": "Print & Surface",
+    "kind": "project",
+    "client": "Rockaedron",
+    "technique": "Discharge ink · screen printing · photography",
+    "description": "Surface designs for Rockaedron — discharge ink, screen printing and photographic composition.",
+    "images": [
+      "assets/fashion/p11.jpg",
+      "assets/fashion/p13.jpg"
+    ],
+    "previews": [
+      "assets/previews/print-burst-01.svg",
+      "assets/previews/print-cliff-01.svg"
     ]
   }
 ]
