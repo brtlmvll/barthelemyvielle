@@ -99,3 +99,6 @@ html{font-variant-emoji:text}
  .terrain-cluster[data-cluster=projects] .terrain-stone:first-child{grid-column:1/-1!important}
  .terrain-cluster[data-cluster=projects] .terrain-stone:nth-child(2){grid-column:span 3!important}
 }
+/* Home: no stray rule under mass titles; tighter title → subtitle (Claude) */
+.masses .m .sub{border-top:0!important;display:block!important;min-height:0!important;margin-top:4px!important}
+.masses .m .lab{margin-bottom:0}
