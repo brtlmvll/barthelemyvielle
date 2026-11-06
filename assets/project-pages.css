@@ -19,3 +19,10 @@
 .study-body .visual:not(:first-child) .image-open img{max-height:min(66vh,760px)}
 .study-body figcaption{justify-content:flex-start;padding-top:14px}
 @media(max-width:700px){.study-body{gap:46px;padding-inline:20px}.study-body .visual:nth-child(n){align-self:stretch;width:auto;margin:0}.study-body .image-open img,.study-body .visual:not(:first-child) .image-open img{width:100%;max-height:none}}
+
+/* Viewer controls: uppercase, larger close target, image click closes (Claude) */
+.lightbox .viewer-tools button,.lightbox .viewer-tools span,.lightbox .close-viewer{text-transform:uppercase;letter-spacing:.16em;font-size:11px}
+.lightbox .close-viewer{position:fixed;top:12px;right:12px;padding:10px 16px;min-height:48px;min-width:96px;border:1px solid rgba(241,240,235,.35);z-index:3}
+.lightbox .close-viewer:hover,.lightbox .close-viewer:focus-visible{background:#f1f0eb;color:#151613!important}
+.lightbox>img{cursor:zoom-out}
+.lightbox p{text-transform:uppercase;letter-spacing:.14em;cursor:zoom-out}

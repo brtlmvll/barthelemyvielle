@@ -476,13 +476,10 @@
       "assets/photo/moss-wall.jpg",
       "assets/photo/building-bw.jpg",
       "assets/photo/moss-dark.jpg",
-      "assets/photo/slug.jpg",
-      "assets/photo/chamois-snow.jpg",
-      "assets/photo/dogs.jpg"
+      "assets/photo/slug.jpg"
     ],
     "kind": "photography",
     "previews": [
-      "assets/previews/field-notes-01.svg",
       "assets/previews/field-notes-02.svg",
       "assets/previews/field-notes-03.svg",
       "assets/previews/field-notes-04.svg",
