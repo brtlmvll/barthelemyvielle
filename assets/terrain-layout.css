@@ -31,3 +31,8 @@ body::after{opacity:.018!important;pointer-events:none}.terrain-stone.surface-se
 .masses{grid-template-columns:1.4fr .72fr .7fr!important;position:relative}.m:nth-child(2){width:88%!important;justify-self:center;padding-bottom:45px}.home-featured{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 24px;font-size:11px;line-height:1.6;letter-spacing:.03em;color:var(--terrain-muted)}.home-featured>span{font-size:9px;text-transform:uppercase;letter-spacing:.1em}.home-featured a{padding:10px 0;color:var(--terrain-text);opacity:.65;transition:opacity .2s}.home-featured a:hover,.home-featured a:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:5px}.stagec:has(.m:first-child:hover) .home-featured a{opacity:1}.terrain-cluster[data-cluster=studies] .terrain-stone:only-child{max-width:520px!important;grid-column:1/7!important;justify-self:start}
 @media(max-width:620px){.masses{grid-template-columns:1.15fr .85fr!important;padding-bottom:54px!important}.m:nth-child(2){width:76%!important;padding-top:28px;padding-bottom:0}.home-featured{bottom:2px;gap:0 16px;font-size:9px;padding-inline:4px}.home-featured>span{width:100%;text-align:center;font-size:8px}.home-featured a{padding-block:6px;opacity:.85}.terrain-cluster[data-cluster=studies] .terrain-stone:only-child{grid-column:1/-1!important;width:80%!important;justify-self:start}}
 #home .stagec{position:relative}
+
+/* ===== Ergonomie mobile (Claude) ===== */
+@media(hover:none),(max-width:620px){
+ .home-featured a,.hb a,.footer a,footer a,.sitebar .motion-control,.project-top a,.back{display:inline-flex;align-items:center;min-height:44px}
+}
