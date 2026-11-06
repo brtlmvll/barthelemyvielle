@@ -41,3 +41,10 @@ html{font-variant-emoji:text}
 /* Studies series pages: dark ground (Claude) */
 :root:has(.study-body){--ground:#181a17;--terrain-text:#eaece2;--terrain-muted:#a8aca1;--terrain-rule:#3a3e35;color-scheme:dark}
 :root:has(.study-body) .study-body .image-open img{mix-blend-mode:normal}
+
+/* Information: services block (Claude, preview) */
+.about .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:30px 0 26px;border-top:1px solid currentColor;padding-top:20px}
+.about .svc b{display:block;font-family:var(--serif,Georgia,serif);font-weight:400;font-size:21px;margin-bottom:8px}
+.about .svc span{display:block;font-size:12px;line-height:1.5;opacity:.72}
+.about .small{font-size:12px;line-height:1.7;letter-spacing:.03em;opacity:.8}
+@media(max-width:620px){.about .svc{grid-template-columns:1fr;gap:16px}}

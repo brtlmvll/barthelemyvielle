@@ -42,6 +42,25 @@
     ]
   },
   {
+    "name": "U-Exist",
+    "slug": "u-exist",
+    "category": "Print & Surface",
+    "description": "Prints for custom prosthetics and orthotics. High-resolution scans of lichen, minerals and organic forms wrap the device's contours — the prosthetic as an extension of identity.",
+    "images": [
+      "assets/archive/u-exist/01.svg",
+      "assets/archive/u-exist/02.svg",
+      "assets/archive/u-exist/03.svg",
+      "assets/archive/u-exist/04.svg"
+    ],
+    "kind": "project",
+    "previews": [
+      "assets/previews/u-exist-01.svg",
+      "assets/previews/u-exist-02.svg",
+      "assets/previews/u-exist-03.svg",
+      "assets/previews/u-exist-04.svg"
+    ]
+  },
+  {
     "name": "Hovr",
     "slug": "hovr",
     "category": "Identity",
@@ -113,25 +132,6 @@
       "assets/previews/99-cts-records-01.svg",
       "assets/previews/99-cts-records-02.svg",
       "assets/previews/99-cts-records-03.svg"
-    ]
-  },
-  {
-    "name": "U-Exist",
-    "slug": "u-exist",
-    "category": "Print & Surface",
-    "description": "Prints for custom prosthetics and orthotics. High-resolution scans of lichen, minerals and organic forms wrap the device's contours — the prosthetic as an extension of identity.",
-    "images": [
-      "assets/archive/u-exist/01.svg",
-      "assets/archive/u-exist/02.svg",
-      "assets/archive/u-exist/03.svg",
-      "assets/archive/u-exist/04.svg"
-    ],
-    "kind": "project",
-    "previews": [
-      "assets/previews/u-exist-01.svg",
-      "assets/previews/u-exist-02.svg",
-      "assets/previews/u-exist-03.svg",
-      "assets/previews/u-exist-04.svg"
     ]
   },
   {
@@ -501,27 +501,6 @@
       "assets/studies-archives/manifestes-clvstr-67.webp",
       "assets/studies-archives/manifestes-clvstr-69.webp",
       "assets/studies-archives/manifestes-clvstr-70.webp"
-    ],
-    "kind": "study"
-  },
-  {
-    "name": "Fictional Brands",
-    "slug": "marques-fictives",
-    "category": "Studies",
-    "description": "Identities for brands that do not exist, set on mineral matter, objects and interfaces.",
-    "images": [
-      "assets/studies-archives/marques-labradora.webp",
-      "assets/studies-archives/marques-fathaer-h.webp",
-      "assets/studies-archives/ridgeworks-5.webp",
-      "assets/studies-archives/marques-accomplicoins.webp",
-      "assets/studies-archives/ridgeworks-17.webp",
-      "assets/studies-archives/ridgeworks-15.webp",
-      "assets/studies-archives/marques-fathaer-haello.webp"
-    ],
-    "previews": [
-      "assets/studies-archives/marques-labradora.webp",
-      "assets/studies-archives/marques-fathaer-h.webp",
-      "assets/studies-archives/marques-accomplicoins.webp"
     ],
     "kind": "study"
   },
