@@ -14,26 +14,3 @@ a:focus-visible{outline-color:#a8aca1}
 .index-grid a:nth-child(4){grid-column:2/4;width:62%;justify-self:end;margin-top:-40px}
 .index-grid .fieldnotes{height:300px}
 @media(max-width:760px){.index-grid a:nth-child(4){grid-column:1/-1;width:70%;justify-self:end;margin-top:0}.index-grid .fieldnotes{height:250px}}
-
-
-/* CLVSTR — clinical grid / raw matter. System fonts, no remote assets. */
-:root{--serif:"Helvetica Neue",Arial,Helvetica,sans-serif;--v2-ui:"Helvetica Neue",Arial,Helvetica,sans-serif;--v2-data:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
-body,button,input,select,textarea{font-family:var(--v2-ui)}
-h1,h2,h3,.lab,.label h2,.end strong,.editorial h2,.project-head h1,.intro h1,.about .big,.about .svc b,.card-caption>span:first-child,.project-pagination strong{font-family:var(--v2-ui)!important;font-weight:600!important;letter-spacing:-.045em}
-#home .m .lab{font-family:var(--v2-ui)!important;font-weight:600;letter-spacing:-.035em}
-#clock,.index-count,.micro,.caption,.pair figcaption,.image-sequence figcaption,.card-caption>span:last-child,.project-top .micro,.hb a[href^="mailto:"],.index-note{font-family:var(--v2-data);font-size:11px;line-height:1.6;letter-spacing:.035em}
-.sitebar,#bar,header,nav,.back,.return{font-family:var(--v2-ui)}
-.sitebar .signature,#bar .bd b,header b{font-weight:700;letter-spacing:.12em}
-.index-intro,.intro{position:relative}.index-intro:before,.index-intro:after,.intro:before,.intro:after{content:"+";position:absolute;font:16px/1 var(--v2-data);font-weight:400;color:currentColor;opacity:.48;pointer-events:none;top:12px}
-.index-intro:before{left:var(--gutter)}.index-intro:after{right:var(--gutter)}.intro:before{left:0;top:-18px}.intro:after{right:0;top:-18px}
-#home .stagec:before,#home .stagec:after{content:"+";position:absolute;top:18px;font:16px/1 var(--v2-data);color:currentColor;opacity:.45;pointer-events:none}#home .stagec:before{left:0}#home .stagec:after{right:0}
-.window:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background-image:radial-gradient(circle,#000 0 .5px,transparent .8px);background-size:3px 3px;opacity:.035;mix-blend-mode:multiply}
-@media(max-width:760px){.index-intro:before,.index-intro:after,.intro:before,.intro:after,#home .stagec:before,#home .stagec:after{display:none}#clock,.index-count,.micro,.caption,.pair figcaption,.image-sequence figcaption,.card-caption>span:last-child,.hb a[href^="mailto:"],.index-note{font-size:10px!important}.m .sub{font-size:10px!important;letter-spacing:.02em!important}.signature,#home #bar .bd b{font-size:11px}.caption{gap:16px}}
-
-html{color-scheme:dark}body{background:#0a0a0a;color:#f4f4f1}
-header,.index-grid,.index-note,.end{border-color:#454940}
-header span,.intro p,.label+p,.index-note,.project-head p,.caption,.editorial p,.pair figcaption{color:#b6b9b0}
-.return{background:#0a0a0a;border-radius:0;border-color:#686d61;color:#f4f4f1}
-.intro h1{font-size:clamp(45px,5vw,76px)}.project-head h1{font-size:clamp(52px,7vw,102px)}
-.label h2{font-size:clamp(24px,2.6vw,38px)}.editorial h2{font-size:clamp(32px,4vw,48px)}
-@media(max-width:760px){.label h2{font-size:27px}.project-head h1{font-size:52px}.end strong{font-size:27px}.index-grid a:nth-child(4){width:85%}}
