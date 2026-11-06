@@ -26,3 +26,9 @@
 .lightbox .close-viewer:hover,.lightbox .close-viewer:focus-visible{background:#f1f0eb;color:#151613!important}
 .lightbox>img{cursor:zoom-out}
 .lightbox p{text-transform:uppercase;letter-spacing:.14em;cursor:zoom-out}
+/* Studies series pages in dark (Claude) */
+html{font-variant-emoji:text}
+html:has(.study-body){--paper:#181a17;--ink:#eaece2;--muted:#a8aca1;--line:#3a3e35;color-scheme:dark}
+html:has(.study-body) body{background:#181a17;color:#eaece2}
+html:has(.study-body) .study-body .image-open img{mix-blend-mode:normal}
+html:has(.study-body) .sitebar,html:has(.study-body) .footer{border-color:#3a3e35}

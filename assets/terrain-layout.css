@@ -36,3 +36,8 @@ body::after{opacity:.018!important;pointer-events:none}.terrain-stone.surface-se
 @media(hover:none),(max-width:620px){
  .home-featured a,.hb a,.footer a,footer a,.sitebar .motion-control,.project-top a,.back{display:inline-flex;align-items:center;min-height:44px}
 }
+
+html{font-variant-emoji:text}
+/* Studies series pages: dark ground (Claude) */
+:root:has(.study-body){--ground:#181a17;--terrain-text:#eaece2;--terrain-muted:#a8aca1;--terrain-rule:#3a3e35;color-scheme:dark}
+:root:has(.study-body) .study-body .image-open img{mix-blend-mode:normal}

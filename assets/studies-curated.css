@@ -2,3 +2,15 @@
 .window svg{filter:grayscale(1);transition:filter .3s}.window:hover svg{filter:none}.hero.orbs svg{padding:20px 0}.detail.logo{height:250px}.review[hidden]{display:none}@media(max-width:760px){.detail.logo{height:160px}.hero.orbs svg{padding:8px 0}}
 
 .detail.logo{height:auto!important;aspect-ratio:1310/330}.detail.logo svg{overflow:hidden}.window svg{overflow:hidden}
+/* ===== Studies en mode sombre + Field Notes (Claude) ===== */
+html{color-scheme:dark;font-variant-emoji:text}
+body{background:#181a17;color:#eaece2}
+header,.index-grid,.index-note,.end{border-color:#3a3e35}
+header span,.intro p,.label+p,.index-note,.project-head p,.caption,.editorial p,.pair figcaption{color:#a8aca1}
+.review{background:#22251f;color:#a8aca1}.review b{color:#eaece2}
+.return{background:#181a17;border-color:#3a3e35;color:#eaece2}
+a:focus-visible{outline-color:#a8aca1}
+.fieldnotes{background:#20221d;border-radius:22% 31% 24% 28% / 15% 12% 19% 13%}
+.index-grid a:nth-child(4){grid-column:2/4;width:62%;justify-self:end;margin-top:-40px}
+.index-grid .fieldnotes{height:300px}
+@media(max-width:760px){.index-grid a:nth-child(4){grid-column:1/-1;width:70%;justify-self:end;margin-top:0}.index-grid .fieldnotes{height:250px}}

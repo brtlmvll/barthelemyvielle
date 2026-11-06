@@ -468,17 +468,17 @@
   {
     "name": "Field Notes",
     "slug": "field-notes",
-    "category": "Photography",
+    "category": "Studies",
     "description": "A photographic notebook of surfaces, structures, plants and encounters. Close observation links the natural environment to the built world.",
     "images": [
-      "assets/photo/pine.jpg",
       "assets/photo/moss-grate.jpg",
-      "assets/photo/moss-wall.jpg",
-      "assets/photo/building-bw.jpg",
       "assets/photo/moss-dark.jpg",
-      "assets/photo/slug.jpg"
+      "assets/photo/moss-wall.jpg",
+      "assets/photo/slug.jpg",
+      "assets/photo/pine.jpg",
+      "assets/photo/building-bw.jpg"
     ],
-    "kind": "photography",
+    "kind": "study",
     "previews": [
       "assets/previews/field-notes-02.svg",
       "assets/previews/field-notes-03.svg",
