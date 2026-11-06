@@ -538,5 +538,48 @@
       "assets/studies-archives/estaing-isaby-51.webp"
     ],
     "kind": "study"
+  },
+  {
+    "slug": "multimum",
+    "name": "Multimum",
+    "description": "Mineral matter and speculative identity.",
+    "category": "Studies",
+    "kind": "study",
+    "images": [
+      "assets/studies-curated/multimum.webp"
+    ],
+    "previews": [
+      "assets/studies-curated/multimum.webp"
+    ]
+  },
+  {
+    "slug": "fathaer",
+    "name": "Fathaer",
+    "description": "A typographic identity extended into Haello and Tribe interfaces.",
+    "category": "Studies",
+    "kind": "study",
+    "images": [
+      "assets/studies-curated/fathaer.webp",
+      "assets/studies-curated/haello.webp",
+      "assets/studies-curated/tribe.webp"
+    ],
+    "previews": [
+      "assets/studies-curated/fathaer.webp",
+      "assets/studies-curated/haello.webp",
+      "assets/studies-curated/tribe.webp"
+    ]
+  },
+  {
+    "slug": "signes",
+    "name": "Signes",
+    "description": "An archive of graphic figures and signs, composed as a circular repertoire.",
+    "category": "Studies",
+    "kind": "study",
+    "images": [
+      "assets/studies-curated/signes.webp"
+    ],
+    "previews": [
+      "assets/studies-curated/signes.webp"
+    ]
   }
 ]
