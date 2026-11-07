@@ -471,5 +471,23 @@
     "previews": [
       "assets/archive/factions/01.jpg"
     ]
+  },
+  {
+    "slug": "slot-b",
+    "name": "SLOT.B",
+    "category": "Identity",
+    "kind": "project",
+    "client": "SLOT.B",
+    "technique": "Logotype, monogram, applications",
+    "description": "Identity for SLOT.B: logotype, monogram and applications.",
+    "images": [
+      "assets/archive/slot-b/01.jpg",
+      "assets/archive/slot-b/02.jpg",
+      "assets/archive/slot-b/03.jpg"
+    ],
+    "previews": [
+      "assets/archive/slot-b/01.jpg",
+      "assets/archive/slot-b/03.jpg"
+    ]
   }
 ]
