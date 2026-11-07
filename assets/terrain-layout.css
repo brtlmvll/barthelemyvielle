@@ -102,3 +102,21 @@ html{font-variant-emoji:text}
 /* Home: no stray rule under mass titles; tighter title → subtitle (Claude) */
 .masses .m .sub{border-top:0!important;display:block!important;min-height:0!important;margin-top:4px!important}
 .masses .m .lab{margin-bottom:0}
+
+/* Motion lot 12 (Claude): continuous window Work ⇄ project + contact signal */
+@view-transition{navigation:auto}
+::view-transition-group(root){animation-duration:.2s}
+::view-transition-group(bv-window){animation-duration:.52s;animation-timing-function:cubic-bezier(.22,.7,.12,1);overflow:clip}
+::view-transition-image-pair(bv-window){overflow:clip}
+::view-transition-old(bv-window),::view-transition-new(bv-window){width:100%;height:100%;object-fit:none;object-position:50% 50%}
+::view-transition-old(bv-window){animation-duration:.22s}
+::view-transition-new(bv-window){animation-duration:.3s}
+@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+.card-image::after,.hero-visual .image-open::after{content:"";display:block!important;position:absolute;z-index:2;inset:0;pointer-events:none;opacity:0;
+ background:radial-gradient(circle,var(--signal,#f2f1ec) 1.15px,transparent 1.5px) 0 0/4px 4px;
+ -webkit-mask:linear-gradient(115deg,transparent 0 41%,#000 45%,#000 47%,transparent 51% 100%) 120% 0/260% 100% no-repeat;
+         mask:linear-gradient(115deg,transparent 0 41%,#000 45%,#000 47%,transparent 51% 100%) 120% 0/260% 100% no-repeat;
+}
+.signal-on::after{animation:bv-signal .62s cubic-bezier(.3,.6,.2,1) 1}
+@keyframes bv-signal{0%{opacity:0;-webkit-mask-position:120% 0;mask-position:120% 0}20%{opacity:.85}80%{opacity:.85}100%{opacity:0;-webkit-mask-position:-20% 0;mask-position:-20% 0}}
+html.motion-paused .signal-on::after{animation:none}

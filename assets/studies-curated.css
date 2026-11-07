@@ -37,3 +37,8 @@ body.studies-v3{--study-paper:#eaece2;--study-muted:#a8aca1;--study-rule:#3a3e35
 
 
 @media(hover:none){.study-window>svg,.study-window>img,.study-image>svg,.study-image>img{filter:none!important}}
+
+/* Motion lot 12 (Claude): page transitions opt-in (shared with terrain-layout.css) */
+@view-transition{navigation:auto}
+::view-transition-group(root){animation-duration:.2s}
+@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
