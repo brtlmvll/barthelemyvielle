@@ -307,12 +307,7 @@
     ],
     "kind": "study",
     "previews": [
-      "assets/photo/moss-grate.jpg",
-      "assets/photo/moss-dark.jpg",
-      "assets/photo/moss-wall.jpg",
-      "assets/photo/slug.jpg",
-      "assets/photo/pine.jpg",
-      "assets/photo/building-bw.jpg"
+      "assets/photo/moss-grate.jpg"
     ]
   },
   {
@@ -326,9 +321,7 @@
       "assets/studies-archives/estaing-neural-3-image.webp"
     ],
     "previews": [
-      "assets/studies-archives/estaing-isaby-51.webp",
-      "assets/studies-archives/estaing-neural-8196.webp",
-      "assets/studies-archives/estaing-neural-3-image.webp"
+      "assets/studies-archives/estaing-isaby-51.webp"
     ],
     "kind": "study"
   },
@@ -357,9 +350,7 @@
       "assets/studies-curated/tribe.webp"
     ],
     "previews": [
-      "assets/studies-curated/fathaer.webp",
-      "assets/studies-curated/haello.webp",
-      "assets/studies-curated/tribe.webp"
+      "assets/studies-curated/fathaer.webp"
     ]
   },
   {
@@ -422,8 +413,48 @@
       "assets/studies-archives/ridgeworks-15.webp"
     ],
     "previews": [
-      "assets/studies-archives/ridgeworks-5.webp",
-      "assets/studies-archives/ridgeworks-15.webp"
+      "assets/studies-archives/ridgeworks-5.webp"
+    ],
+    "kind": "study"
+  },
+  {
+    "name": "Hshtgs",
+    "slug": "hshtgs",
+    "category": "Studies",
+    "description": "Une mue de serpent scannée devient une texture irisée, associée à une composition typographique arabe.",
+    "images": [
+      "assets/archive/hshtgs/01.svg"
+    ],
+    "previews": [
+      "assets/previews/hshtgs-01.svg"
+    ],
+    "kind": "study"
+  },
+  {
+    "name": "Accomplicoins",
+    "slug": "accomplicoins",
+    "category": "Studies",
+    "description": "Une recherche de signes appliqués à des médailles : gravures, matière et géométries réunies dans une composition.",
+    "images": [
+      "assets/studies-archives/marques-accomplicoins.webp"
+    ],
+    "previews": [
+      "assets/studies-archives/marques-accomplicoins.webp"
+    ],
+    "kind": "study"
+  },
+  {
+    "name": "Manifestes CLVSTR",
+    "slug": "manifestes-clvstr",
+    "category": "Studies",
+    "description": "Trois compositions des archives CLVSTR : assemblages de matière, figures et motifs techniques.",
+    "images": [
+      "assets/studies-archives/manifestes-clvstr-67.webp",
+      "assets/studies-archives/manifestes-clvstr-69.webp",
+      "assets/studies-archives/manifestes-clvstr-70.webp"
+    ],
+    "previews": [
+      "assets/studies-archives/manifestes-clvstr-67.webp"
     ],
     "kind": "study"
   }
