@@ -11,7 +11,7 @@ Promise.all([fetch('../assets/project-catalogue.json').then(r=>r.json()),fetch('
  if(isIndex&&filter&&filter!=='All'&&!availableGroups.includes(filter)){location.replace('studies.html');return;}
  const cover={Identity:'terrarivm-generalis','Print & Surface':'print-diorama','Artwork & Print':'medivm',Treatments:'longchamp','3D & Motion':'maskne-protect',Photography:'field-notes'};
  let entries;if(isStudies)entries=items.filter(p=>p.kind==='study').sort((a,b)=>['marques-fictives','manifestes-clvstr','estaing-isaby','hshtgs'].indexOf(a.slug)-['marques-fictives','manifestes-clvstr','estaing-isaby','hshtgs'].indexOf(b.slug)).map(p=>({...p,href:p.slug+'.html',sub:p.images.length+' plates'}));
- else if(depth===1){const priority=["de-saint-aise","medivm","u-exist","longchamp","terrarivm-generalis","kazuho","common-wave","maskne-protect","koridor-2","hovr","smthg-smthg-rcrds","99-cts-records","trendt","vibra","petit-producteur","ludgate-squatter","rockaedron","golfinho"];entries=items.filter(p=>p.kind!=='study').sort((a,b)=>(priority.includes(a.slug)?priority.indexOf(a.slug):99)-(priority.includes(b.slug)?priority.indexOf(b.slug):99)).map(p=>({...p,href:p.slug+'.html',sub:p.category}));}
+ else if(depth===1){const priority=["de-saint-aise","medivm","u-exist","factions","terrarivm-generalis","longchamp","slot-b","kazuho","common-wave","maskne-protect","koridor-2","hovr","smthg-smthg-rcrds","99-cts-records","trendt","vibra","petit-producteur","ludgate-squatter","rockaedron","golfinho"];entries=items.filter(p=>p.kind!=='study').sort((a,b)=>(priority.includes(a.slug)?priority.indexOf(a.slug):99)-(priority.includes(b.slug)?priority.indexOf(b.slug):99)).map(p=>({...p,href:p.slug+'.html',sub:p.category}));}
  else entries=items.filter(p=>p.category===filter).map(p=>({...p,href:p.slug+'.html',sub:p.kind==='study'?'Research':p.images.length+' '+(p.images.length===1?'image':'images')}));
  grid.dataset.count=entries.length;grid.classList.add('terrain-cluster');grid.dataset.cluster=isStudies?'studies':'projects';
  const sameCards=depth===1&&grid.children.length===entries.length&&Array.from(grid.children).every((node,i)=>node.getAttribute('href')?.split('/').pop().replace(/\.html$/,'')===entries[i].slug);
@@ -25,5 +25,6 @@ Promise.all([fetch('../assets/project-catalogue.json').then(r=>r.json()),fetch('
  document.documentElement.classList.remove('collection-loading');document.dispatchEvent(new Event('catalogue-ready'));
 }).catch(()=>document.documentElement.classList.remove('collection-loading'));
 })();
+
 
 

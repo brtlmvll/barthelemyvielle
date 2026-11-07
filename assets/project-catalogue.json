@@ -457,5 +457,37 @@
       "assets/studies-archives/manifestes-clvstr-67.webp"
     ],
     "kind": "study"
+  },
+  {
+    "slug": "factions",
+    "name": "Factions",
+    "category": "Artwork & Print",
+    "kind": "project",
+    "technique": "Key art",
+    "description": "Key art for Factions: title treatment and image.",
+    "images": [
+      "assets/archive/factions/01.jpg"
+    ],
+    "previews": [
+      "assets/archive/factions/01.jpg"
+    ]
+  },
+  {
+    "slug": "slot-b",
+    "name": "SLOT.B",
+    "category": "Identity",
+    "kind": "project",
+    "client": "SLOT.B",
+    "technique": "Logotype, monogram, applications",
+    "description": "Logotype proposals, monogram and apparel mockup for SLOT.B.",
+    "images": [
+      "assets/archive/slot-b/03.jpg",
+      "assets/archive/slot-b/02.jpg",
+      "assets/archive/slot-b/01.jpg"
+    ],
+    "previews": [
+      "assets/archive/slot-b/03.jpg",
+      "assets/archive/slot-b/01.jpg"
+    ]
   }
 ]

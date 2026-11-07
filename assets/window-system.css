@@ -21,3 +21,6 @@ body::after,.pctitle,.ml,.sect .h,.hlab{animation:none!important}.motion-paused 
 .m.has-preview:is(:hover,:focus-visible) .window-fill{fill:var(--terrain-text)}.m .window-fill{transition:none}.m:not(.has-preview) .window-fill{fill:var(--terrain-text)}
 
 .m .wrap>img.window-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover!important;transform:none!important;animation:none!important;max-width:none!important}
+
+
+@media(hover:none){.window-surface,.card-image>img,.pcover>img,.image-open>img,.m .window-image{filter:none!important}}
