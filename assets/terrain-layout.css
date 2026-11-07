@@ -102,3 +102,32 @@ html{font-variant-emoji:text}
 /* Home: no stray rule under mass titles; tighter title → subtitle (Claude) */
 .masses .m .sub{border-top:0!important;display:block!important;min-height:0!important;margin-top:4px!important}
 .masses .m .lab{margin-bottom:0}
+
+/* Home type: same families, more weight and tension (Claude, 7/11) */
+:root{--mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace}
+#bar .bd b{font-size:15px;font-weight:800;letter-spacing:.03em}
+#bar .bd span{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.06em}
+#topnav a,#topnav button{font-weight:700!important;font-size:12px;letter-spacing:.07em}
+.m .lab{font-weight:700;letter-spacing:.005em}
+.m .sub{font-family:var(--mono);letter-spacing:.03em}
+.home-featured>span{font-family:var(--mono);letter-spacing:.06em}
+.home-featured a{opacity:1;font-weight:700;letter-spacing:.01em}
+.hb .tag{max-width:none;margin:0 0 22px;text-align:left;font-size:clamp(22px,2.5vw,38px);line-height:1;letter-spacing:-.025em;opacity:1;color:var(--terrain-text)!important}
+.hb .tag b{display:block;font-weight:800;text-transform:uppercase}
+.hb .tag span{display:block;margin-top:.12em;font-weight:400;color:var(--terrain-muted)}
+.hb .ft{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--terrain-text);align-items:baseline}
+.hb .ft #clock{font-variant-numeric:tabular-nums}
+.hb .ft a{font-weight:700}
+@media (max-width:700px){
+ #bar .bd b{font-size:13px}
+ #topnav a,#home #topnav button{font-size:11px}
+ .hb .tag{font-size:19px;margin-bottom:12px}
+ .hb .ft{font-size:9px;gap:6px 12px}
+}
+.hb-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 40px;margin-bottom:22px}
+.hb-top .tag{margin:0!important}
+.hb-top .home-featured{position:static;justify-content:flex-end;flex:0 1 auto;gap:4px 22px;padding-bottom:.2em}
+@media (max-width:700px){.hb-top{flex-direction:column-reverse;align-items:flex-start;margin-bottom:12px}.hb-top .home-featured{justify-content:flex-start}}
+@media (max-width:700px){.hb-top .home-featured{gap:2px 16px}.hb-top .home-featured>span{width:auto!important;flex-basis:auto!important;text-align:left!important;margin:0!important}.hb-top .home-featured a{padding:8px 0}}
+@media (max-width:700px) and (max-height:740px){.hb .tag{font-size:16px}.hb .tag span{display:inline;margin:0}.hb-top{margin-bottom:8px}}
+@media(max-width:620px){.masses{padding-bottom:0!important}}
