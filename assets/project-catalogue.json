@@ -457,5 +457,19 @@
       "assets/studies-archives/manifestes-clvstr-67.webp"
     ],
     "kind": "study"
+  },
+  {
+    "slug": "factions",
+    "name": "Factions",
+    "category": "Artwork & Print",
+    "kind": "project",
+    "technique": "Key art",
+    "description": "Key art for Factions: title treatment and image.",
+    "images": [
+      "assets/archive/factions/01.jpg"
+    ],
+    "previews": [
+      "assets/archive/factions/01.jpg"
+    ]
   }
 ]
