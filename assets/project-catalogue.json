@@ -293,24 +293,6 @@
     ]
   },
   {
-    "name": "Field Notes",
-    "slug": "field-notes",
-    "category": "Photography",
-    "description": "Mousse, béton, acier, pierre. Un carnet de photographies prises au téléphone, attentif aux surfaces et aux rencontres entre le vivant et le construit.",
-    "images": [
-      "assets/photo/moss-grate.jpg",
-      "assets/photo/moss-dark.jpg",
-      "assets/photo/moss-wall.jpg",
-      "assets/photo/slug.jpg",
-      "assets/photo/pine.jpg",
-      "assets/photo/building-bw.jpg"
-    ],
-    "kind": "study",
-    "previews": [
-      "assets/photo/moss-grate.jpg"
-    ]
-  },
-  {
     "name": "Lac d’Estaing",
     "slug": "estaing-isaby",
     "category": "Studies",
@@ -427,19 +409,6 @@
     ],
     "previews": [
       "assets/previews/hshtgs-01.svg"
-    ],
-    "kind": "study"
-  },
-  {
-    "name": "Accomplicoins",
-    "slug": "accomplicoins",
-    "category": "Studies",
-    "description": "Une recherche de signes appliqués à des médailles : gravures, matière et géométries réunies dans une composition.",
-    "images": [
-      "assets/studies-archives/marques-accomplicoins.webp"
-    ],
-    "previews": [
-      "assets/studies-archives/marques-accomplicoins.webp"
     ],
     "kind": "study"
   },
