@@ -37,3 +37,24 @@ body.studies-v3{--study-paper:#eaece2;--study-muted:#a8aca1;--study-rule:#3a3e35
 
 
 @media(hover:none){.study-window>svg,.study-window>img,.study-image>svg,.study-image>img{filter:none!important}}
+
+/* 8/11 Claude: display type B + mobile rhythm (no long single column) */
+@font-face{font-family:"Archivo X";src:url("fonts/archivo-var.woff2") format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+.studies-v3 header b,.studies-v3 header nav a,.study-intro h1,.study-label h2{font-family:"Archivo X","Helvetica Neue",Arial,sans-serif!important;font-stretch:125%}
+.studies-v3 header b{font-weight:800;letter-spacing:.01em}
+.studies-v3 header nav a{font-weight:700}
+.study-intro h1{font-weight:850;letter-spacing:-.03em}
+.study-label h2{font-weight:750;letter-spacing:-.02em;font-size:clamp(17px,1.7vw,26px)}
+.study-card:hover h2{text-decoration:none}
+@media(max-width:700px){
+ .studies-grid{grid-template-columns:1fr 1fr!important;gap:28px 14px!important;padding-top:18px}
+ .study-card:nth-child(n){grid-column:auto!important;padding-top:0!important}
+ .study-card:nth-child(5n+1){grid-column:1/-1!important;width:72%;justify-self:start}
+ .study-card:nth-child(10n+6){justify-self:end}
+ .study-card:nth-child(5n+3),.study-card:nth-child(5n+5){padding-top:34px!important}
+ .study-label{margin-top:9px!important}
+ .study-label h2{font-size:15px!important}
+ .study-label .arrow{font-size:12px}
+ .study-kind{font-size:8px!important;letter-spacing:.06em;margin-top:4px}
+ .study-card p{display:none}
+}
