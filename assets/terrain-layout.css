@@ -131,3 +131,34 @@ html{font-variant-emoji:text}
 @media (max-width:700px){.hb-top .home-featured{gap:2px 16px}.hb-top .home-featured>span{width:auto!important;flex-basis:auto!important;text-align:left!important;margin:0!important}.hb-top .home-featured a{padding:8px 0}}
 @media (max-width:700px) and (max-height:740px){.hb .tag{font-size:16px}.hb .tag span{display:inline;margin:0}.hb-top{margin-bottom:8px}}
 @media(max-width:620px){.masses{padding-bottom:0!important}}
+
+/* Direction B (8/11, Claude): Archivo extended for display text */
+@font-face{font-family:"Archivo X";src:url("fonts/archivo-var.woff2") format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{--display:"Archivo X","Helvetica Neue",Arial,sans-serif}
+#bar .bd b,#topnav a,#topnav button,.hb .tag,.m .lab,.sitebar .signature,.sitebar nav a,.terrain-cluster .card-caption>span:first-child,.project-hero h1,.project-top h1,h1{font-family:var(--display)!important;font-stretch:125%}
+#bar .bd b{font-size:15px;font-weight:800;letter-spacing:.01em}
+#topnav a,#topnav button{font-size:12px;font-weight:700!important;letter-spacing:.04em}
+.m .lab{font-weight:800!important;font-size:clamp(20px,2.2vw,34px)!important;letter-spacing:-.01em!important;line-height:1}
+.hb .tag{font-size:clamp(22px,2.6vw,42px);line-height:1;letter-spacing:-.03em}
+.hb .tag b{font-weight:850}.hb .tag span{font-weight:400}
+/* Selected: tiny blocks */
+.home-featured{align-items:flex-end!important}
+.home-featured .mini{display:flex;flex-direction:column;gap:5px;text-decoration:none!important;padding:0!important;opacity:1!important}
+.home-featured .mini i{display:block;width:46px;height:34px;overflow:hidden;border-radius:7px 11px 6px 10px;background:#1b1b1a}
+.home-featured .mini img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .25s}
+.home-featured .mini:hover img,.home-featured .mini:focus-visible img,.home-featured .mini:active img{filter:none}
+.home-featured .mini em{font:500 8.5px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;font-style:normal;max-width:70px}
+@media(max-width:700px){.home-featured .mini i{width:40px;height:30px}}
+/* Mobile sections: smaller, varied rhythm instead of one full-width column */
+@media(max-width:620px){
+ .terrain-cluster[data-cluster]{grid-template-columns:1fr 1fr!important;gap:30px 14px!important}
+ .terrain-cluster[data-cluster] .terrain-stone:nth-child(n){grid-column:auto!important;width:100%!important;max-width:none!important;padding-top:0!important;justify-self:stretch}
+ .terrain-cluster[data-cluster] .terrain-stone:nth-child(5n+1 of :not([hidden])){grid-column:1/-1!important;width:74%!important;justify-self:start}
+ .terrain-cluster[data-cluster] .terrain-stone:nth-child(10n+6 of :not([hidden])){justify-self:end}
+ .terrain-cluster[data-cluster] .terrain-stone:nth-child(5n+3 of :not([hidden])),.terrain-cluster[data-cluster] .terrain-stone:nth-child(5n+5 of :not([hidden])){padding-top:34px!important}
+ .terrain-cluster .card-caption{margin-top:10px!important}
+ .terrain-cluster .card-caption>span:first-child{font-size:15px!important;letter-spacing:-.01em}
+ .terrain-cluster .card-caption>span:last-child{font-size:8px!important}
+}
+@media(max-width:700px){.home-featured .mini em{display:none}.home-featured{gap:8px!important}.hb .tag{font-size:18px}}
+@media(max-width:700px) and (max-height:740px){.hb .tag{font-size:15px}.home-featured .mini i{width:34px;height:25px}.hb-top{margin-bottom:6px}}
