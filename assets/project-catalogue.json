@@ -467,5 +467,29 @@
       "assets/archive/slot-b/03.jpg",
       "assets/archive/slot-b/01.jpg"
     ]
+  },
+  {
+    "slug": "town-paraltar",
+    "name": "TOWN / Paraltar",
+    "category": "3D & Motion",
+    "kind": "project",
+    "description": "Opening-title study for Log Zero.",
+    "images": [
+      "assets/town-paraltar/title.jpg",
+      "assets/town-paraltar/road.jpg",
+      "assets/town-paraltar/writing.jpg",
+      "assets/town-paraltar/symbol.jpg",
+      "assets/town-paraltar/screenplay.jpg",
+      "assets/town-paraltar/headlights.jpg",
+      "assets/town-paraltar/producer.jpg",
+      "assets/town-paraltar/forest.jpg",
+      "assets/town-paraltar/director.jpg",
+      "assets/town-paraltar/end-title.jpg"
+    ],
+    "previews": [
+      "assets/town-paraltar/thumbnail-still.jpg"
+    ],
+    "motionPreview": "assets/town-paraltar/thumbnail.gif",
+    "previewRatio": 2.2857142857142856
   }
 ]
