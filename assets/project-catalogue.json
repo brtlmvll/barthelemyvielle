@@ -487,9 +487,9 @@
       "assets/town-paraltar/end-title.jpg"
     ],
     "previews": [
-      "assets/town-paraltar/thumbnail-still.jpg"
+      "assets/town-paraltar/thumbnail-still.jpg?v=2"
     ],
-    "motionPreview": "assets/town-paraltar/thumbnail.gif",
+    "motionPreview": "assets/town-paraltar/thumbnail.gif?v=2",
     "previewRatio": 2.2857142857142856
   }
 ]
