@@ -356,9 +356,20 @@
     "description": "Surface designs for TRENDT — screen printing, drawing and scanning.",
     "images": [
       "assets/fashion/p02.jpg",
+      "assets/fashion/trendt/lychen-white-front.jpg",
+      "assets/fashion/trendt/lychen-white-back.jpg",
+      "assets/fashion/trendt/lychen-black-front.jpg",
+      "assets/fashion/trendt/lychen-black-back.jpg",
       "assets/fashion/p07.jpg",
+      "assets/fashion/trendt/snow-top-three-quarter.jpg",
       "assets/fashion/p09.jpg",
-      "assets/fashion/p05.jpg"
+      "assets/fashion/trendt/espinhos-top-back.jpg",
+      "assets/fashion/trendt/espinhos-dress-front.jpg",
+      "assets/fashion/trendt/espinhos-dress-back.jpg",
+      "assets/fashion/p05.jpg",
+      "assets/fashion/trendt/bark-asymmetric-front.jpg",
+      "assets/fashion/trendt/bark-all-over-front.jpg",
+      "assets/fashion/trendt/bark-all-over-back.jpg"
     ],
     "previews": [
       "assets/previews/print-lychen-01.svg",
