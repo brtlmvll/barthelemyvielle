@@ -1,12 +1,12 @@
 body.stonefield-page {
-  --paper: #21211e;
+  --paper: #0a0b09;
   --ink: #f2efe6;
   --muted: #b4b1a7;
   --gutter: clamp(16px,5vw,84px);
   background: var(--paper);
   color: var(--ink);
 }
-.stonefield-page .sitebar {background: var(--paper); color: var(--ink); border-color: #484740}
+.stonefield-page .sitebar {background: var(--paper); color: var(--ink); border-color: #2b2d27}
 .stonefield-page .sitebar nav a[aria-current] {text-decoration: underline; text-underline-offset: 5px}
 .field-intro {
   margin: clamp(52px,8vw,115px) var(--gutter) clamp(48px,7vw,105px);
@@ -16,7 +16,7 @@ body.stonefield-page {
   justify-content: space-between;
   gap: 1.8rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #5b594f;
+  border-bottom: 1px solid #353730;
 }
 .field-intro h1 {font-size: clamp(56px,13vw,220px); line-height: .87; letter-spacing: -.098em; margin: 0}
 .field-heading p {margin: 1.35rem 0 0; font-size: 14px}
@@ -38,7 +38,7 @@ body.stonefield-page {
 .field-tile.size-tall {grid-column:span 3; grid-row:span 5}
 .field-tile .image-open {
   width:100%; height:100%; padding:0; border:0; overflow:hidden;
-  background:#3c3b35; color:var(--ink);
+  background:#21221d; color:var(--ink);
   border-radius:var(--shape); position:relative; cursor:zoom-in;
 }
 .field-tile img {
