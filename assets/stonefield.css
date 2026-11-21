@@ -96,3 +96,6 @@ html.field-viewer-open {overflow:hidden}
 @keyframes field-backdrop-out {from{background:rgba(5,6,5,.9)}to{background:rgba(5,6,5,0)}}
 @media(max-width:490px){.stonefield-page .field-lightbox{padding:72px 16px 24px}.field-lightbox .field-display img{max-width:90vw;max-height:65dvh}}
 @media(prefers-reduced-motion:reduce){.field-tile,.field-lightbox .field-display{transition:none!important}.field-lightbox::backdrop{animation:none!important}}
+/* Random scatter (stonefield-scatter.js): tiles positioned absolutely */
+.field-deposit.is-scattered{display:block;position:relative}
+.field-deposit.is-scattered .field-tile{margin:0}
