@@ -392,34 +392,6 @@
     "motionPreview": "assets/motion-thumbs/maskne-protect.webp"
   },
   {
-    "name": "Lac d’Estaing",
-    "slug": "estaing-isaby",
-    "category": "Studies",
-    "description": "Trois traitements neuraux à partir de photographies du lac d’Estaing prises sur place. Une recherche d’image sur la couleur, le relief et les reflets.",
-    "images": [
-      "assets/studies-archives/estaing-isaby-51.webp",
-      "assets/studies-archives/estaing-neural-8196.webp",
-      "assets/studies-archives/estaing-neural-3-image.webp"
-    ],
-    "previews": [
-      "assets/studies-archives/estaing-isaby-51.webp"
-    ],
-    "kind": "study"
-  },
-  {
-    "slug": "multimum",
-    "name": "Multimum",
-    "description": "Une étude d’identité autour de la labradorite : volumes polis, reflets et dessin du logotype.",
-    "category": "Studies",
-    "kind": "study",
-    "images": [
-      "assets/studies-archives/marques-labradora.webp"
-    ],
-    "previews": [
-      "assets/studies-archives/marques-labradora.webp"
-    ]
-  },
-  {
     "slug": "fathaer",
     "name": "Fathaer",
     "description": "Une recherche d’identité pour un système domotique, présentée à travers l’affiche Fathaer et les deux propositions d’interface Haello et Tribe.",
@@ -432,19 +404,6 @@
     ],
     "previews": [
       "assets/studies-curated/fathaer.webp"
-    ]
-  },
-  {
-    "slug": "signes",
-    "name": "Signes",
-    "description": "Un répertoire de figures, d’animaux et de signes réuni dans une composition circulaire. La pièce conserve son format vertical et sa signature.",
-    "category": "Studies",
-    "kind": "study",
-    "images": [
-      "assets/studies-curated/signes.webp"
-    ],
-    "previews": [
-      "assets/studies-curated/signes.webp"
     ]
   },
   {
@@ -541,20 +500,6 @@
     "kind": "study"
   },
   {
-    "slug": "factions",
-    "name": "Factions",
-    "category": "Studies",
-    "kind": "study",
-    "technique": "Key art",
-    "description": "Key art for Factions: title treatment and image.",
-    "images": [
-      "assets/archive/factions/01.jpg"
-    ],
-    "previews": [
-      "assets/archive/factions/01.jpg"
-    ]
-  },
-  {
     "slug": "slot-b",
     "name": "SLOT.B",
     "category": "Identity",
@@ -646,21 +591,6 @@
     "previews": [
       "assets/stonefield/screens/astersea-1.jpg",
       "assets/stonefield/screens/astersea-2.jpg"
-    ]
-  },
-  {
-    "slug": "pochettes-vinyles",
-    "name": "Pochettes vinyles",
-    "category": "Studies",
-    "kind": "study",
-    "description": "Deux pochettes et leurs macarons.",
-    "images": [
-      "assets/studies-archives/vinyle-01.jpg",
-      "assets/studies-archives/vinyle-02.jpg"
-    ],
-    "previews": [
-      "assets/studies-archives/vinyle-01.jpg",
-      "assets/studies-archives/vinyle-02.jpg"
     ]
   }
 ]
