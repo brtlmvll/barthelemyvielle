@@ -11,13 +11,13 @@ TEMPLATE = ROOT / 'tools/stonefield.html'
 SUPPORTED = {'.jpg', '.jpeg', '.png', '.webp', '.svg', '.avif'}
 items = {}
 # Removed by Bart (iPhone photos, Accomplicoins, Field notes) or unusable (lorem ipsum). Never re-add.
-EXCLUDE_DIRS = ('assets/photo/', 'assets/studies/')  # studies/: generated (ChatGPT, Midjourney, code), not Bart's work
+EXCLUDE_DIRS = ('assets/photo/', 'assets/studies/', 'assets/logo-bank/')  # studies/: generated (ChatGPT, Midjourney, code), not Bart's work
 EXCLUDE = {'assets/archive/de-saint-aise/05.svg', 'assets/archive/de-saint-aise/06.svg', 'assets/studies-curated/field-notes.webp', 'assets/studies-archives/marques-accomplicoins.webp', 'assets/archive/hovr/02.svg', 'assets/archive/99-cts-records/02.svg', 'assets/archive/common-wave/03.svg', 'assets/archive/de-saint-aise/02.svg', 'assets/archive/de-saint-aise/03.svg', 'assets/archive/golfinho/02-poster.svg', 'assets/archive/golfinho/03-poster.svg', 'assets/archive/golfinho/04-poster.svg', 'assets/archive/hovr/01.svg', 'assets/archive/hovr/03.svg', 'assets/archive/hovr/04.svg', 'assets/archive/hovr/05.svg', 'assets/archive/longchamp/02-poster.svg', 'assets/archive/longchamp/03-poster.svg', 'assets/archive/longchamp/04-poster.svg', 'assets/archive/petit-producteur/01.svg', 'assets/archive/terrarivm-generalis/01.svg', 'assets/archive/terrarivm-generalis/02.svg', 'assets/archive/terrarivm-generalis/04.svg', 'assets/archive/vibra/01-poster.svg', 'assets/archive/vibra/02-poster.svg', 'assets/archive/vibra/03-poster.svg', 'assets/studies-archives/estaing-isaby-39.webp', 'assets/studies-archives/estaing-isaby-51.webp', 'assets/studies-archives/estaing-neural-3-image.webp', 'assets/studies-archives/estaing-neural-8196.webp', 'assets/studies-archives/marques-fathaer-h.webp', 'assets/studies-archives/marques-fathaer-haello.webp', 'assets/studies-archives/og-studies.jpg', 'assets/studies-curated/haello.webp', 'assets/studies-curated/multimum.webp', 'assets/studies-curated/tribe.webp', 'assets/studies/recovered/night-signals-02.svg'}
 content = set()
 
 def add(path, name, href=None):
     path = Path(path)
-    if path.as_posix() in EXCLUDE or path.as_posix().startswith(EXCLUDE_DIRS):
+    if path.as_posix() in EXCLUDE or path.as_posix().startswith(EXCLUDE_DIRS) or path.as_posix() in globals().get('used_elsewhere', set()):
         return
     source = ROOT / path
     if path.suffix.lower() not in SUPPORTED or not source.is_file() or path in items:
@@ -28,12 +28,12 @@ def add(path, name, href=None):
     content.add(digest)
     items[path] = name, href
 
+# Stonefield is exclusive: images already shown in Work or Studies cannot re-enter.
+used_elsewhere = set()
 for project in json.loads((ROOT/'assets/project-catalogue.json').read_text()):
-    for path in project['images']:
-        add(path, project['name'], project['slug']+'.html')
-
-for record in json.loads((ROOT/'archive-local-manifest.json').read_text()):
-    add(record['local'], record['project'])
+    used_elsewhere.update(path.split('?')[0] for path in project['images'] + project.get('previews', []))
+elsewhere_digests = {sha256((ROOT/path).read_bytes()).digest() for path in used_elsewhere if (ROOT/path).is_file()}
+content.update(elsewhere_digests)
 
 folders = [
     ('assets/archive', None),

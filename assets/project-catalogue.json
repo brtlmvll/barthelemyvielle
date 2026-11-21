@@ -222,7 +222,7 @@
     "name": "99 Cts Records",
     "slug": "99-cts-records",
     "category": "Identity",
-    "description": "Label identity. Fractured reflections, plastic distortion, deep red — the physicality of sound rendered as a visual language under pressure.",
+    "description": "Label identity, cover artwork and cassette packaging. Selected releases for 99 Cts Records.",
     "images": [
       "assets/archive/99-cts-records/01.svg",
       "assets/archive/99-cts-records/02.svg",
@@ -240,9 +240,10 @@
     ],
     "kind": "project",
     "previews": [
-      "assets/previews/99-cts-records-01.svg",
-      "assets/previews/99-cts-records-02.svg",
-      "assets/previews/99-cts-records-03.svg"
+      "assets/archive/99-cts-records/13.jpg",
+      "assets/archive/99-cts-records/11.jpg",
+      "assets/archive/99-cts-records/15.jpg",
+      "assets/previews/99-cts-records-01.svg"
     ]
   },
   {
@@ -520,12 +521,16 @@
     "name": "Hshtgs",
     "slug": "hshtgs",
     "category": "Studies",
-    "description": "Une mue de serpent scannée devient une texture irisée, associée à une composition typographique arabe.",
+    "description": "Mue de serpent scannée, texture irisée et typographie arabe : composition, volume et détail de surface.",
     "images": [
-      "assets/archive/hshtgs/01.svg"
+      "assets/archive/hshtgs/01.svg",
+      "assets/stonefield/screens/hshtgs-change.jpg",
+      "assets/stonefield/screens/old-snake.jpg"
     ],
     "previews": [
-      "assets/previews/hshtgs-01.svg"
+      "assets/stonefield/screens/hshtgs-change.jpg",
+      "assets/previews/hshtgs-01.svg",
+      "assets/stonefield/screens/old-snake.jpg"
     ],
     "kind": "study"
   },
@@ -608,14 +613,15 @@
     "technique": "Cover design",
     "description": "Cover design: title and mountain relief.",
     "images": [
-      "assets/archive/golem/01.jpg",
-      "assets/archive/golem/02.jpg",
       "assets/archive/golem/03.jpg",
       "assets/archive/golem/04.jpg",
-      "assets/archive/golem/05.jpg"
+      "assets/archive/golem/05.jpg",
+      "assets/archive/golem/01.jpg",
+      "assets/archive/golem/02.jpg"
     ],
     "previews": [
-      "assets/archive/golem/01.jpg",
+      "assets/archive/golem/04.jpg",
+      "assets/archive/golem/03.jpg",
       "assets/archive/golem/02.jpg"
     ]
   },
@@ -625,7 +631,7 @@
     "category": "Artwork & Print",
     "kind": "project",
     "technique": "Cover artwork",
-    "description": "Destrier: three covers, mineral textures under one title.",
+    "description": "Three compositions: mineral surfaces, a shared title and a red registration mark.",
     "images": [
       "assets/archive/destrier/01.jpg",
       "assets/archive/destrier/02.jpg",
@@ -634,6 +640,36 @@
     "previews": [
       "assets/archive/destrier/01.jpg",
       "assets/archive/destrier/02.jpg"
+    ]
+  },
+  {
+    "slug": "astersea",
+    "name": "Astersea",
+    "category": "Studies",
+    "kind": "study",
+    "description": "Deux compositions : un volume clair, des faisceaux rouges et un fond noir.",
+    "images": [
+      "assets/stonefield/screens/astersea-1.jpg",
+      "assets/stonefield/screens/astersea-2.jpg"
+    ],
+    "previews": [
+      "assets/stonefield/screens/astersea-1.jpg",
+      "assets/stonefield/screens/astersea-2.jpg"
+    ]
+  },
+  {
+    "slug": "pochettes-vinyles",
+    "name": "Pochettes vinyles",
+    "category": "Studies",
+    "kind": "study",
+    "description": "Deux pochettes et leurs macarons.",
+    "images": [
+      "assets/studies-archives/vinyle-01.jpg",
+      "assets/studies-archives/vinyle-02.jpg"
+    ],
+    "previews": [
+      "assets/studies-archives/vinyle-01.jpg",
+      "assets/studies-archives/vinyle-02.jpg"
     ]
   }
 ]
