@@ -17,9 +17,7 @@
       "assets/previews/de-saint-aise-01.svg",
       "assets/previews/de-saint-aise-02.svg",
       "assets/previews/de-saint-aise-03.svg",
-      "assets/previews/de-saint-aise-04.svg",
-      "assets/previews/de-saint-aise-05.svg",
-      "assets/previews/de-saint-aise-06.svg"
+      "assets/previews/de-saint-aise-04.svg"
     ]
   },
   {
@@ -233,8 +231,6 @@
       "assets/archive/99-cts-records/14.jpg",
       "assets/archive/99-cts-records/15.jpg",
       "assets/archive/99-cts-records/16.jpg",
-      "assets/archive/99-cts-records/17.jpg",
-      "assets/archive/99-cts-records/18.jpg",
       "assets/archive/99-cts-records/19.jpg",
       "assets/archive/99-cts-records/20.jpg"
     ],
@@ -287,9 +283,9 @@
     ],
     "kind": "project",
     "previews": [
-      "assets/previews/medivm-01.svg",
-      "assets/previews/medivm-02.svg"
-    ]
+      "assets/motion-thumbs/medivm-still.jpg"
+    ],
+    "motionPreview": "assets/motion-thumbs/medivm.webp"
   },
   {
     "name": "Kazuho",
@@ -374,11 +370,9 @@
     ],
     "kind": "project",
     "previews": [
-      "assets/previews/golfinho-01.svg",
-      "assets/previews/golfinho-02.svg",
-      "assets/previews/golfinho-03.svg",
-      "assets/previews/golfinho-04.svg"
-    ]
+      "assets/motion-thumbs/golfinho-still.jpg"
+    ],
+    "motionPreview": "assets/motion-thumbs/golfinho.webp"
   },
   {
     "name": "Maskné Protect",
@@ -393,11 +387,9 @@
     ],
     "kind": "project",
     "previews": [
-      "assets/previews/maskne-protect-01.svg",
-      "assets/previews/maskne-protect-02.svg",
-      "assets/previews/maskne-protect-03.svg",
-      "assets/previews/maskne-protect-04.svg"
-    ]
+      "assets/motion-thumbs/maskne-protect-still.jpg"
+    ],
+    "motionPreview": "assets/motion-thumbs/maskne-protect.webp"
   },
   {
     "name": "Lac d’Estaing",
@@ -481,10 +473,9 @@
       "assets/fashion/trendt/bark-all-over-back.jpg"
     ],
     "previews": [
-      "assets/previews/print-lychen-01.svg",
-      "assets/previews/print-snow-01.svg",
-      "assets/previews/print-espinhos-01.svg"
-    ]
+      "assets/motion-thumbs/trendt-still.jpg"
+    ],
+    "motionPreview": "assets/motion-thumbs/trendt.webp"
   },
   {
     "slug": "rockaedron",
