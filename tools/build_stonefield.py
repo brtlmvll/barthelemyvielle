@@ -10,10 +10,15 @@ ROOT = Path(__file__).resolve().parents[1]
 TEMPLATE = ROOT / 'tools/stonefield.html'
 SUPPORTED = {'.jpg', '.jpeg', '.png', '.webp', '.svg', '.avif'}
 items = {}
+# Removed by Bart (iPhone photos, Accomplicoins, Field notes) or unusable (lorem ipsum). Never re-add.
+EXCLUDE_DIRS = ('assets/photo/',)
+EXCLUDE = {'assets/studies-curated/field-notes.webp', 'assets/studies-archives/marques-accomplicoins.webp', 'assets/archive/hovr/02.svg'}
 content = set()
 
 def add(path, name, href=None):
     path = Path(path)
+    if path.as_posix() in EXCLUDE or path.as_posix().startswith(EXCLUDE_DIRS):
+        return
     source = ROOT / path
     if path.suffix.lower() not in SUPPORTED or not source.is_file() or path in items:
         return
@@ -35,7 +40,6 @@ folders = [
     ('assets/studies', 'Studies'),
     ('assets/studies-archives', 'Studies'),
     ('assets/studies-curated', 'Studies'),
-    ('assets/photo', 'Field notes'),
     ('assets/stonefield/screens', None),
 ]
 for folder, label in folders:
