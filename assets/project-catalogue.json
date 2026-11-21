@@ -226,7 +226,17 @@
     "images": [
       "assets/archive/99-cts-records/01.svg",
       "assets/archive/99-cts-records/02.svg",
-      "assets/archive/99-cts-records/03.svg"
+      "assets/archive/99-cts-records/03.svg",
+      "assets/archive/99-cts-records/11.jpg",
+      "assets/archive/99-cts-records/12.jpg",
+      "assets/archive/99-cts-records/13.jpg",
+      "assets/archive/99-cts-records/14.jpg",
+      "assets/archive/99-cts-records/15.jpg",
+      "assets/archive/99-cts-records/16.jpg",
+      "assets/archive/99-cts-records/17.jpg",
+      "assets/archive/99-cts-records/18.jpg",
+      "assets/archive/99-cts-records/19.jpg",
+      "assets/archive/99-cts-records/20.jpg"
     ],
     "kind": "project",
     "previews": [
@@ -589,5 +599,41 @@
     ],
     "motionPreview": "assets/town-paraltar/thumbnail.gif?v=2",
     "previewRatio": 2.2857142857142856
+  },
+  {
+    "slug": "golem",
+    "name": "Golem",
+    "category": "Artwork & Print",
+    "kind": "project",
+    "technique": "Cover design",
+    "description": "Cover design: title and mountain relief.",
+    "images": [
+      "assets/archive/golem/01.jpg",
+      "assets/archive/golem/02.jpg",
+      "assets/archive/golem/03.jpg",
+      "assets/archive/golem/04.jpg",
+      "assets/archive/golem/05.jpg"
+    ],
+    "previews": [
+      "assets/archive/golem/01.jpg",
+      "assets/archive/golem/02.jpg"
+    ]
+  },
+  {
+    "slug": "destrier",
+    "name": "Destrier",
+    "category": "Artwork & Print",
+    "kind": "project",
+    "technique": "Cover artwork",
+    "description": "Destrier: three covers, mineral textures under one title.",
+    "images": [
+      "assets/archive/destrier/01.jpg",
+      "assets/archive/destrier/02.jpg",
+      "assets/archive/destrier/03.jpg"
+    ],
+    "previews": [
+      "assets/archive/destrier/01.jpg",
+      "assets/archive/destrier/02.jpg"
+    ]
   }
 ]
