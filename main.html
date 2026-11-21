@@ -255,13 +255,13 @@
       +'<g>'+coverRects(S,"hfrag",d)+'</g>'
       +'<path class="hrim" d="'+d+'"/></g></svg>';
   }
-  var PHOTOS=["pine","moss-grate","moss-wall","building-bw","moss-dark","slug","chamois-snow","dogs"];
+  var PHOTOS=[];
   var HUB=[
     {cat:"branding",seed:3, type:"monolith",lab:"Identity",  sub:"7 projects",img:"assets/archive/de-saint-aise/01.svg"},
     {cat:"artwork", seed:11,type:"relic",   lab:"Artwork",   sub:"5 projects",img:"assets/archive/koridor-2/01.svg"},
     {cat:"motion",  seed:23,type:"ridge",   lab:"Treatments & Motion", sub:"4 projects",img:"assets/archive/vibra/01-poster.svg"},
     {cat:"fashion", seed:31,type:"shard",   lab:"Fashion Print",sub:"11 prints",img:"assets/fashion/p11.jpg"},
-    {cat:"photo",   seed:37,type:"totem",   lab:"Photography",sub:PHOTOS.length+" images",img:"assets/photo/pine.jpg"}
+    {cat:"photo",   seed:37,type:"totem",   lab:"Photography",sub:PHOTOS.length+" images",img:"assets/stonefield/screens/moss-3.jpg"}
   ];
   var hubEl=document.getElementById("hubshapes");
   HUB.forEach(function(hc){var b=document.createElement("button");b.className="hs"+(hc.cat==="photo"?" soon":"");b.type="button";
