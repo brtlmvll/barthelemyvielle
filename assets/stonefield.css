@@ -23,19 +23,20 @@ body.stonefield-page {
 .field-count {margin: 0; color: var(--muted); font-size: 11px; letter-spacing: .08em; text-transform: uppercase}
 .field-deposit {
   display: grid;
-  grid-template-columns: repeat(18,minmax(0,1fr));
-  grid-auto-rows: clamp(12px,2vw,32px);
+  grid-template-columns: repeat(12,minmax(0,1fr));
+  grid-auto-rows: clamp(20px,2.5vw,38px);
   grid-auto-flow: dense;
-  gap: clamp(3px,.54vw,9px);
+  gap: clamp(36px,5vw,86px) clamp(28px,4vw,68px);
   align-items: stretch;
   margin: 0 var(--gutter) clamp(72px,11vw,170px);
 }
-.field-tile {position:relative; min-width:0; margin:0; padding:5px; transform:translateY(var(--shift)) rotate(var(--tilt))}
-.field-tile.size-s {grid-column:span 3; grid-row:span 3}
-.field-tile.size-m {grid-column:span 4; grid-row:span 4}
-.field-tile.size-l {grid-column:span 6; grid-row:span 5}
-.field-tile.size-wide {grid-column:span 5; grid-row:span 3}
-.field-tile.size-tall {grid-column:span 3; grid-row:span 5}
+.field-tile {position:relative; min-width:0; margin:0; padding:0; transform:translateY(var(--shift)) rotate(var(--tilt));transition:opacity .65s ease,filter .65s ease}
+.field-tile.size-s {grid-column:span 2; grid-row:span 2}
+.field-tile.size-m {grid-column:span 2; grid-row:span 3}
+.field-tile.size-l {grid-column:span 3; grid-row:span 3}
+.field-tile.size-wide {grid-column:span 3; grid-row:span 2}
+.field-tile.size-tall {grid-column:span 2; grid-row:span 4}
+.field-tile.is-displayed {opacity:0;filter:blur(4px)}
 .field-tile .image-open {
   width:100%; height:100%; padding:0; border:0; overflow:hidden;
   background:#21221d; color:var(--ink);
@@ -64,14 +65,34 @@ body.stonefield-page {
 .field-tag[href]:hover, .field-tag[href]:focus-visible {text-decoration:underline}
 .stonefield-page .lightbox img {filter:none}
 @media(max-width:800px){
-  .field-deposit {grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(15px,3vw,25px)}
+  .field-deposit {grid-template-columns:repeat(9,minmax(0,1fr));grid-auto-rows:24px;gap:44px 28px}
 }
 @media(max-width:490px){
-  .field-deposit {grid-template-columns:repeat(8,minmax(0,1fr));grid-auto-rows:clamp(15px,4vw,22px)}
-  .field-tile {padding:3px}
-  .field-tile.size-l {grid-column:span 5}
-  .field-tile.size-wide {grid-column:span 5}
+  .field-deposit {grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:20px;gap:40px 24px}
+  .field-tile.size-l {grid-column:span 3}
+  .field-tile.size-wide {grid-column:span 3}
   .field-tag {left:6px;bottom:8px;padding:3px 5px}
   .field-tile:nth-child(4n) .field-tag {font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.field-tile img{transition:none}}
+
+/* The viewer belongs to Stonefield only; project viewers remain unchanged. */
+.stonefield-page .field-lightbox {position:fixed;inset:0;margin:0;width:100%;height:100dvh;max-width:none;max-height:none;padding:70px 24px 24px;border:0;background:transparent;color:var(--ink);overflow:auto}
+.field-lightbox[open] {display:flex;align-items:center;justify-content:center}
+.field-lightbox::backdrop {background:rgba(5,6,5,.9);animation:field-backdrop-in .7s ease both}
+.field-lightbox .field-display {margin:0;max-width:100%;opacity:0;filter:blur(5px);transition:opacity 1s ease,filter 1s ease}
+.field-lightbox.is-ready .field-display {opacity:1;filter:blur(0)}
+.field-lightbox .field-display img {display:block;width:auto;height:auto;max-width:min(86vw,1600px);max-height:72dvh;object-fit:contain;filter:none;cursor:default}
+.field-lightbox .field-display figcaption {display:block;margin-top:16px;padding:0;color:var(--ink);font-size:12px;line-height:1.5;letter-spacing:.04em;max-width:80vw;cursor:default}
+.field-lightbox .field-viewer-nav {display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;font-size:11px;color:var(--muted)}
+.field-viewer-nav button {min-height:44px;padding:10px 0;min-width:60px}
+.field-lightbox .close-viewer {position:fixed;top:12px;right:20px;color:var(--ink);z-index:3;min-width:96px;min-height:44px}
+.field-status {position:fixed;top:28px;left:24px;margin:0;font-size:12px;letter-spacing:.03em;color:var(--ink)}
+.field-status:empty {display:none}
+.field-lightbox.is-closing .field-display {opacity:0;filter:blur(4px);transition-duration:.45s}
+.field-lightbox.is-closing::backdrop {animation:field-backdrop-out .45s ease both}
+html.field-viewer-open {overflow:hidden}
+@keyframes field-backdrop-in {from{background:rgba(5,6,5,0)}to{background:rgba(5,6,5,.9)}}
+@keyframes field-backdrop-out {from{background:rgba(5,6,5,.9)}to{background:rgba(5,6,5,0)}}
+@media(max-width:490px){.stonefield-page .field-lightbox{padding:72px 16px 24px}.field-lightbox .field-display img{max-width:90vw;max-height:65dvh}}
+@media(prefers-reduced-motion:reduce){.field-tile,.field-lightbox .field-display{transition:none!important}.field-lightbox::backdrop{animation:none!important}}
