@@ -6,17 +6,11 @@
     "description": "Retail concept and identity. Monolithic structures carved from raw matter — shelving emerges from rock, light cuts through shadow. Brutal, tactile minimalism where the space extends the brand.",
     "images": [
       "assets/archive/de-saint-aise/01.svg",
-      "assets/archive/de-saint-aise/02.svg",
-      "assets/archive/de-saint-aise/03.svg",
-      "assets/archive/de-saint-aise/04.svg",
-      "assets/archive/de-saint-aise/05.svg",
-      "assets/archive/de-saint-aise/06.svg"
+      "assets/archive/de-saint-aise/04.svg"
     ],
     "kind": "project",
     "previews": [
       "assets/previews/de-saint-aise-01.svg",
-      "assets/previews/de-saint-aise-02.svg",
-      "assets/previews/de-saint-aise-03.svg",
       "assets/previews/de-saint-aise-04.svg"
     ]
   },
@@ -26,17 +20,11 @@
     "category": "Identity",
     "description": "Identity for an urban-vegetalization startup. A logotype drawn from modular architecture; natural textures set against synthetic tones — grounded yet forward-thinking.",
     "images": [
-      "assets/archive/terrarivm-generalis/01.svg",
-      "assets/archive/terrarivm-generalis/02.svg",
-      "assets/archive/terrarivm-generalis/03.svg",
-      "assets/archive/terrarivm-generalis/04.svg"
+      "assets/archive/terrarivm-generalis/03.svg"
     ],
     "kind": "project",
     "previews": [
-      "assets/previews/terrarivm-generalis-01.svg",
-      "assets/previews/terrarivm-generalis-02.svg",
-      "assets/previews/terrarivm-generalis-03.svg",
-      "assets/previews/terrarivm-generalis-04.svg"
+      "assets/previews/terrarivm-generalis-03.svg"
     ]
   },
   {
@@ -158,25 +146,6 @@
       "assets/previews/u-exist-02.svg",
       "assets/previews/u-exist-03.svg",
       "assets/previews/u-exist-04.svg"
-    ]
-  },
-  {
-    "name": "Hovr",
-    "slug": "hovr",
-    "category": "Identity",
-    "description": "Branding for a meditation-supplements brand. A digital-first system, clear and elevated; organic textures and landscapes behind minimal product shots, with motion that evokes breath.",
-    "images": [
-      "assets/archive/hovr/01.svg",
-      "assets/archive/hovr/03.svg",
-      "assets/archive/hovr/04.svg",
-      "assets/archive/hovr/05.svg"
-    ],
-    "kind": "project",
-    "previews": [
-      "assets/previews/hovr-01.svg",
-      "assets/previews/hovr-03.svg",
-      "assets/previews/hovr-04.svg",
-      "assets/previews/hovr-05.svg"
     ]
   },
   {
@@ -321,39 +290,16 @@
     ]
   },
   {
-    "name": "Vibra",
-    "slug": "vibra",
-    "category": "Treatments",
-    "description": "Director's treatment for VIBRA Brazil. A keynote of bold type and high contrast, built as a storytelling tool — the creative direction made clear, kinetic, high-adrenaline.",
-    "images": [
-      "assets/archive/vibra/01-poster.svg",
-      "assets/archive/vibra/02-poster.svg",
-      "assets/archive/vibra/03-poster.svg"
-    ],
-    "kind": "project",
-    "previews": [
-      "assets/previews/vibra-01.svg",
-      "assets/previews/vibra-02.svg",
-      "assets/previews/vibra-03.svg"
-    ]
-  },
-  {
     "name": "Longchamp",
     "slug": "longchamp",
     "category": "Treatments",
     "description": "Creative direction and motion for “Très Paris – Chapter II”. A fluid narrative between cinematic storytelling and editorial layout — Parisian nonchalance, from casting to location.",
     "images": [
-      "assets/archive/longchamp/01-poster.svg",
-      "assets/archive/longchamp/02-poster.svg",
-      "assets/archive/longchamp/03-poster.svg",
-      "assets/archive/longchamp/04-poster.svg"
+      "assets/archive/longchamp/01-poster.svg"
     ],
     "kind": "project",
     "previews": [
-      "assets/previews/longchamp-01.svg",
-      "assets/previews/longchamp-02.svg",
-      "assets/previews/longchamp-03.svg",
-      "assets/previews/longchamp-04.svg"
+      "assets/previews/longchamp-01.svg"
     ]
   },
   {
