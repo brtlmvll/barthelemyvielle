@@ -1,19 +1,14 @@
-/* One motion system: blur + opacity only. Tokens shared by every page. */
-:root{--t-fast:180ms;--t-base:360ms;--t-slow:700ms;--ease-out:cubic-bezier(.2,.7,.1,1);--ease-in:cubic-bezier(.55,0,.8,.2)}
+/* One motion language, taken from the Information curtain on the home page:
+   a dark panel sweeps in from the left, then leaves to the right and reveals the new page. */
+:root{--t-fast:180ms;--t-base:360ms;--t-slow:700ms;--ease-out:cubic-bezier(.2,.7,.1,1);--ease-in:cubic-bezier(.55,0,.8,.2);--ease-wipe:cubic-bezier(.76,0,.24,1);--wipe:420ms;--curtain:#0a0b09}
 @view-transition{navigation:auto}
-::view-transition-group(root){animation-duration:420ms}
-/* Default (same ground): soft crossfade */
-::view-transition-old(root){animation:bv-out 240ms var(--ease-out) both}
-::view-transition-new(root){animation:bv-in var(--t-base) var(--ease-out) 60ms both}
-/* Light to dark: the light goes out first, the dark settles, content comes back sharp */
-html:active-view-transition-type(to-dark)::view-transition-old(root){animation:bv-out-deep 200ms var(--ease-out) both}
-html:active-view-transition-type(to-dark)::view-transition-new(root){animation:bv-in 420ms var(--ease-out) 110ms both}
-/* Dark to light: quicker, like a door opening */
-html:active-view-transition-type(to-light)::view-transition-old(root){animation:bv-out 180ms var(--ease-out) both}
-html:active-view-transition-type(to-light)::view-transition-new(root){animation:bv-in-bright 320ms var(--ease-out) 40ms both}
-@keyframes bv-out{to{opacity:0;filter:blur(6px)}}
-@keyframes bv-out-deep{to{opacity:0;filter:blur(10px) brightness(.6)}}
-@keyframes bv-in{from{opacity:0;filter:blur(8px)}}
-@keyframes bv-in-bright{from{opacity:0;filter:blur(6px) brightness(1.15)}}
-@media (max-width:700px){@keyframes bv-out-deep{to{opacity:0;filter:blur(5px) brightness(.6)}}@keyframes bv-in{from{opacity:0;filter:blur(4px)}}}
+::view-transition{background:var(--curtain)}
+::view-transition-group(root){animation-duration:calc(var(--wipe)*2 + 10ms)}
+::view-transition-old(root),::view-transition-new(root){mix-blend-mode:normal;opacity:1}
+::view-transition-old(root){animation:bv-curtain-in var(--wipe) var(--ease-wipe) both}
+::view-transition-new(root){animation:bv-curtain-out var(--wipe) var(--ease-wipe) calc(var(--wipe) + 10ms) both}
+/* Same ground (project to project): a little quicker */
+html:active-view-transition-type(same){--wipe:340ms}
+@keyframes bv-curtain-in{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 0 0 100%)}}
+@keyframes bv-curtain-out{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 @media (prefers-reduced-motion:reduce){@view-transition{navigation:none}::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
