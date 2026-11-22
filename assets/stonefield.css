@@ -90,8 +90,8 @@ body.stonefield-page {
 .field-lightbox .close-viewer {position:fixed;top:12px;right:20px;color:var(--ink);z-index:3;min-width:96px;min-height:44px}
 .field-status {position:fixed;top:28px;left:24px;margin:0;font-size:12px;letter-spacing:.03em;color:var(--ink)}
 .field-status:empty {display:none}
-.field-lightbox.is-closing .field-display {opacity:0;filter:blur(4px);transition-duration:.45s}
-.field-lightbox.is-closing::backdrop {animation:field-backdrop-out .45s ease both}
+.field-lightbox.is-closing .field-display {opacity:0;filter:blur(4px);transition-duration:.2s}
+.field-lightbox.is-closing::backdrop {animation:field-backdrop-out .2s ease both}
 html.field-viewer-open {overflow:hidden}
 @keyframes field-backdrop-in {from{background:rgba(5,6,5,0)}to{background:rgba(5,6,5,.9)}}
 @keyframes field-backdrop-out {from{background:rgba(5,6,5,.9)}to{background:rgba(5,6,5,0)}}

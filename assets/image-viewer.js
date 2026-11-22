@@ -4,7 +4,7 @@ if(sources.length)mount();
 
 function mount(){
   const css=document.createElement('link');
-  css.rel='stylesheet';css.href=new URL('image-viewer.css?v=20261121-global',import.meta.url).href;document.head.append(css);
+  css.rel='stylesheet';css.href=new URL('image-viewer.css?v=20261122-close',import.meta.url).href;document.head.append(css);
   document.querySelectorAll('dialog.lightbox,dialog.studies-viewer').forEach(el=>{if(!el.open)el.remove();});
   const fr=document.documentElement.lang.startsWith('fr');
   const text=fr?{label:'Visionneuse des images',close:'Fermer',prev:'Précédente',next:'Suivante',loading:'Chargement de l’image…',error:'Image indisponible. Essayez la suivante ou fermez.'}:{label:'Image viewer',close:'Close',prev:'Previous',next:'Next',loading:'Loading image…',error:'Image unavailable. Try another image or close.'};
@@ -62,7 +62,7 @@ function mount(){
     if(!dialog.open||closing)return;
     closing=true;++request;dialog.classList.add('is-closing');
     selected?.classList.remove('bv-viewer-source-hidden');
-    closeTimer=setTimeout(()=>dialog.close(),motionOff()?0:450);
+    closeTimer=setTimeout(()=>dialog.close(),motionOff()?0:200);
   }
   sources.forEach((source,i)=>source.addEventListener('click',()=>{
     if(dialog.open)return;

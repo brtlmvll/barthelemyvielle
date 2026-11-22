@@ -16,8 +16,8 @@ dialog.bv-image-viewer{position:fixed;inset:0;margin:0;width:100%;height:100dvh;
 .bv-image-viewer .bv-viewer-status{position:fixed;top:28px;left:24px;margin:0;font:12px/1.5 Arial,Helvetica,sans-serif;color:inherit}
 .bv-viewer-status:empty{display:none}
 .bv-image-viewer.is-switching .bv-viewer-display{transition-duration:.2s}
-.bv-image-viewer.is-closing .bv-viewer-display{opacity:0;filter:blur(4px);transition-duration:.45s}
-.bv-image-viewer.is-closing::backdrop{animation:bv-viewer-backdrop-out .45s ease both}
+.bv-image-viewer.is-closing .bv-viewer-display{opacity:0;filter:blur(4px);transition-duration:.2s}
+.bv-image-viewer.is-closing::backdrop{animation:bv-viewer-backdrop-out .2s ease both}
 @keyframes bv-viewer-backdrop-in{from{background:rgba(5,6,5,0)}to{background:rgba(5,6,5,.9)}}
 @keyframes bv-viewer-backdrop-out{from{background:rgba(5,6,5,.9)}to{background:rgba(5,6,5,0)}}
 @media(max-width:490px){dialog.bv-image-viewer{padding:72px 16px 24px}.bv-image-viewer .bv-viewer-media>img,.bv-image-viewer .bv-viewer-media>svg{max-width:90vw;max-height:65dvh}.bv-image-viewer .bv-viewer-status{max-width:55vw;left:16px}}
