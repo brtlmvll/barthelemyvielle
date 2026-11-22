@@ -30,7 +30,7 @@ body.stonefield-page {
   align-items: stretch;
   margin: 0 var(--gutter) clamp(72px,11vw,170px);
 }
-.field-tile {position:relative; min-width:0; margin:0; padding:0; transform:translateY(var(--shift)) rotate(var(--tilt));transition:opacity .65s ease,filter .65s ease}
+.field-tile {position:relative; min-width:0; margin:0; padding:0; transform:translateY(var(--shift)) rotate(var(--tilt));transition:opacity var(--t-base,360ms) var(--ease-out,ease),filter var(--t-base,360ms) var(--ease-out,ease)}
 .field-tile.size-s {grid-column:span 2; grid-row:span 2}
 .field-tile.size-m {grid-column:span 2; grid-row:span 3}
 .field-tile.size-l {grid-column:span 3; grid-row:span 3}
@@ -44,7 +44,7 @@ body.stonefield-page {
 }
 .field-tile img {
   position:absolute; inset:0; width:100%; height:100%; max-height:none;
-  object-fit:cover; filter:saturate(.86); transition:filter .2s;
+  object-fit:cover; filter:saturate(.86); transition:filter var(--t-fast,180ms);
 }
 .field-tile:hover img, .field-tile:focus-within img {filter:none}
 .field-tile .image-open:focus-visible {outline:2px solid var(--ink); outline-offset:3px}
@@ -80,7 +80,7 @@ body.stonefield-page {
 .stonefield-page .field-lightbox {position:fixed;inset:0;margin:0;width:100%;height:100dvh;max-width:none;max-height:none;padding:70px 24px 24px;border:0;background:transparent;color:var(--ink);overflow:auto}
 .field-lightbox[open] {display:flex;align-items:center;justify-content:center}
 .field-lightbox::backdrop {background:rgba(5,6,5,.9);animation:field-backdrop-in .7s ease both}
-.field-lightbox .field-display {margin:0;max-width:100%;opacity:0;filter:blur(5px);transition:opacity 1s ease,filter 1s ease}
+.field-lightbox .field-display {margin:0;max-width:100%;opacity:0;filter:blur(5px);transition:opacity var(--t-slow,700ms) var(--ease-out,ease),filter var(--t-slow,700ms) var(--ease-out,ease)}
 .field-lightbox.is-ready .field-display {opacity:1;filter:blur(0)}
 .field-lightbox .field-display img {display:block;width:auto;height:auto;max-width:min(86vw,1600px);max-height:72dvh;object-fit:contain;filter:none;cursor:default}
 .field-lightbox .field-display figcaption {display:block;margin-top:16px;padding:0;color:var(--ink);font-size:12px;line-height:1.5;letter-spacing:.04em;max-width:80vw;cursor:default}

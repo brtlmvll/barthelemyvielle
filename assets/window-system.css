@@ -1,14 +1,14 @@
 /* The frame moves; the artwork remains still. */
 .window-svg,.m .wrap svg,.hs .hw svg{animation:none!important;transform:none!important;filter:none!important;overflow:visible}
 .m:hover .wrap,.hs:hover .hw{transform:none!important}.m .wrap::after,.hs .hw::after,.frag,.hfrag,.card-fragments{display:none!important}
-.window-fill{fill:var(--terrain-text);transition:fill .4s}.window-image{opacity:1;filter:grayscale(1);transition:opacity .38s,filter .32s}.m.has-preview:is(:hover,:focus-visible) .window-fill{fill:var(--image-ground,var(--ground))}.m.has-preview:is(:hover,:focus-visible) .window-image{opacity:1;filter:none}
-.window-surface{position:relative!important;isolation:isolate;overflow:hidden!important;background:var(--image-ground,#deded8)!important;border:0!important;animation:none!important;transform:none!important;filter:grayscale(1)!important;transition:filter .32s}
+.window-fill{fill:var(--terrain-text);transition:fill var(--t-base,360ms)}.window-image{opacity:1;filter:grayscale(1);transition:opacity var(--t-base,360ms),filter var(--t-fast,180ms)}.m.has-preview:is(:hover,:focus-visible) .window-fill{fill:var(--image-ground,var(--ground))}.m.has-preview:is(:hover,:focus-visible) .window-image{opacity:1;filter:none}
+.window-surface{position:relative!important;isolation:isolate;overflow:hidden!important;background:var(--image-ground,#deded8)!important;border:0!important;animation:none!important;transform:none!important;filter:grayscale(1)!important;transition:filter var(--t-fast,180ms)}
 .project-card:is(:hover,:focus-visible) .window-surface,.pchead:is(:hover,:focus-visible) .window-surface{filter:none!important}
 .surface-definitions{position:absolute;width:0;height:0;pointer-events:none}
-.card-image>img,.pcover>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center!important;transform:none!important;animation:none!important;clip-path:none!important;opacity:1!important;filter:grayscale(1);transition:filter .32s}
+.card-image>img,.pcover>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center!important;transform:none!important;animation:none!important;clip-path:none!important;opacity:1!important;filter:grayscale(1);transition:filter var(--t-fast,180ms)}
 .project-card:is(:hover,:focus-visible) img,.pchead:is(:hover,:focus-visible) img{filter:none}
 .image-open{padding:0!important;background:transparent!important;transform:none!important;animation:none!important;clip-path:none!important;overflow:hidden!important}
-.image-open>img{width:100%;height:auto;object-fit:contain;transform:none!important;animation:none!important;clip-path:none!important;transition:filter .35s}
+.image-open>img{width:100%;height:auto;object-fit:contain;transform:none!important;animation:none!important;clip-path:none!important;transition:filter var(--t-fast,180ms)}
 .image-open:hover>img,.image-open:focus-visible>img{filter:none}.image-open canvas,.card-image canvas,.aperture-frame,.colour-toggle,#bvstrobe,.strand{display:none!important}
 .reveal,.reveal.is-seen,.project-pagination strong,.open-mark,.witem img,.pgrid img,.ggrid img,.pcmore img{transform:none!important;animation:none!important;clip-path:none!important}
 body::after,.pctitle,.ml,.sect .h,.hlab{animation:none!important}.motion-paused *{animation-play-state:paused!important}
