@@ -8,7 +8,7 @@ from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 TEMPLATE = ROOT / 'tools/stonefield.html'
-SUPPORTED = {'.jpg', '.jpeg', '.png', '.webp', '.svg', '.avif'}
+SUPPORTED = {'.jpg', '.jpeg', '.png', '.webp', '.svg', '.avif', '.gif'}
 items = {}
 # Removed by Bart (iPhone photos, Accomplicoins, Field notes) or unusable (lorem ipsum). Never re-add.
 EXCLUDE_DIRS = ('assets/photo/', 'assets/studies/', 'assets/logo-bank/')  # studies/: generated (ChatGPT, Midjourney, code), not Bart's work
@@ -35,17 +35,10 @@ for project in json.loads((ROOT/'assets/project-catalogue.json').read_text()):
 elsewhere_digests = {sha256((ROOT/path).read_bytes()).digest() for path in used_elsewhere if (ROOT/path).is_file()}
 content.update(elsewhere_digests)
 
-folders = [
-    ('assets/archive', None),
-    ('assets/studies-archives', 'Studies'),
-    ('assets/studies-curated', 'Studies'),
-    ('assets/stonefield/screens', None),
-]
-for folder, label in folders:
-    for path in sorted((ROOT/folder).rglob('*')):
-        relative = path.relative_to(ROOT)
-        name = label or (path.parent.name if folder=='assets/archive' else path.stem)
-        add(relative, name.replace('-', ' ').replace('_', ' '))
+# Only selected exports enter the archive. Dropping a source file does not publish it.
+selection = json.loads((ROOT/'assets/stonefield-selection.json').read_text())
+for record in selection:
+    add(record['src'], record['name'])
 
 rng = random.Random(48127)
 stones = list(items.items())

@@ -515,6 +515,54 @@
     ]
   },
   {
+    "slug": "moss",
+    "name": "MOSS",
+    "category": "Studies",
+    "kind": "study",
+    "description": "Trois scans de mousse : densités végétales, filaments et fragments sur fond noir.",
+    "images": [
+      "assets/stonefield/screens/moss-3.jpg",
+      "assets/stonefield/screens/moss-1.jpg",
+      "assets/stonefield/screens/moss-12.jpg"
+    ],
+    "previews": [
+      "assets/stonefield/screens/moss-3.jpg",
+      "assets/stonefield/screens/moss-1.jpg",
+      "assets/stonefield/screens/moss-12.jpg"
+    ]
+  },
+  {
+    "slug": "factions",
+    "name": "Factions",
+    "category": "Studies",
+    "kind": "study",
+    "description": "Titre et écrans pour un univers de jeu : Arenas, Continent et Frontera.",
+    "images": [
+      "assets/archive/factions/01.jpg",
+      "assets/stonefield/screens/factions-arenas.jpg",
+      "assets/stonefield/screens/factions-continent.jpg",
+      "assets/stonefield/screens/factions-frontera.jpg"
+    ],
+    "previews": [
+      "assets/stonefield/screens/factions-arenas.jpg",
+      "assets/stonefield/screens/factions-continent.jpg",
+      "assets/stonefield/screens/factions-frontera.jpg"
+    ]
+  },
+  {
+    "slug": "dead-cat-bounce",
+    "name": "Dead Cat Bounce",
+    "category": "Studies",
+    "kind": "study",
+    "description": "Second Chance : composition de titre, volumes sombres et lumière cyan.",
+    "images": [
+      "assets/stonefield/screens/dcb-second-chance.jpg"
+    ],
+    "previews": [
+      "assets/stonefield/screens/dcb-second-chance.jpg"
+    ]
+  },
+  {
     "slug": "oppicasso",
     "name": "Oppic’Asso",
     "category": "Identity",
