@@ -58,3 +58,6 @@ body.studies-v3{--study-paper:#eaece2;--study-muted:#a8aca1;--study-rule:#2b2d27
  .study-kind{font-size:8px!important;letter-spacing:.06em;margin-top:4px}
  .study-card p{display:none}
 }
+
+/* Small phones: the menu takes its own row and spreads evenly */
+@media(max-width:420px){header nav{flex:1 1 100%;order:3;justify-content:space-between;gap:0 8px;flex-wrap:wrap;letter-spacing:.04em}}

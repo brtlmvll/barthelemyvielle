@@ -1,14 +1,10 @@
 /* One motion language, taken from the Information curtain on the home page:
-   a dark panel sweeps in from the left, then leaves to the right and reveals the new page. */
+   a dark panel covers the page from the left, then leaves to the right and reveals the next page.
+   The curtain is a fixed layer on <html>, driven by terrain-transitions.js and the inline flag in each page head. */
 :root{--t-fast:180ms;--t-base:360ms;--t-slow:700ms;--ease-out:cubic-bezier(.2,.7,.1,1);--ease-in:cubic-bezier(.55,0,.8,.2);--ease-wipe:cubic-bezier(.76,0,.24,1);--wipe:420ms;--curtain:#0a0b09}
-@view-transition{navigation:auto}
-::view-transition{background:var(--curtain)}
-::view-transition-group(root){animation-duration:calc(var(--wipe)*2 + 10ms)}
-::view-transition-old(root),::view-transition-new(root){mix-blend-mode:normal;opacity:1}
-::view-transition-old(root){animation:bv-curtain-in var(--wipe) var(--ease-wipe) both}
-::view-transition-new(root){animation:bv-curtain-out var(--wipe) var(--ease-wipe) calc(var(--wipe) + 10ms) both}
-/* Same ground (project to project): a little quicker */
-html:active-view-transition-type(same){--wipe:340ms}
-@keyframes bv-curtain-in{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 0 0 100%)}}
-@keyframes bv-curtain-out{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
+html::after{content:"";position:fixed;inset:0;z-index:2147483000;background:var(--curtain);pointer-events:none;transform:scaleX(0);transform-origin:left;will-change:transform}
+html.bv-leave::after{transform-origin:left;animation:bv-cover var(--wipe) var(--ease-wipe) forwards}
+html.bv-enter::after{transform-origin:right;animation:bv-reveal var(--wipe) var(--ease-wipe) 30ms both}
+@keyframes bv-cover{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes bv-reveal{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+@media (prefers-reduced-motion:reduce){html::after{display:none}}
