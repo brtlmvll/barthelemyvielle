@@ -465,9 +465,9 @@
   {
     "slug": "town-paraltar",
     "name": "TOWN / Paraltar",
-    "category": "3D & Motion",
-    "kind": "project",
-    "description": "Opening-title study for Log Zero.",
+    "category": "Studies",
+    "kind": "study",
+    "description": "Étude de générique : typographie, signes et crédits fictifs dans une traversée nocturne.",
     "images": [
       "assets/town-paraltar/title.jpg",
       "assets/town-paraltar/road.jpg",
@@ -536,6 +536,54 @@
     "previews": [
       "assets/stonefield/screens/astersea-1.jpg",
       "assets/stonefield/screens/astersea-2.jpg"
+    ]
+  },
+  {
+    "slug": "moss",
+    "name": "MOSS",
+    "category": "Studies",
+    "kind": "study",
+    "description": "Trois scans de mousse : densités végétales, filaments et fragments sur fond noir.",
+    "images": [
+      "assets/stonefield/screens/moss-3.jpg",
+      "assets/stonefield/screens/moss-1.jpg",
+      "assets/stonefield/screens/moss-12.jpg"
+    ],
+    "previews": [
+      "assets/stonefield/screens/moss-3.jpg",
+      "assets/stonefield/screens/moss-1.jpg",
+      "assets/stonefield/screens/moss-12.jpg"
+    ]
+  },
+  {
+    "slug": "factions",
+    "name": "Factions",
+    "category": "Studies",
+    "kind": "study",
+    "description": "Titre et écrans pour un univers de jeu : Arenas, Continent et Frontera.",
+    "images": [
+      "assets/archive/factions/01.jpg",
+      "assets/stonefield/screens/factions-arenas.jpg",
+      "assets/stonefield/screens/factions-continent.jpg",
+      "assets/stonefield/screens/factions-frontera.jpg"
+    ],
+    "previews": [
+      "assets/stonefield/screens/factions-arenas.jpg",
+      "assets/stonefield/screens/factions-continent.jpg",
+      "assets/stonefield/screens/factions-frontera.jpg"
+    ]
+  },
+  {
+    "slug": "dead-cat-bounce",
+    "name": "Dead Cat Bounce",
+    "category": "Studies",
+    "kind": "study",
+    "description": "Second Chance : composition de titre, volumes sombres et lumière cyan.",
+    "images": [
+      "assets/stonefield/screens/dcb-second-chance.jpg"
+    ],
+    "previews": [
+      "assets/stonefield/screens/dcb-second-chance.jpg"
     ]
   }
 ]
