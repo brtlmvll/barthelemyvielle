@@ -563,23 +563,6 @@
     ]
   },
   {
-    "slug": "oppicasso",
-    "name": "Oppic’Asso",
-    "category": "Identity",
-    "kind": "project",
-    "technique": "Logo proposals",
-    "description": "Logo proposals for Oppic’Asso, an association: three directions for one mark.",
-    "images": [
-      "assets/archive/oppicasso/01.jpg",
-      "assets/archive/oppicasso/02.jpg",
-      "assets/archive/oppicasso/03.jpg"
-    ],
-    "previews": [
-      "assets/archive/oppicasso/02.jpg",
-      "assets/archive/oppicasso/01.jpg"
-    ]
-  },
-  {
     "slug": "kosmo",
     "name": "Kosmö",
     "category": "Identity",
