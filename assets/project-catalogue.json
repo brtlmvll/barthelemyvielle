@@ -530,5 +530,28 @@
       "assets/archive/oppicasso/02.jpg",
       "assets/archive/oppicasso/01.jpg"
     ]
+  },
+  {
+    "slug": "kosmo",
+    "name": "Kosmö",
+    "category": "Identity",
+    "kind": "project",
+    "technique": "Logotype, icons, 3D product scenes",
+    "description": "Identity for Kosmö Paris: logotype, icon set and product scenes.",
+    "images": [
+      "assets/archive/kosmo/01.jpg",
+      "assets/archive/kosmo/02.jpg",
+      "assets/archive/kosmo/03.jpg",
+      "assets/archive/kosmo/04.jpg",
+      "assets/archive/kosmo/05.jpg",
+      "assets/archive/kosmo/06.jpg",
+      "assets/archive/kosmo/07.jpg",
+      "assets/archive/kosmo/08.jpg",
+      "assets/archive/kosmo/09.jpg"
+    ],
+    "previews": [
+      "assets/archive/kosmo/07.jpg",
+      "assets/archive/kosmo/01.jpg"
+    ]
   }
 ]
