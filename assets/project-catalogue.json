@@ -18,14 +18,16 @@
     "name": "Terrarivm Generalis",
     "slug": "terrarivm-generalis",
     "category": "Identity",
-    "description": "Identity for an urban-vegetalization startup. A logotype drawn from modular architecture; natural textures set against synthetic tones — grounded yet forward-thinking.",
+    "description": "Branding for the Terrarivm Generalis group: logo versions, paper elements and photography shot in a Paris botanical garden.",
     "images": [
-      "assets/archive/terrarivm-generalis/03.svg"
+      "assets/archive/terrarivm-generalis/photo-01.jpg",
+      "assets/archive/terrarivm-generalis/paper-01.jpg"
     ],
     "kind": "project",
     "previews": [
       "assets/previews/terrarivm-generalis-03.svg"
-    ]
+    ],
+    "technique": "Branding, photography"
   },
   {
     "name": "Logo Bank",
